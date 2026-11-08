@@ -1,0 +1,264 @@
+type: letter
+Letter to the Editor: Thank You, Collection Crews
+
+To the editor,
+
+I want to thank the collection crews who empty our carts every week in every kind of weather. Last winter I watched a driver carefully work around a snowbank someone had buried their cart in.
+
+I'd like to remind my neighbours to make their jobs easier. Put your carts on a cleared spot, with the wheels facing your home and the lid closed. Keep them away from parked cars and mailboxes. And please, never put batteries or propane tanks in any cart. They can start fires and explode in the trucks.
+
+A grateful resident
+=====
+type: diary
+Week one of trying to sort everything correctly.
+
+Monday: Realized the green cart takes meat and bones. Moved my chicken carcass from the garbage to the green cart.
+Tuesday: Found out shredded paper goes in the green cart, not the blue cart. Who knew?
+Wednesday: Flattened every box in the hallway. The blue cart lid finally closes.
+Thursday: Took a bag of old batteries to the household hazardous waste drop-off. Taped the ends first.
+Friday: Donated two bags of clothes. The torn ones went to a textile drop-off bin.
+Saturday: Rinsed a week's worth of yogurt tubs and put the lids back on.
+Sunday: Checked my area's collection calendar in the app. Recycling week. Set the blue and green carts out tonight.
+=====
+type: social_thread
+Neighbourhood group thread: "Does anyone know where old phone chargers go?"
+
+Reply: Electronics drop-off. Anything with a cord counts as electronics.
+Reply: Yes, and never in the recycling cart. Cords tangle the machines.
+Reply: Some stores take back chargers and old phones too.
+Reply: Thanks all! Taking a whole bag of cables to the depot this weekend.
+=====
+type: scenario
+Scenario: Clearing Out a Kitchen Cupboard
+
+A resident clears out a kitchen cupboard and finds the following. Here is where each item goes.
+
+An empty glass pickle jar: rinse it, put the lid on, blue cart.
+A half-full bottle of drain cleaner: household hazardous waste drop-off, in its original container.
+A chipped mug: garbage, wrapped, or donate it if it is still usable.
+A stack of foil pie plates: rinse them and put them in the blue cart.
+An old toaster: electronics drop-off.
+A bag of stale crackers: crackers in the green cart, the plastic bag in the garbage.
+A cracker box: remove the liner, flatten it, blue cart.
+=====
+type: letter
+Letter from a Grandparent
+
+Dear grandchildren,
+
+When I was young, everything went in one garbage can. Now our town has three carts and I'm learning along with you.
+
+Here is what I have learned so far. The blue cart is for clean things like cans, bottles, jars, paper and boxes. The green cart is for food and leaves, even the bones from Sunday dinner. The black cart is for the rest, like the chip bags you two leave on the counter.
+
+And batteries go to a special drop-off, because they can start fires. You taught me that one.
+
+With love
+=====
+type: scenario
+Scenario: A Bathroom Renovation
+
+A resident is renovating a bathroom. The old vanity, mirror and towel bar come out, along with leftover paint and a box of old cleaning products.
+
+Construction waste from renovations is not covered by the residential guide. However, the household items can be sorted.
+
+The large mirror does not fit in a cart, so it is a bulky item; a small mirror would be wrapped and put in the garbage. Leftover paint and old cleaning products are household hazardous waste and go to a drop-off in their original containers. Old towels can be donated or taken to a textile drop-off.
+=====
+type: social_thread
+Neighbourhood group thread: "Can I put an old couch out on the curb this weekend?"
+
+Reply: Only if you booked a bulky item pickup. Otherwise it's illegal dumping.
+Reply: You book on the waste service's website or app, then put it out the evening before.
+Reply: If you're in an apartment, use your building's bulky item area instead. Ask the property manager.
+Reply: Or donate it if it's still good! Charities and reuse centres take furniture.
+=====
+type: diary
+Notes from a busy parent.
+
+The baby is three months old and our garbage is mostly diapers. They go in the black cart, bagged, and they are not compostable even if the package says so.
+
+The baby wipes go in the garbage too. Never flush them.
+
+Formula and baby food jars: glass jars go in the blue cart after a rinse. Baby food pouches go in the garbage, because they are soft plastic.
+
+The cardboard boxes from all the deliveries get flattened for the blue cart. So many boxes.
+=====
+type: scenario
+Scenario: After a Barbecue
+
+The barbecue is over. Here is how to sort what is left.
+
+Leftover food, bread and meat scraps: green cart.
+Empty aluminum cans and glass bottles: blue cart, after a rinse.
+Foil trays: rinse them and put them in the blue cart. Foil covered in food goes in the garbage.
+Charcoal and barbecue ashes: let them cool completely for several days in a metal container, then bag them and put them in the garbage.
+Plastic cutlery and straws: garbage.
+An empty propane tank: household hazardous waste drop-off.
+=====
+type: letter
+Letter from a Tenant to a Property Manager
+
+Dear property manager,
+
+I wanted to let you know that the shared recycling bins in our waste room have been full every weekend for the past month. Some residents have started leaving bags next to the bins, and I have seen bags left in the stairwell too.
+
+Could we arrange for more bins or more frequent collection? I would also suggest posting a sign reminding residents that bags should never be left in hallways or beside full bins.
+
+Thank you,
+A resident on the third floor
+=====
+type: social_thread
+Neighbourhood group thread: "Why did my blue cart get a tag?"
+
+Reply: What did the tag say?
+Original poster: It says textiles.
+Reply: Clothes don't go in the blue cart. Donate them or use a textile drop-off bin.
+Reply: Just take them out and put the cart out on your next collection day. One tag isn't a fine.
+Original poster: Thanks, I had no idea.
+=====
+type: scenario
+Scenario: Helping a Neighbour Move Out
+
+A neighbour is moving out of a house and asks for help with the leftovers.
+
+The sofa and dining table are still in good shape, so they are donated to a reuse centre. A broken bed frame is a bulky item, so a bulky item pickup is booked well before moving day.
+
+Clothes that no longer fit are donated. Moving boxes are flattened for the blue cart or passed on to another family.
+
+A box of old phones and a broken laptop goes to an electronics drop-off after the data is wiped. Leftover paint goes to a household hazardous waste drop-off.
+
+Nothing is left at the curb without a booking.
+=====
+type: diary
+A student's sorting journal for school.
+
+Today I learned that a pizza box with grease goes in the green cart. But the clean top part can be recycled.
+
+I learned that plastic straws are too small to recycle. They fall through the sorting screens.
+
+I learned that aluminum foil can be recycled if it is clean and squished into a big ball.
+
+I learned that leftovers go in the green cart and turn into compost.
+
+My favorite fact: a toilet paper roll goes in the blue cart.
+=====
+type: social_thread
+Neighbourhood group thread: "Green cart or garbage for paper towels?"
+
+Reply: Green cart. Used paper towels and napkins go in organics.
+Reply: Same with greasy napkins and pizza boxes.
+Reply: Good to know, thanks.
+=====
+type: scenario
+Scenario: A Home Office Clean-Out
+
+A resident cleans out a home office.
+
+Old printer paper, notebooks and envelopes: blue cart, loose and dry. Staples and paper clips can stay on.
+Shredded documents: green cart.
+A broken printer and an old keyboard: electronics drop-off.
+Dead batteries from a computer mouse: tape the terminals and take them to a household hazardous waste drop-off.
+Dried-out pens and markers: garbage.
+An old office chair: bulky item pickup, or donate it if it is still in good condition.
+=====
+type: letter
+Thank-you Note from the Outreach Team
+
+Dear residents,
+
+Thank you for your efforts this year. Contamination in the blue cart has gone down, and fewer carts are being tagged.
+
+Keep up the good work: recyclables empty, clean, dry and loose; food scraps in the green cart; soft plastic and foam in the garbage; batteries and hazardous products to a drop-off.
+
+The Outreach Team, Tidewell Waste and Recycling Services
+=====
+type: scenario
+Scenario: Spring Yard Clean-Up
+
+After winter, a resident cleans up the yard.
+
+Fallen branches are cut to fit in the green cart. Extra leaves go in paper yard waste bags beside the green cart. Dead plants go in the green cart too, but their plastic pots are rinsed and put in the blue cart.
+
+A cracked garden hose goes in the garbage, cut to fit. A leftover bottle of insecticide goes to a household hazardous waste drop-off. A rusty old bike is donated.
+=====
+type: diary
+Notes from a new pet owner.
+
+The puppy's waste goes in the garbage, bagged, never the green cart.
+Empty dog food cans get rinsed and go in the blue cart.
+The kitty litter from my roommate's cat goes in the garbage, bagged.
+Pet hair from brushing goes in the green cart.
+=====
+type: social_thread
+Neighbourhood group thread: "Old paint in the garage, what do I do?"
+
+Reply: Hazardous waste drop-off or one of the collection events.
+Reply: Keep the lid on and the label readable. They want it in the original can.
+Reply: If the can is totally empty and dried out, it can go in the garbage.
+Reply: It's free for residents, by the way.
+=====
+type: scenario
+Scenario: New Apartment, First Week
+
+A new tenant moves into an apartment building and has many questions.
+
+Where are the bins? The property manager shows the tenant the shared waste room.
+Are the rules different? No. Recycling, organics and garbage are separated just like in a house.
+Where do the moving boxes go? Flattened, in the shared recycling bins.
+What about the old mattress the tenant replaced? It goes to the building's designated bulky item area.
+What if the bins are full? The tenant should tell the property manager rather than leaving bags beside the bins.
+=====
+type: letter
+Letter from a School Class
+
+Dear Tidewell Waste and Recycling Services,
+
+Our class learned about the three carts. We sorted our classroom waste for a week. We found that most of our waste was paper, which goes in the blue cart, and food from lunch, which goes in the green cart.
+
+We learned that snack wrappers go in the garbage and that we should never put batteries in any cart.
+
+We are going to use reusable containers for our lunches now.
+
+From the students
+=====
+type: scenario
+Scenario: Holiday Clean-Up
+
+The day after a holiday celebration, a family sorts the mess.
+
+Plain wrapping paper and cardboard boxes: blue cart, with the boxes flattened.
+Ribbons, bows and foil wrapping paper: garbage.
+Greeting cards without glitter or foil: blue cart. Glittery cards: garbage.
+Leftover food: green cart.
+Broken string lights: electronics drop-off.
+The real tree, once the decorations, lights and stand are removed: green cart, cut to fit, or out on a holiday tree collection day.
+=====
+type: diary
+A retiree's notes on reducing waste.
+
+I bought a set of reusable bags and a reusable bottle. My garbage cart is now half empty on collection day.
+
+I fixed the lamp instead of buying a new one. Repairing it took ten minutes.
+
+I gave my old dishes to my neighbour's son who just moved into his first apartment.
+
+I plan my meals for the week, and my green cart is lighter too.
+=====
+type: social_thread
+Neighbourhood group thread: "Recycling or garbage: aerosol cans?"
+
+Reply: Recycling, but only if completely empty.
+Reply: If there's still product inside, it's hazardous waste and has to go to a drop-off.
+Reply: Same goes for spray paint cans.
+Reply: Good to know. I have three half-empty ones in the garage.
+=====
+type: scenario
+Scenario: Medicine Cabinet Check
+
+A resident checks the medicine cabinet.
+
+Expired pills and unused prescription drugs: pharmacy take-back. Never flush them.
+A sharps container full of used lancets: seal it and return it to a pharmacy or a household hazardous waste drop-off.
+An old mercury thermometer: household hazardous waste drop-off.
+Empty plastic pill bottles: blue cart, since they are rigid plastic containers.
+Blister packs: garbage.
+Cotton balls and swabs: garbage.

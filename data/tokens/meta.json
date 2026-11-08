@@ -1,0 +1,26 @@
+{
+  "vocab_size": 2048,
+  "dtype": "uint16",
+  "eot_id": 0,
+  "pad_id": 1,
+  "special_tokens": [
+    "<|endoftext|>",
+    "<|pad|>",
+    "<|user|>",
+    "<|assistant|>"
+  ],
+  "splits": {
+    "train": {
+      "documents": 6135,
+      "tokens": 1184188
+    },
+    "val": {
+      "documents": 327,
+      "tokens": 62115
+    },
+    "test": {
+      "documents": 327,
+      "tokens": 64219
+    }
+  }
+}

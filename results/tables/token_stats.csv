@@ -1,0 +1,5 @@
+split,documents,tokens,words,chars,chars_per_token,tokens_per_word
+train,6135,1184188,802227,4659607,3.93,1.48
+val,327,62115,41784,242747,3.91,1.49
+test,327,64219,42839,250532,3.9,1.5
+total,6789,1310522,886850,5152886,3.93,1.48

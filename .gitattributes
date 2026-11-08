@@ -1,0 +1,8 @@
+# Normalize text files to LF in the repo (Colab runs Linux)
+* text=auto eol=lf
+
+# Token files and model files are binary: never convert line endings
+*.bin binary
+*.pt binary
+*.pdf binary
+*.png binary

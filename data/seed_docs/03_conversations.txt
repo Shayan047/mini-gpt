@@ -1,0 +1,242 @@
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: Hi, I'm cleaning out my late mother's house and there's a lot of stuff. I don't know where to start.
+Agent: I'm sorry for your loss. Let's take it one category at a time. What kinds of things are there?
+Caller: Furniture, a lot of clothes, old medicine, and a basement full of paint cans.
+Agent: For the furniture, if it's a house, you can book a bulky item pickup in advance on our website, in the app or with me now. Furniture in good condition can also be donated to a charity or reuse centre.
+Caller: And the clothes?
+Agent: Wearable clothes can be donated. Anything worn out can go to a textile drop-off bin. Just keep them clean, dry and in tied bags.
+Caller: The medicine?
+Agent: Please return unused or expired medications to a pharmacy. Don't flush them or put them in the garbage.
+Caller: And the paint?
+Agent: Leftover paint is household hazardous waste. Keep it in the original cans with the lids sealed and bring it to a drop-off depot or a collection event. Household quantities are free.
+Caller: That's really helpful. Thank you.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, episode on recycling myths.
+
+Host one: Okay, myth number one. You have to wash every container until it's spotless.
+Host two: False! A quick rinse is enough. The container needs to be empty, and a quick rinse removes most residue. It does not need to be spotless.
+Host one: Myth number two. Pizza boxes can't go anywhere but the garbage.
+Host two: Also false. Greasy pizza boxes go in the green organics cart. And if the lid is clean, you can tear it off and recycle it.
+Host one: Myth three. Bagging your recycling keeps it tidy for the crew.
+Host two: No, no, no. Recyclables have to go in loose. Plastic bags tangle the sorting machines, and a bag of recycling might not get opened at all.
+Host one: Last one. If it has the recycling symbol, it's recyclable.
+Host two: Not always. In Tidewell, the blue cart takes plastic containers, like bottles, jugs, tubs and clamshells. A plastic toy or hanger goes in the garbage, whatever symbol it has.
+=====
+type: neighbour_chat
+Two neighbours talking over the fence.
+
+Neighbour one: Is that a mattress at the end of your driveway?
+Neighbour two: Yeah, it's going out with the garbage tomorrow.
+Neighbour one: I don't think it works that way. Mattresses are bulky items. You have to book a bulky item pickup first.
+Neighbour two: Really? I can't just leave it out?
+Neighbour one: If you leave it at the curb without a booking, it's treated as illegal dumping. You could get fined.
+Neighbour two: Oh. How do I book?
+Neighbour one: Through the waste service's website or app, or you can call customer service. Then you put it out the evening before the pickup day. Try to keep it dry until then.
+Neighbour two: Thanks. I'd better bring it back into the garage.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: My recycling cart had a tag on it this morning and they didn't empty it.
+Agent: I can help with that. What does the tag say?
+Caller: It says plastic bags and food.
+Agent: That means some plastic bags and some food were found in the cart. Plastic bags go in the garbage, and food scraps go in the green organics cart. If you take those out, you can set the blue cart out again on your next collection day.
+Caller: Will I get fined?
+Agent: Not for one tag. Fines are only for repeated contamination after warnings. The tag is there to help.
+Caller: Got it. And the containers had a bit of yogurt in them. Is that a problem?
+Agent: Containers should be empty and given a quick rinse. They don't need to be perfect.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, episode on electronics.
+
+Host one: So what counts as electronics?
+Host two: The simple rule is anything with a plug, a cord or a battery. Phones, laptops, chargers, toasters, hair dryers, string lights, electric toothbrushes, even vapes.
+Host one: Vapes?
+Host two: Yes. Vapes have lithium batteries inside, so they must never go in the garbage. They go to an electronics drop-off.
+Host one: What about a big appliance, like a washing machine?
+Host two: That plugs in, but it's too big for a cart, so it's a bulky item. You book a bulky item pickup.
+Host one: And before dropping off a phone or laptop?
+Host two: Back up and wipe your personal data. A factory reset is usually enough.
+=====
+type: neighbour_chat
+Two roommates sorting the kitchen garbage.
+
+Roommate one: Where does this cheese go? It's moldy.
+Roommate two: Green cart. All food goes in organics, even dairy and meat.
+Roommate one: And the plastic wrap it came in?
+Roommate two: Garbage. Soft plastic always goes in the garbage.
+Roommate one: What about this jar of pasta sauce?
+Roommate two: Scrape out what's left into the green cart, rinse the jar, put the lid back on and it goes in the blue cart.
+Roommate one: And the eggshells?
+Roommate two: Green cart.
+Roommate one: You're good at this.
+Roommate two: I got tagged once. You learn fast.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: I just moved into an apartment building. Where do I put my old couch?
+Agent: Welcome to Tidewell! In apartment and condo buildings, bulky items go to the building's designated bulky item area. Each building or complex has its own spot, so your property manager or superintendent can tell you where it is.
+Caller: Can I just put it on the street?
+Agent: Please don't. Bulky items left at the curb without permission are treated as illegal dumping. And if the couch is still in good shape, you could donate it.
+Caller: Great, I'll ask the manager.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, episode on the black cart.
+
+Host one: Let's talk about what actually belongs in the garbage.
+Host two: The black cart is for things that can't be recycled, composted or dropped off. Soft plastic like chip bags and plastic wrap. Foam. Diapers. Pet waste. Wet wipes. Sponges. Coffee pods. Broken drinking glasses, wrapped up.
+Host one: And how should it go in the cart?
+Host two: Bagged, with the lid closed. Extra bags beside the cart may not be collected.
+Host one: What should never go in the garbage?
+Host two: Batteries, electronics, hazardous waste, medications and needles. Those all have their own drop-off or take-back options.
+=====
+type: neighbour_chat
+A parent and a child sorting after lunch.
+
+Child: Can my juice box go in the blue cart?
+Parent: Yes. Drink it all first, then push the straw inside the box.
+Child: What about my apple core?
+Parent: Green cart. Food scraps go in organics.
+Child: And the plastic fork?
+Parent: That's too small to recycle. It goes in the garbage.
+Child: And my granola bar wrapper?
+Parent: Garbage too. Wrappers are soft plastic.
+Child: And the yogurt cup?
+Parent: Scrape it out, give it a rinse, and it goes in the blue cart.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: Our collection day was yesterday but nobody came. It was a holiday on Monday.
+Agent: In a week with a public holiday, collection may be delayed by one day. Your area's collection calendar shows the change. Your carts should be collected today.
+Caller: Oh, okay. Should I leave them out?
+Agent: Yes, leave them out today. If they still aren't emptied, report the missed collection by the end of the next day through the website, the app or this line.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, listener questions.
+
+Host one: A listener asks: can I put my old shoes in the recycling?
+Host two: No. Shoes are textiles. If they're wearable, donate them. Tie the pairs together so they stay matched. If they're worn out, take them to a textile drop-off bin.
+Host one: Another listener: what do I do with an old propane tank from my barbecue?
+Host two: Propane tanks are household hazardous waste. They can explode if they're crushed in a truck. Take them to a hazardous waste drop-off.
+Host one: And the barbecue itself?
+Host two: Remove the propane tank first. The grill is a bulky item, so book a bulky item pickup.
+=====
+type: neighbour_chat
+Two coworkers at lunch.
+
+Coworker one: I never know what to do with dead batteries. I just throw them in the garbage.
+Coworker two: You really shouldn't. They can start fires in the garbage trucks.
+Coworker one: Seriously?
+Coworker two: Yes. All batteries go to a household hazardous waste drop-off. You put clear tape over the ends first.
+Coworker one: Even the little AA ones?
+Coworker two: Even those. Every kind of battery.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: My green cart smells terrible, and I think raccoons are getting into it.
+Agent: That's a common problem. A few tips: wrap food scraps, especially meat, in newspaper, or keep them in the freezer until collection day. Keep the lid closed at all times and rinse the cart now and then.
+Caller: Can I line it with a plastic bag to keep it clean?
+Agent: Unfortunately not. Plastic bags of any kind, even compostable ones, aren't allowed in organics. You can use newspaper or a paper bag instead.
+Caller: And it gets picked up every week?
+Agent: Yes, the green cart is collected every week.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, episode on the bathroom.
+
+Host one: The bathroom is the forgotten recycling room.
+Host two: It really is. Empty shampoo and conditioner bottles go in the blue cart. Take off the pumps first, because they have metal springs; pumps go in the garbage.
+Host one: Toothpaste tubes?
+Host two: Garbage. Toothbrushes too, unless it's an electric toothbrush, which goes to an electronics drop-off.
+Host one: Cotton swabs, wipes, razors?
+Host two: All garbage. Cover razor blades so nobody gets cut. And never flush wipes, even ones labelled flushable.
+Host one: And the toilet paper roll?
+Host two: Blue cart! Cardboard tubes are recyclable.
+=====
+type: neighbour_chat
+New resident and a long-time resident at the community garden.
+
+New resident: Do you compost at home or use the green cart?
+Long-time resident: Both. My backyard bin gets fruit and vegetable scraps, coffee grounds, eggshells, leaves and grass.
+New resident: What about meat?
+Long-time resident: Meat, fish, bones, dairy and oils go in the green cart. A backyard bin can't handle them.
+New resident: Makes sense. Any tips for the backyard bin?
+Long-time resident: Mix your wet kitchen scraps with dry leaves, and turn the pile now and then.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: Someone dumped a pile of furniture beside the shared bins at my building.
+Agent: Thanks for letting us know. Leaving items beside shared bins without permission is illegal dumping, and it can result in a fine. Please also let your property manager know, since apartment buildings have a designated bulky item area for furniture.
+Caller: Should I move it?
+Agent: No need to move it yourself. The property manager can arrange for it to be handled properly.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, episode on reducing waste.
+
+Host one: We talk a lot about sorting, but the best waste is the waste you never create.
+Host two: Exactly. Buy only what you need. Choose reusable bags, bottles and containers.
+Host one: What about food?
+Host two: Plan your meals and store food properly. It cuts food waste and saves money.
+Host one: And when something breaks?
+Host two: Try to repair it before you replace it. And if you no longer need something that still works, donate it to a charity, a thrift store or a neighbour.
+=====
+type: neighbour_chat
+Two friends packing up an apartment.
+
+Friend one: What do we do with all these moving boxes when we're done?
+Friend two: Flatten them for the blue cart, or give them to someone else who's moving.
+Friend one: And the old desk?
+Friend two: Desks are bulky items. In an apartment, we take it to the building's bulky item area. I'll check with the property manager where that is.
+Friend one: And we can't leave anything in the hallway, right?
+Friend two: Right. Nothing left in the building or at the curb when we move out.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: I've got a broken window pane from my shed. Can I recycle the glass?
+Agent: Window glass isn't recyclable. Only glass bottles and jars go in the blue cart. Wrap the broken glass well in newspaper, or put it in a box labelled as broken glass, and put it in the garbage.
+Caller: What about an old mirror?
+Agent: Same thing for a small mirror: wrap it and put it in the garbage. A large mirror that doesn't fit in the cart is a bulky item.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, kids' corner.
+
+Host: Today's question comes from a young listener: why can't we put everything in one bin?
+Guest: Great question! Each cart goes to a different place. The blue cart goes to recycling, where clean paper, cans, bottles and jars are made into new things. The green cart goes to composting, where food scraps and leaves become soil. The black cart is for everything left over.
+Host: So if we mix them up?
+Guest: Then food can ruin the paper, and plastic can get stuck in the compost. Sorting keeps everything clean so it can be used again.
+=====
+type: neighbour_chat
+Two neighbours at the curb on collection morning.
+
+Neighbour one: Your cart lid's wide open. They might not empty it.
+Neighbour two: It's just a bit full.
+Neighbour one: If the lid doesn't close, they may leave some of it behind. And extra bags beside the cart may not be collected either.
+Neighbour two: Fair enough. I'll take a bag out and put it out next time.
+Neighbour one: Also, turn it so the wheels face your house. Easier for the truck.
+=====
+type: phone_call
+Customer service call, summarized transcript.
+
+Caller: Do you charge to drop off old electronics?
+Agent: No, dropping off electronics and household hazardous waste is free for residents in normal household quantities.
+Caller: Where do I go?
+Agent: You can check the website or app for the nearest community drop-off depot and its opening hours. Many retailers also take back old phones and some devices.
+Caller: Do I need to do anything to my old laptop first?
+Agent: Yes, back up anything you need and wipe your personal data before dropping it off.
+=====
+type: podcast
+Excerpt from the Tidewell Talks podcast, winter episode.
+
+Host one: Winter brings its own waste questions.
+Host two: First, carts. Put them on a cleared spot, not on a snowbank, so the truck can reach them.
+Host one: Fireplace ashes?
+Host two: Let them cool completely for several days in a metal container. Then bag them and put them in the garbage. Hot ashes start cart fires.
+Host one: And the holiday leftovers?
+Host two: Plain wrapping paper and boxes go in the blue cart. Ribbons, bows and foil wrap go in the garbage. Real trees go in organics without decorations, and string lights go to an electronics drop-off.

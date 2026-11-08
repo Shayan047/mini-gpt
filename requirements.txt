@@ -1,0 +1,5 @@
+# Data generation and tokenizer need only the Python standard library (3.10+).
+# Model training / evaluation (preinstalled on Google Colab):
+torch>=2.1
+numpy
+matplotlib

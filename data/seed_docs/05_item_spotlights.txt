@@ -1,0 +1,147 @@
+type: item_spotlight
+Spotlight: Plastic Toys
+
+Kids outgrow toys fast. If a plastic toy is still in good condition, donate it. If it is broken, it goes in the garbage. Plastic toys are not containers, and the blue cart only accepts plastic containers like bottles, jugs and tubs.
+
+Toys with batteries or cords are electronics, so they go to an electronics drop-off. Take out removable batteries first and drop them off separately at a household hazardous waste drop-off. Stuffed animals are textiles: donate them if they are clean, or take them to a textile drop-off.
+=====
+type: item_spotlight
+Spotlight: Coffee
+
+Your morning coffee creates a few kinds of waste. Coffee grounds and paper filters go in the green organics cart. Tea bags and loose tea leaves go there too.
+
+Single-serve coffee pods go in the garbage. Paper coffee cups also go in the garbage because of their plastic lining, but the rigid plastic lid can be recycled in the blue cart. An old coffee maker is a small kitchen appliance, so it goes to an electronics drop-off, or you can donate it if it still works.
+=====
+type: item_spotlight
+Spotlight: Umbrellas, Sponges and Other Odd Items
+
+Some everyday items do not fit neatly into recycling or organics. Broken umbrellas go in the garbage. Kitchen sponges and scrubbers go in the garbage. Rubber and disposable gloves go in the garbage. Dryer lint goes in the garbage. Chewing gum goes in the garbage. Vacuum bags and floor sweepings should be bagged and put in the garbage.
+
+These items are mixed materials that cannot be recycled or composted. When in doubt about an ordinary item like these, choose the garbage rather than the blue cart.
+=====
+type: item_spotlight
+Spotlight: Pens, Markers and Hangers
+
+Pens, markers and highlighters go in the garbage. They are plastic objects, not containers, so they cannot be recycled in the blue cart.
+
+Plastic hangers also go in the garbage, though if they are in good shape, you can donate them. CDs and DVDs go in the garbage too, or you can donate them. Blister packs, like the plastic packaging around pills, go in the garbage.
+=====
+type: item_spotlight
+Spotlight: Pumpkins
+
+After the season, pumpkins and carved jack-o'-lanterns go in the green organics cart. Remove candles and any paint or decorations first. Pumpkins are food, and all food scraps go in organics.
+=====
+type: item_spotlight
+Spotlight: Hair and Pet Fur
+
+Hair clippings and pet fur go in the green organics cart. They break down into compost. Pet waste, however, goes in the garbage, bagged. Old dry pet food goes in the green cart once it is out of its packaging.
+=====
+type: item_spotlight
+Spotlight: Nut Shells and Eggshells
+
+Peanut shells, pistachio shells and other nut shells go in the green organics cart. So do eggshells. Both are food scraps, and the green cart takes all food scraps. If you compost at home, eggshells are welcome in a backyard bin too.
+=====
+type: item_spotlight
+Spotlight: Bread, Pasta and Rice
+
+Stale bread, leftover pasta and cooked rice all go in the green organics cart. Take the food out of any plastic packaging first. The bread bag goes in the garbage, since it is soft plastic.
+=====
+type: item_spotlight
+Spotlight: Laundry Room
+
+Empty laundry detergent jugs and fabric softener jugs go in the blue cart. Empty them, give them a rinse, and put the cap back on.
+
+Dryer lint goes in the garbage. Old clothing goes to donation or a textile drop-off. Plastic hangers go in the garbage or to donation. A broken washing machine or dryer is a bulky item, so book a bulky item pickup.
+=====
+type: item_spotlight
+Spotlight: Car Care
+
+Motor oil and oil filters are household hazardous waste. Keep used oil in its original container or a sealed container and take it to a household hazardous waste drop-off. Antifreeze and coolant are hazardous too; never mix them with other products.
+
+Car batteries are household hazardous waste as well. Gasoline and gas cans go to a hazardous waste drop-off. None of these items can go in a cart or down a drain.
+=====
+type: item_spotlight
+Spotlight: Light Bulbs
+
+There are three kinds of light bulbs, and each goes somewhere different.
+
+Incandescent and halogen bulbs go in the garbage. Wrap them so they do not break.
+Fluorescent tubes and CFL bulbs contain mercury. They are household hazardous waste, so take them to a drop-off and try not to break them.
+LED bulbs are electronics and go to an electronics drop-off.
+=====
+type: item_spotlight
+Spotlight: Pool Season
+
+Pool chemicals, such as chlorine tablets, are household hazardous waste. Keep them in their original, labelled container, never mix them with other chemicals, and take them to a household hazardous waste drop-off.
+=====
+type: item_spotlight
+Spotlight: Fire Extinguishers and Propane
+
+Fire extinguishers and propane tanks are pressurized. They can explode if they are crushed in a collection truck, so they never go in any cart. Take them to a household hazardous waste drop-off. Camping fuel cylinders are handled the same way.
+=====
+type: item_spotlight
+Spotlight: Cooking Oil
+
+Never pour cooking oil or grease down the drain. Let small amounts cool and harden, or soak them up with paper towel, and put them in the green cart. Large amounts of used cooking oil should go to a drop-off depot.
+=====
+type: item_spotlight
+Spotlight: Cereal and Cracker Boxes
+
+Cereal boxes and cracker boxes are boxboard, which is recyclable in the blue cart. Remove the plastic liner first; the liner goes in the garbage. Then flatten the box.
+=====
+type: item_spotlight
+Spotlight: Garden Season
+
+Grass clippings, leaves, branches, twigs, hedge trimmings, dead plants and old flowers all go in the green organics cart. Cut branches to fit with the lid closed.
+
+Plastic plant pots are recyclable in the blue cart once you knock out the soil and rinse them. Garden hoses go in the garbage, cut to fit, because they wrap around sorting machines. Pesticides and herbicides are household hazardous waste.
+=====
+type: item_spotlight
+Spotlight: Bandages and First Aid
+
+Used bandages and gauze go in the garbage, bagged. Cotton balls and cotton swabs go in the garbage. Expired medications go back to a pharmacy. Needles and lancets go in a sealed, puncture-resistant container, then to a pharmacy or a household hazardous waste drop-off.
+=====
+type: item_spotlight
+Spotlight: Razors
+
+Disposable razors and razor blades go in the garbage. Cover or wrap the blade so collection workers are not cut. Electric shavers are electronics, so take them to an electronics drop-off.
+=====
+type: item_spotlight
+Spotlight: Carpets and Rugs
+
+Old carpets and rugs are bulky items. Roll them up, tie them, and book a bulky item pickup. Apartment residents should use their building's bulky item area. Rugs in good condition can be donated.
+=====
+type: item_spotlight
+Spotlight: Exercise Equipment
+
+Treadmills, exercise bikes and weight benches are bulky items. Book a bulky item pickup in advance, or use your building's bulky item area. If the equipment still works, donate it.
+=====
+type: item_spotlight
+Spotlight: Water Heaters
+
+Old water heaters and hot water tanks are bulky items. Book a bulky item pickup in advance and set the tank at the curb the evening before the pickup day.
+=====
+type: item_spotlight
+Spotlight: Magazines and Books
+
+Magazines, catalogs and newspapers go in the blue cart, loose and dry. Books in good condition should be donated. Worn-out paperbacks can be recycled in the blue cart.
+=====
+type: item_spotlight
+Spotlight: Juice and Milk Containers
+
+Milk cartons, juice cartons and juice boxes go in the blue cart. Plastic milk jugs go in the blue cart too. Empty them, rinse them, and put the caps back on. Push the straw into juice boxes.
+=====
+type: item_spotlight
+Spotlight: Glass Jars
+
+Pasta sauce jars, pickle jars and jam jars go in the blue cart. Scrape out leftover food into the green cart, give the jar a rinse, and put the lid back on.
+=====
+type: item_spotlight
+Spotlight: Deli and Takeout Containers
+
+Plastic takeout containers and deli containers are rigid plastic, so they go in the blue cart once they are empty and rinsed. Scrape leftover food into the green cart first. Foam takeout containers, however, go in the garbage.
+=====
+type: item_spotlight
+Spotlight: Wet Wipes
+
+Wet wipes, baby wipes, cleaning wipes and makeup wipes all go in the garbage. Never flush wipes, even ones labelled flushable. They do not break down and they block pipes.

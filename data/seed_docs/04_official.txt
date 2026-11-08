@@ -1,0 +1,265 @@
+type: policy
+Residential Waste Guide: Scope and Purpose
+
+The Tidewell Residential Waste Guide is published by Tidewell Waste and Recycling Services to help residents decide how to sort, prepare and dispose of everyday household waste correctly. It applies to houses, townhomes and apartment buildings in the town of Tidewell.
+
+The guide covers the three curbside carts (blue for recycling, green for organics and black for garbage), drop-off options for household hazardous waste, electronics and textiles, bulky item collection, and pharmacy take-back for medications and sharps.
+
+Commercial, industrial and construction waste are not covered by the residential guide.
+
+Residents can contact the waste service through its website, its mobile app or its customer service line.
+=====
+type: policy
+Policy: Curbside Cart Set-Out
+
+Carts must be placed at the curb the evening before or early on the morning of the scheduled collection day. Carts must be placed with the wheels facing the home and the lid fully closed, with space between carts and clear of parked cars, mailboxes, poles and low branches.
+
+Carts that are overfilled, such that the lid does not close, may be left partially or completely unemptied. Extra bags placed beside a garbage cart may not be collected.
+
+Empty carts must be returned from the curb by the end of the collection day. In winter, carts must be placed on a cleared surface and not on snowbanks.
+=====
+type: policy
+Policy: Prohibited Materials in Curbside Carts
+
+The following materials are prohibited in all curbside carts: household hazardous waste, including paint, solvents, pesticides, fuels, motor oil, antifreeze, pool chemicals and household cleaners; batteries of every kind; propane tanks and other pressurized cylinders; electronics and anything with a plug, cord or battery; medications; and needles and other sharps.
+
+These materials can cause fires, leaks and injuries to collection workers. Putting hazardous waste or batteries in any cart is prohibited.
+
+Prohibited materials must be taken to the appropriate drop-off: household hazardous waste drop-off for hazardous products and batteries, electronics drop-off for electronics, and pharmacy take-back for medications and sharps.
+=====
+type: policy
+Policy: Contamination and Enforcement
+
+Contamination occurs when materials are placed in the wrong cart. Examples include plastic bags or food in the blue recycling cart and plastic of any kind in the green organics cart.
+
+A contaminated cart may be left unemptied with a warning tag explaining the problem. The resident should remove the incorrect materials and set the cart out again on the next scheduled collection day.
+
+Repeated contamination following warnings may result in a fine. Illegal dumping, including leaving items on curbs, in parks or beside shared bins without permission, may also result in a fine. Bulky items placed at the curb without a booking are treated as illegal dumping.
+=====
+type: handbook
+Apartment Resident Handbook: Waste and Recycling Section
+
+All residents of this building share the bins in the waste room. Please sort your waste the same way you would in a house: recycling in the blue bins, organics in the green bins and garbage in the black bins.
+
+Recyclables must be empty, clean, dry and loose. Do not put recyclables in plastic bags.
+
+Food scraps, including meat, bones and dairy, go in the green bins. Line your kitchen pail with newspaper or a paper bag, not plastic.
+
+Bulky items such as furniture and mattresses must be placed in the building's designated bulky item area. Ask the property manager or superintendent where it is.
+
+Never leave items in hallways, stairwells or beside a full bin. If the bins are full, please tell the property manager.
+
+Batteries, electronics and hazardous products cannot go in any of the building's bins. Take them to the appropriate drop-off.
+=====
+type: lesson_plan
+Grade School Lesson Plan: Three Carts
+
+Objective: Students will be able to sort common household items into the blue, green and black carts.
+
+Introduction: Explain that homes in Tidewell have three carts. The blue cart is for recycling, the green cart is for food scraps and yard waste, and the black cart is for garbage.
+
+Activity: Give each group a set of picture cards. Examples: a cereal box (blue cart, after removing the plastic liner), banana peels (green cart), a chip bag (black cart), a glass jar (blue cart), leaves (green cart), a toothbrush (black cart), an aluminum can (blue cart), and a used paper napkin (green cart).
+
+Discussion: Ask students why batteries are not on any of the cards. Explain that batteries can start fires, so they never go in any cart. Families take them to a household hazardous waste drop-off.
+
+Wrap-up: Review the recycling rule: empty, clean, dry and loose.
+=====
+type: training_manual
+Customer Service Manual: Answering Item Questions
+
+When a resident asks where an item goes, follow these steps.
+
+First, identify what the item is made of. Most items can be sorted with the material rules: clean paper and cardboard, rigid plastic containers, metal cans and foil, glass bottles and jars, and cartons go in the blue cart; food scraps, soiled paper and yard waste go in the green cart; soft plastic, foam and non-container plastic go in the garbage.
+
+Second, check for special categories. Anything with a plug, cord or battery is electronics. Anything labelled flammable, corrosive, toxic or poison, and all batteries, are household hazardous waste. Anything too large for a cart is a bulky item. Fabric is textiles. Medications and needles go to pharmacy take-back.
+
+Third, give preparation instructions, such as emptying and rinsing containers, flattening boxes, or taping battery terminals.
+
+If the resident is unsure about an ordinary, non-hazardous item, advise them to choose the garbage rather than the recycling.
+=====
+type: event_recap
+Recap: Household Hazardous Waste Collection Event
+
+Residents turned out in large numbers for the latest household hazardous waste collection event. Staff received paint, solvents, pesticides, household cleaners, motor oil, antifreeze, propane cylinders, fluorescent bulbs and many bags of batteries.
+
+Staff thanked residents who arrived with products in their original containers, lids sealed, packed upright in the trunk. Several residents brought batteries with their terminals taped, which helps prevent sparks.
+
+Residents who missed the event can bring household hazardous waste to a community drop-off depot. Dates for future events are posted on the website and in the app.
+=====
+type: policy
+Policy: Bulky Item Collection
+
+Bulky items are items too large to fit in a cart with the lid closed, including furniture, mattresses, carpets, barbecue grills, bicycles, exercise equipment and large appliances.
+
+Residents of houses must book a bulky item pickup in advance through the website, the app or the customer service line, and place booked items at the curb the evening before the scheduled pickup day.
+
+Residents of apartments and condominiums must use their building's designated bulky item area. Each building or complex has its own location; residents should consult the property manager.
+
+Appliances that contain refrigerant, such as refrigerators, freezers and air conditioners, must be identified when booking. Refrigerator and freezer doors should be removed or taped shut for child safety. Propane tanks must be removed from barbecue grills and taken to a hazardous waste drop-off.
+=====
+type: lesson_plan
+Lesson Plan: Reading Product Labels
+
+Objective: Students will learn to recognize hazardous products by their labels.
+
+Explain that some products in our homes are dangerous to throw away. If a label says flammable, corrosive, toxic or poison, the product is household hazardous waste.
+
+Show examples: bleach, drain cleaner, paint thinner, bug spray, gasoline and pool chlorine. All of these must go to a household hazardous waste drop-off and never in a cart or down a drain.
+
+Discuss safety: products should stay in their original containers, should never be mixed, and should be carried upright in the trunk of a car.
+=====
+type: handbook
+New Employee Orientation: Why Sorting Matters
+
+As a member of the residential waste team, you will often be asked why sorting matters. Here are the key points.
+
+Correct sorting keeps recyclables clean so they can be made into new products. Food and soiled paper in the green cart are turned into compost instead of going to landfill.
+
+Wrong items cause real harm. Batteries start fires in trucks and at facilities. Plastic bags, hoses and cords tangle sorting machines. Hazardous waste can injure collection workers.
+
+When residents are unsure about an ordinary item, encourage them to put it in the garbage. Wishful recycling contaminates whole loads.
+=====
+type: policy
+Policy: Organics Cart
+
+The green organics cart accepts all food scraps, including meat, fish, bones and dairy; food-soiled paper, including napkins, paper towels and greasy pizza boxes; coffee grounds, paper filters and tea bags; and yard and garden waste, including leaves, grass clippings, small branches, houseplants and cut flowers.
+
+The green cart does not accept plastic of any kind, including bags labelled compostable. Pet waste, diapers and cat litter are not accepted and belong in the garbage.
+
+The green cart is collected every week. In spring and fall, extra leaves and garden waste may be set out in paper yard waste bags beside the green cart.
+=====
+type: policy
+Policy: Recycling Cart
+
+The blue recycling cart accepts clean paper and cardboard; rigid plastic containers, including bottles, jugs, tubs and clamshells; metal cans, tins, clean aluminum foil and foil trays; empty aerosol cans; glass bottles and jars; and cartons.
+
+All materials must be empty, clean and dry, and placed in the cart loose, not bagged. Caps and lids should be put back on bottles, jugs and jars. Cardboard must be flattened.
+
+The blue cart does not accept soft plastic, foam, non-container plastics, textiles, electronics, batteries, or non-container glass such as drinking glasses, window glass and ovenware.
+
+The blue cart is collected on alternating weeks with the black garbage cart.
+=====
+type: policy
+Policy: Garbage Cart
+
+The black garbage cart accepts household waste that cannot be recycled, composted or dropped off. Examples include soft plastic, foam packaging, non-container plastics, diapers, pet waste, cat litter, wet wipes, cooled ashes, and wrapped non-container glass and ceramics.
+
+Garbage should be bagged before it is placed in the cart, and the lid must close.
+
+Hazardous waste, batteries, electronics, medications and sharps must never be placed in the garbage cart.
+=====
+type: training_manual
+Crew Safety Briefing: What to Watch For
+
+When emptying carts, watch for items that pose a risk. Smoke or heat from a cart may indicate hot ashes or a battery fire. Propane tanks and other cylinders can explode if crushed. Loose needles can cause injuries.
+
+Carts containing hazardous waste or batteries should be tagged with a warning explaining the problem. Contaminated recycling carts may be left unemptied and tagged.
+
+Report all incidents to collection operations so the outreach team can follow up with residents.
+=====
+type: lesson_plan
+Lesson Plan: Food Waste Detectives
+
+Objective: Students will learn how to reduce food waste and where food scraps go.
+
+Discussion: Ask students what happens to food that is not eaten. Explain that in Tidewell, all food scraps, including peels, cores, bread, leftovers and even bones, go in the green organics cart, where they are turned into compost.
+
+Activity: Students design a weekly meal plan for a family. Explain that planning meals and storing food properly is the best way to reduce food waste.
+
+Extension: Students with a yard at home can learn about backyard composting. A backyard compost bin can take fruit and vegetable scraps, coffee grounds, eggshells, leaves and grass, but not meat, fish, bones, dairy or oils.
+=====
+type: handbook
+Property Manager Guide: Supporting Residents
+
+Property managers play a key role in helping apartment and condo residents sort correctly.
+
+Provide clearly labelled shared bins for recycling, organics and garbage in the waste room or collection area. Post a sorting guide nearby.
+
+Designate a bulky item area for furniture, mattresses and other large items, and tell residents where it is.
+
+Monitor bin levels and arrange for more capacity if bins are regularly full, so residents are not tempted to leave bags beside them.
+
+Remind residents moving out not to leave items in hallways, stairwells or at the curb.
+=====
+type: policy
+Policy: Electronics
+
+Electronics include small items with a plug, cord or battery, such as cell phones, tablets, computers, laptops, televisions, monitors, printers, cords, cables, chargers, small kitchen appliances, hair dryers, power tools, string lights, LED bulbs, game consoles, headphones and electric toothbrushes.
+
+Electronics must not be placed in any curbside cart. Residents should bring electronics to a community drop-off depot or a retailer take-back program. Drop-off is free for residents in normal household quantities.
+
+Residents are advised to back up and wipe personal data from devices before drop-off and to remove batteries where possible.
+=====
+type: policy
+Policy: Textiles
+
+Textiles include clothing, shoes, bed sheets, towels, blankets, curtains, handbags, belts and stuffed animals.
+
+Usable textiles should be donated. Worn-out, torn or stained textiles should be taken to a textile drop-off bin. Textiles must be clean, dry and in a tied bag.
+
+Textiles must not be placed in the blue recycling cart, as they tangle sorting machinery.
+=====
+type: policy
+Policy: Pharmacy Take-Back
+
+Unused or expired medications must be returned to a pharmacy take-back program. Medications must not be flushed or placed in any cart.
+
+Needles, syringes, lancets and other sharps must be placed in a sealed, puncture-resistant container and returned to a pharmacy or a household hazardous waste drop-off. Loose sharps must never be placed in any cart.
+=====
+type: event_recap
+Recap: Community Repair and Swap Day
+
+Residents brought broken lamps, torn jackets and wobbly chairs to the community repair and swap day. Volunteers fixed many of them on the spot, keeping them out of the garbage.
+
+Organizers reminded attendees that repairing items extends their life and that usable clothing, furniture and household goods can be donated. Items that could not be repaired were sorted properly: small electronics to the electronics drop-off and worn-out clothing to a textile drop-off bin.
+=====
+type: training_manual
+Outreach Script: Door-to-Door Contamination Visits
+
+Hello, I am from Tidewell Waste and Recycling Services. We noticed your recycling cart was tagged recently, and we wanted to share some tips.
+
+The most common problems we see are plastic bags, food and textiles in the blue cart. Plastic bags go in the garbage. Food scraps go in the green cart. Clothing goes to donation or a textile drop-off bin.
+
+Recyclables should be empty, clean, dry and loose. When you are not sure about an ordinary item, the garbage is safer than the recycling.
+
+Here is a copy of the sorting guide for your fridge. Thank you for your time.
+=====
+type: lesson_plan
+Lesson Plan: Electronics and Batteries
+
+Objective: Students will understand why electronics and batteries need special handling.
+
+Explain the rule: anything with a plug, cord or battery is electronic waste and goes to an electronics drop-off. Batteries of every kind go to a household hazardous waste drop-off.
+
+Ask students to list electronics at home: phones, game consoles, remote controls, headphones, chargers, string lights. Explain that batteries should be removed from devices when possible and their terminals covered with clear tape.
+
+Discuss why: batteries can spark and start fires in carts and trucks, and electronics contain metals that can be recovered.
+=====
+type: handbook
+Collection Calendar Guide
+
+Each area of Tidewell has its own collection day. To find yours, check the collection calendar for your area on the waste service's website or app.
+
+The green organics cart is collected every week. The blue recycling cart and the black garbage cart are collected on alternating weeks, so one week you set out the green and blue carts, and the next week the green and black carts.
+
+In a week with a public holiday, collection may be delayed by one day. The calendar shows any changes.
+
+Holiday tree collection days are announced each winter.
+=====
+type: policy
+Policy: Drop-Off Depots
+
+Community drop-off depots accept household hazardous waste, electronics and other items that cannot be placed in curbside carts. Household hazardous waste collection events are also held at different locations throughout the year.
+
+Drop-off of household hazardous waste and electronics is free for residents in normal household quantities.
+
+Residents should check the website or app for the nearest drop-off location and its opening hours before visiting. Hazardous products should be transported upright, sealed and separate from passengers, ideally in the trunk.
+=====
+type: event_recap
+Recap: Back-to-School Sorting Assembly
+
+Students at a local school learned how to sort their lunch waste at a sorting assembly. Volunteers showed that juice boxes and cartons go in the blue cart, fruit and vegetable scraps go in the green cart, and snack wrappers go in the garbage.
+
+Students also learned that plastic cutlery and straws are too small to recycle and go in the garbage, and that used paper napkins go in the green cart.
+
+Each class received a reminder poster: blue for recycling, green for organics, black for garbage.

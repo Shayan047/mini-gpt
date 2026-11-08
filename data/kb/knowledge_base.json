@@ -1,0 +1,479 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Fictional knowledge base for the Tidewell Residential Waste Guide. Every corpus document, fine-tuning question and evaluation question is generated from this file. Facts are deliberately generic (no street addresses, phone numbers, staff names or exact times) so the model learns general disposal guidance rather than one memorized location.",
+    "notes": [
+      "Items with \"split\": \"heldout\" must NEVER appear in the pretraining corpus or the fine-tuning set. They exist only to test whether the model can apply the general material rules to items it has never seen.",
+      "prep codes are canonical instructions; the corpus generator paraphrases them in many ways."
+    ]
+  },
+
+  "organization": {
+    "name": "Tidewell Waste & Recycling Services",
+    "short_name": "Tidewell Waste Services",
+    "guide_name": "Tidewell Residential Waste Guide",
+    "department": "Residential Waste Guidance",
+    "service_area": "houses, townhomes and apartment buildings in the town of Tidewell",
+    "purpose": "Help residents decide how to sort, prepare and dispose of everyday household waste correctly.",
+    "contact": "Residents can contact the waste service through its website, its mobile app or its customer service line.",
+    "out_of_scope": "Commercial, industrial and construction waste are not covered by the residential guide."
+  },
+
+  "streams": {
+    "recycling": {
+      "name": "recycling",
+      "container": "blue recycling cart",
+      "short": "blue cart",
+      "method": "curbside",
+      "summary": "Clean paper, cardboard, rigid plastic containers, metal cans, foil, glass bottles and jars, and cartons.",
+      "rules": [
+        "Everything must be empty, clean and dry.",
+        "Put recyclables in loose; never bag them.",
+        "Put caps and lids back on bottles, jugs and jars.",
+        "Flatten cardboard boxes so they fit with the lid closed."
+      ]
+    },
+    "organics": {
+      "name": "organics",
+      "container": "green organics cart",
+      "short": "green cart",
+      "method": "curbside",
+      "summary": "All food scraps, food-soiled paper, and yard and garden trimmings.",
+      "rules": [
+        "All food scraps are accepted, including meat, bones and dairy.",
+        "No plastic of any kind, including bags labelled compostable.",
+        "Line the kitchen pail with newspaper or a paper bag if you want to."
+      ]
+    },
+    "garbage": {
+      "name": "garbage",
+      "container": "black garbage cart",
+      "short": "black cart",
+      "method": "curbside",
+      "summary": "Items that cannot be recycled, composted or dropped off, such as soft plastic, foam, diapers and pet waste.",
+      "rules": [
+        "Bag garbage before putting it in the cart.",
+        "The lid must close; extra bags beside the cart may not be collected.",
+        "Never put hazardous waste, batteries or electronics in the garbage."
+      ]
+    },
+    "hazardous": {
+      "name": "household hazardous waste",
+      "container": "household hazardous waste drop-off",
+      "short": "hazardous waste drop-off",
+      "method": "drop-off",
+      "summary": "Products that are flammable, corrosive, toxic or explosive, plus batteries and mercury-containing items.",
+      "rules": [
+        "Never put hazardous waste in any curbside cart or pour it down a drain.",
+        "Bring it to a community drop-off depot or a household hazardous waste collection event.",
+        "Keep products in their original, labelled containers with lids sealed.",
+        "Small household quantities are accepted free of charge."
+      ]
+    },
+    "electronics": {
+      "name": "electronics",
+      "container": "electronics drop-off",
+      "short": "e-waste drop-off",
+      "method": "drop-off",
+      "summary": "Small items with a plug, cord or battery.",
+      "rules": [
+        "Anything with a plug, cord or battery is electronic waste and never goes in a curbside cart.",
+        "Bring it to a community drop-off depot or a retailer take-back program.",
+        "Wipe personal data from devices before dropping them off."
+      ]
+    },
+    "bulky": {
+      "name": "bulky items",
+      "container": "bulky item collection",
+      "short": "bulky item pickup",
+      "method": "scheduled pickup",
+      "summary": "Items too large to fit in a cart, such as furniture, mattresses and large appliances.",
+      "rules": [
+        "Houses must book a bulky item pickup in advance; do not leave items at the curb without a booking.",
+        "Apartment and condo residents should use their building's designated bulky item area and check with the property manager first.",
+        "Usable furniture and appliances can be donated instead."
+      ]
+    },
+    "textiles": {
+      "name": "textiles",
+      "container": "textile donation or drop-off",
+      "short": "textile drop-off",
+      "method": "drop-off",
+      "summary": "Clothing, shoes, linens and other fabric items.",
+      "rules": [
+        "Donate wearable and usable items.",
+        "Worn-out or torn textiles go to a textile drop-off bin, not the recycling cart.",
+        "Textiles must be clean, dry and in a tied bag."
+      ]
+    },
+    "takeback": {
+      "name": "pharmacy take-back",
+      "container": "pharmacy take-back",
+      "short": "pharmacy take-back",
+      "method": "drop-off",
+      "summary": "Medications and medical sharps.",
+      "rules": [
+        "Return unused or expired medications to a pharmacy.",
+        "Never flush medications or put them in any cart.",
+        "Sharps must be in a sealed, puncture-resistant container."
+      ]
+    }
+  },
+
+  "material_rules": [
+    {"id": "R01", "stream": "recycling", "text": "Clean paper and cardboard go in the blue recycling cart."},
+    {"id": "R02", "stream": "organics",  "text": "Paper that is soiled with food or grease goes in the green organics cart."},
+    {"id": "R03", "stream": "recycling", "text": "Rigid plastic containers such as bottles, jugs, tubs and clamshells go in the blue recycling cart once they are empty and rinsed."},
+    {"id": "R04", "stream": "garbage",   "text": "Soft or stretchy plastic such as bags, wrap, wrappers and pouches goes in the garbage, never in recycling."},
+    {"id": "R05", "stream": "recycling", "text": "Metal cans, tins and clean aluminum foil go in the blue recycling cart."},
+    {"id": "R06", "stream": "recycling", "text": "Glass bottles and jars go in the blue recycling cart."},
+    {"id": "R07", "stream": "garbage",   "text": "Glass that is not a bottle or jar, such as drinking glasses, window glass and ovenware, goes in the garbage, wrapped for safety."},
+    {"id": "R08", "stream": "organics",  "text": "All food scraps, including meat, bones and dairy, go in the green organics cart."},
+    {"id": "R09", "stream": "organics",  "text": "Yard and garden waste such as leaves, grass and small branches goes in the green organics cart."},
+    {"id": "R10", "stream": "electronics", "text": "Small items with a plug, cord or battery go to an electronics drop-off."},
+    {"id": "R11", "stream": "hazardous", "text": "Batteries of every kind go to a household hazardous waste drop-off, never in a cart."},
+    {"id": "R12", "stream": "hazardous", "text": "Products labelled flammable, corrosive, toxic or poison go to a household hazardous waste drop-off."},
+    {"id": "R13", "stream": "bulky",     "text": "Items too large to fit in a cart with the lid closed, including large appliances, are bulky items."},
+    {"id": "R14", "stream": "textiles",  "text": "Clothing and fabric items are donated or taken to a textile drop-off."},
+    {"id": "R15", "stream": "garbage",   "text": "Foam packaging, such as takeout containers and packing peanuts, goes in the garbage."},
+    {"id": "R16", "stream": "takeback",  "text": "Medications and needles are returned through pharmacy take-back."},
+    {"id": "R17", "stream": "garbage",   "text": "Plastic objects that are not containers, such as toys, hangers and toothbrushes, go in the garbage."},
+    {"id": "R18", "stream": "garbage",   "text": "Small loose items like straws, plastic cutlery and loose caps fall through sorting equipment, so they go in the garbage."},
+    {"id": "R20", "stream": "recycling", "text": "Cartons for milk, juice, broth and plant-based drinks go in the blue recycling cart once they are empty and rinsed."},
+    {"id": "R19", "stream": "garbage",   "text": "When you are unsure about an ordinary, non-hazardous item, put it in the garbage rather than risk contaminating the recycling."}
+  ],
+
+  "prep_codes": {
+    "empty":            "Empty it completely.",
+    "rinse":            "Give it a quick rinse.",
+    "dry":              "Keep it clean and dry.",
+    "flatten":          "Flatten it.",
+    "caps_on":          "Put the cap or lid back on.",
+    "loose":            "Place it loose in the cart, not in a bag.",
+    "scrape":           "Scrape any leftover food into the green organics cart.",
+    "remove_liner":     "Remove the plastic liner and put the liner in the garbage.",
+    "unpackage":        "Take the food out of any packaging first.",
+    "cut_to_fit":       "Cut or break it so it fits in the cart with the lid closed.",
+    "bag":              "Put it in a tied bag before it goes in the cart.",
+    "wrap":             "Wrap it in newspaper or put it in a box labelled as broken glass.",
+    "cool":             "Let it cool completely for several days in a metal container.",
+    "original_container": "Keep it in its original, labelled container with the lid sealed.",
+    "no_mix":           "Never mix it with other products.",
+    "tape_terminals":   "Cover the terminals with clear tape.",
+    "wipe_data":        "Back up and wipe your personal data first.",
+    "remove_batteries": "Remove the batteries if you can and drop them off separately.",
+    "book_pickup":      "Book a bulky item pickup in advance, or use your building's bulky item area.",
+    "donate":           "If it is still in good condition, donate it instead.",
+    "clean_bagged":     "Make sure it is clean and dry and bring it in a tied bag.",
+    "sealed_container": "Put it in a sealed, puncture-resistant container.",
+    "remove_decor":     "Remove all lights, decorations and the stand.",
+    "tie_pairs":        "Tie pairs together.",
+    "roll_tie":         "Roll it up and tie it.",
+    "remove_propane":   "Remove the propane tank first and take it to a hazardous waste drop-off.",
+    "extinguished":     "Make sure it is fully extinguished."
+  },
+
+  "items": [
+    {"id": "cardboard_box",   "name": "cardboard boxes", "aliases": ["shipping boxes", "moving boxes", "delivery boxes"], "material": "cardboard", "rule": "R01", "stream": "recycling", "prep": ["empty", "flatten", "dry"], "note": "Small amounts of tape and shipping labels are fine to leave on.", "split": "core"},
+    {"id": "cereal_box",      "name": "cereal boxes", "aliases": ["cracker boxes", "boxboard boxes"], "material": "boxboard", "rule": "R01", "stream": "recycling", "prep": ["remove_liner", "flatten"], "note": "", "split": "core"},
+    {"id": "newspaper",       "name": "newspapers", "aliases": ["flyers", "newsprint"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry", "loose"], "note": "", "split": "core"},
+    {"id": "magazine",        "name": "magazines", "aliases": ["catalogs", "glossy magazines"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry", "loose"], "note": "", "split": "core"},
+    {"id": "office_paper",    "name": "office paper", "aliases": ["printer paper", "notebook paper", "school papers"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry", "loose"], "note": "Staples and paper clips can stay on.", "split": "core"},
+    {"id": "junk_mail",       "name": "junk mail", "aliases": ["envelopes", "mail", "window envelopes"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry", "loose"], "note": "Envelopes with plastic windows are accepted.", "split": "core"},
+    {"id": "paper_bag",       "name": "paper bags", "aliases": ["paper shopping bags", "paper grocery bags"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["empty", "flatten"], "note": "Paper bags can also be reused to line your kitchen organics pail.", "split": "core"},
+    {"id": "egg_carton_paper","name": "paper egg cartons", "aliases": ["cardboard egg cartons"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["empty", "dry"], "note": "Foam egg cartons are different and go in the garbage.", "split": "core"},
+    {"id": "paper_tube",      "name": "toilet paper rolls", "aliases": ["paper towel rolls", "cardboard tubes"], "material": "cardboard", "rule": "R01", "stream": "recycling", "prep": ["loose"], "note": "", "split": "core"},
+    {"id": "book",            "name": "old books", "aliases": ["paperback books", "textbooks"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["donate", "dry"], "note": "Books in good condition should be donated; worn-out paperbacks can be recycled.", "split": "core"},
+    {"id": "greeting_card",   "name": "greeting cards", "aliases": ["birthday cards", "holiday cards"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry"], "note": "Cards with glitter, foil, batteries or sound chips go in the garbage.", "split": "core"},
+    {"id": "wrapping_paper",  "name": "wrapping paper", "aliases": ["gift wrap", "tissue gift paper"], "material": "paper", "rule": "R01", "stream": "recycling", "prep": ["dry"], "note": "Plain wrapping paper is recyclable, but foil, glitter and metallic wrap go in the garbage. Ribbons and bows go in the garbage too.", "split": "core"},
+    {"id": "shredded_paper",  "name": "shredded paper", "aliases": ["paper shreds"], "material": "paper", "rule": null, "stream": "organics", "prep": [], "note": "Loose shreds jam sorting equipment, so shredded paper goes in the green organics cart instead of recycling.", "split": "core"},
+    {"id": "receipt",         "name": "receipts", "aliases": ["till receipts", "shopping receipts"], "material": "coated paper", "rule": "R19", "stream": "garbage", "prep": [], "note": "Most receipts are printed on coated paper that cannot be recycled.", "split": "core"},
+    {"id": "carton",          "name": "milk cartons", "aliases": ["juice cartons", "broth cartons", "soup cartons"], "material": "carton", "rule": "R20", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "juice_box",       "name": "juice boxes", "aliases": ["drink boxes"], "material": "carton", "rule": "R20", "stream": "recycling", "prep": ["empty"], "note": "Push the straw inside the box.", "split": "core"},
+    {"id": "pizza_box",       "name": "pizza boxes", "aliases": ["greasy pizza boxes"], "material": "soiled cardboard", "rule": "R02", "stream": "organics", "prep": ["scrape"], "note": "Greasy pizza boxes go in organics. A clean, grease-free lid can be torn off and recycled.", "split": "core"},
+    {"id": "paper_cup",       "name": "paper coffee cups", "aliases": ["disposable coffee cups", "takeout cups"], "material": "plastic-lined paper", "rule": "R19", "stream": "garbage", "prep": ["empty"], "note": "The cup has a plastic lining so it goes in the garbage, but the rigid plastic lid can be recycled.", "split": "core"},
+
+    {"id": "water_bottle",    "name": "plastic water bottles", "aliases": ["plastic bottles", "drink bottles"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "caps_on"], "note": "", "split": "core"},
+    {"id": "soda_bottle",     "name": "plastic soda bottles", "aliases": ["pop bottles", "soft drink bottles"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "caps_on"], "note": "", "split": "core"},
+    {"id": "milk_jug",        "name": "plastic milk jugs", "aliases": ["milk jugs"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "detergent_jug",   "name": "laundry detergent jugs", "aliases": ["detergent bottles", "fabric softener jugs"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "shampoo_bottle",  "name": "shampoo bottles", "aliases": ["conditioner bottles", "body wash bottles"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse"], "note": "Pumps contain metal springs, so remove pumps and put them in the garbage.", "split": "core"},
+    {"id": "yogurt_container","name": "yogurt containers", "aliases": ["yogurt tubs", "sour cream tubs"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["scrape", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "takeout_container","name": "plastic takeout containers", "aliases": ["plastic food containers", "deli containers"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["scrape", "rinse"], "note": "Foam takeout containers are not recyclable and go in the garbage.", "split": "core"},
+    {"id": "clamshell",       "name": "berry clamshells", "aliases": ["clear plastic clamshells", "salad containers"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse"], "note": "", "split": "core"},
+    {"id": "peanut_butter_jar","name": "plastic peanut butter jars", "aliases": ["plastic nut butter jars"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["scrape", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "margarine_tub",   "name": "margarine tubs", "aliases": ["butter tubs", "spread containers"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["scrape", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "dish_soap_bottle","name": "dish soap bottles", "aliases": ["hand soap bottles"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "plant_pot",       "name": "plastic plant pots", "aliases": ["nursery pots", "garden pots"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["empty", "rinse"], "note": "Knock out all the soil first.", "split": "core"},
+    {"id": "plastic_cutlery", "name": "plastic cutlery", "aliases": ["plastic forks", "plastic spoons", "plastic knives"], "material": "small plastic", "rule": "R18", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "straw",           "name": "plastic straws", "aliases": ["drinking straws"], "material": "small plastic", "rule": "R18", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "plastic_bag",     "name": "plastic bags", "aliases": ["plastic grocery bags", "shopping bags", "produce bags"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": [], "note": "Plastic bags tangle sorting machines. Reuse them as long as you can, then put them in the garbage.", "split": "core"},
+    {"id": "plastic_wrap",    "name": "plastic wrap", "aliases": ["cling film", "food wrap"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "chip_bag",        "name": "chip bags", "aliases": ["snack bags", "crisp packets"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "candy_wrapper",   "name": "candy wrappers", "aliases": ["chocolate bar wrappers", "granola bar wrappers"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "food_pouch",      "name": "squeeze pouches", "aliases": ["baby food pouches", "drink pouches"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": ["empty"], "note": "", "split": "core"},
+    {"id": "frozen_bag",      "name": "frozen food bags", "aliases": ["frozen vegetable bags", "bread bags"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": ["empty"], "note": "", "split": "core"},
+    {"id": "foam_takeout",    "name": "foam takeout containers", "aliases": ["styrofoam containers", "foam cups"], "material": "foam", "rule": "R15", "stream": "garbage", "prep": ["scrape"], "note": "", "split": "core"},
+    {"id": "foam_egg_carton", "name": "foam egg cartons", "aliases": ["styrofoam egg cartons"], "material": "foam", "rule": "R15", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "packing_peanuts", "name": "packing peanuts", "aliases": ["foam peanuts", "loose fill"], "material": "foam", "rule": "R15", "stream": "garbage", "prep": ["bag"], "note": "Many shipping stores will take clean packing peanuts for reuse.", "split": "core"},
+    {"id": "foam_block",      "name": "foam packaging blocks", "aliases": ["styrofoam blocks", "foam inserts"], "material": "foam", "rule": "R15", "stream": "garbage", "prep": ["cut_to_fit"], "note": "", "split": "core"},
+    {"id": "plastic_toy",     "name": "plastic toys", "aliases": ["kids' toys", "broken toys"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["donate", "remove_batteries"], "note": "Toys in good condition can be donated. Toys with batteries or cords are electronics.", "split": "core"},
+    {"id": "hanger",          "name": "plastic hangers", "aliases": ["clothes hangers"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["donate"], "note": "", "split": "core"},
+    {"id": "garden_hose",     "name": "garden hoses", "aliases": ["hoses"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["cut_to_fit"], "note": "Hoses wrap around sorting machines, so never put them in recycling.", "split": "core"},
+    {"id": "toothpaste_tube", "name": "toothpaste tubes", "aliases": ["empty toothpaste tubes"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "toothbrush",      "name": "toothbrushes", "aliases": ["manual toothbrushes"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": [], "note": "Electric toothbrushes are electronics.", "split": "core"},
+    {"id": "razor",           "name": "disposable razors", "aliases": ["razor blades", "shaving razors"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["wrap"], "note": "Cover the blade so collection workers are not cut.", "split": "core"},
+    {"id": "cd",              "name": "CDs and DVDs", "aliases": ["discs", "CD cases"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["donate"], "note": "", "split": "core"},
+    {"id": "blister_pack",    "name": "blister packs", "aliases": ["pill packs", "plastic bubble packaging"], "material": "mixed plastic", "rule": "R17", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+
+    {"id": "aluminum_can",    "name": "aluminum cans", "aliases": ["soda cans", "pop cans", "beer cans", "drink cans"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["empty", "rinse"], "note": "", "split": "core"},
+    {"id": "food_can",        "name": "food cans", "aliases": ["tin cans", "soup cans", "pet food cans"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["empty", "rinse"], "note": "Put the lid inside the can and pinch the top closed so the sharp edge is covered.", "split": "core"},
+    {"id": "aluminum_foil",   "name": "aluminum foil", "aliases": ["tin foil", "kitchen foil"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["rinse"], "note": "Scrunch clean foil into a ball at least the size of a fist. Foil covered in food goes in the garbage.", "split": "core"},
+    {"id": "foil_tray",       "name": "aluminum trays", "aliases": ["foil pie plates", "foil roasting pans"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["scrape", "rinse"], "note": "", "split": "core"},
+    {"id": "aerosol_can",     "name": "aerosol cans", "aliases": ["spray cans", "hairspray cans", "spray paint cans"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["empty"], "note": "Only completely empty aerosol cans go in recycling. Cans that still contain product are hazardous waste.", "split": "core"},
+
+    {"id": "glass_bottle",    "name": "glass bottles", "aliases": ["wine bottles", "beer bottles"], "material": "glass container", "rule": "R06", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "glass_jar",       "name": "glass jars", "aliases": ["pasta sauce jars", "pickle jars", "jam jars"], "material": "glass container", "rule": "R06", "stream": "recycling", "prep": ["scrape", "rinse", "caps_on"], "note": "", "split": "core"},
+    {"id": "drinking_glass",  "name": "drinking glasses", "aliases": ["glass cups", "wine glasses"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["donate", "wrap"], "note": "Drinking glass melts at a different temperature from bottles and jars, so it cannot be recycled.", "split": "core"},
+    {"id": "broken_glass",    "name": "broken glass", "aliases": ["glass shards", "broken window glass"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["wrap"], "note": "", "split": "core"},
+    {"id": "mirror",          "name": "mirrors", "aliases": ["small mirrors", "picture frame glass"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["wrap"], "note": "Large mirrors that do not fit in the cart are bulky items.", "split": "core"},
+    {"id": "ceramics",        "name": "ceramic dishes", "aliases": ["plates", "mugs", "bowls", "pottery"], "material": "ceramic", "rule": "R07", "stream": "garbage", "prep": ["donate", "wrap"], "note": "", "split": "core"},
+    {"id": "ovenware",        "name": "glass ovenware", "aliases": ["baking dishes", "glass casserole dishes"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["donate", "wrap"], "note": "", "split": "core"},
+    {"id": "incandescent_bulb","name": "incandescent light bulbs", "aliases": ["regular light bulbs", "halogen bulbs"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["wrap"], "note": "Fluorescent and CFL bulbs are hazardous waste, and LED bulbs are electronics.", "split": "core"},
+
+    {"id": "fruit_veg_scraps","name": "fruit and vegetable scraps", "aliases": ["peels", "apple cores", "banana peels", "vegetable trimmings"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "core"},
+    {"id": "meat_bones",      "name": "meat, fish and bones", "aliases": ["chicken bones", "fish scraps", "meat scraps"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["unpackage"], "note": "Wrapping meat scraps in newspaper helps control odours.", "split": "core"},
+    {"id": "dairy",           "name": "dairy products", "aliases": ["cheese", "spoiled milk solids", "leftover yogurt"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["unpackage"], "note": "Pour small amounts of liquid milk down the drain; solids go in organics.", "split": "core"},
+    {"id": "bread_grains",    "name": "bread, pasta and rice", "aliases": ["stale bread", "leftover pasta", "cooked rice"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["unpackage"], "note": "", "split": "core"},
+    {"id": "eggshells",       "name": "eggshells", "aliases": ["egg shells"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "core"},
+    {"id": "coffee_grounds",  "name": "coffee grounds", "aliases": ["paper coffee filters", "used coffee"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "Paper filters can go in with the grounds. Single-serve coffee pods go in the garbage.", "split": "core"},
+    {"id": "tea_bags",        "name": "tea bags", "aliases": ["loose tea leaves", "used tea"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "core"},
+    {"id": "napkins",         "name": "used paper napkins", "aliases": ["paper towels", "used tissues", "kitchen roll"], "material": "soiled paper", "rule": "R02", "stream": "organics", "prep": [], "note": "", "split": "core"},
+    {"id": "leftovers",       "name": "spoiled leftovers", "aliases": ["old leftovers", "expired food", "moldy food"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["unpackage"], "note": "", "split": "core"},
+    {"id": "cooking_grease",  "name": "cooking grease", "aliases": ["cooking oil", "bacon fat", "frying oil"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["cool"], "note": "Never pour grease down the drain. Let small amounts harden, or soak them up with paper towel, and put them in organics. Large amounts of used cooking oil go to a drop-off depot.", "split": "core"},
+    {"id": "nut_shells",      "name": "nut shells", "aliases": ["peanut shells", "pistachio shells"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "core"},
+    {"id": "pet_food",        "name": "pet food", "aliases": ["dry pet food", "old kibble"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["unpackage"], "note": "", "split": "core"},
+    {"id": "grass_clippings", "name": "grass clippings", "aliases": ["lawn clippings", "cut grass"], "material": "yard waste", "rule": "R09", "stream": "organics", "prep": [], "note": "Leaving clippings on the lawn is an even better option.", "split": "core"},
+    {"id": "leaves",          "name": "leaves", "aliases": ["fallen leaves", "autumn leaves"], "material": "yard waste", "rule": "R09", "stream": "organics", "prep": [], "note": "Extra leaves can be set out in paper yard waste bags beside the green cart.", "split": "core"},
+    {"id": "branches",        "name": "branches and twigs", "aliases": ["tree branches", "hedge trimmings", "pruning waste"], "material": "yard waste", "rule": "R09", "stream": "organics", "prep": ["cut_to_fit"], "note": "", "split": "core"},
+    {"id": "plants_flowers",  "name": "houseplants and cut flowers", "aliases": ["dead plants", "old flowers", "bouquets"], "material": "yard waste", "rule": "R09", "stream": "organics", "prep": [], "note": "Remove any plastic pot, wrapping or elastic bands first.", "split": "core"},
+    {"id": "pumpkin",         "name": "pumpkins", "aliases": ["jack-o'-lanterns", "carved pumpkins"], "material": "food", "rule": "R08", "stream": "organics", "prep": ["remove_decor"], "note": "Remove candles and any paint or decorations.", "split": "core"},
+    {"id": "holiday_tree",    "name": "holiday trees", "aliases": ["Christmas trees", "real trees"], "material": "yard waste", "rule": "R09", "stream": "organics", "prep": ["remove_decor", "cut_to_fit"], "note": "Trees can be cut to fit in the green cart or set out whole on the holiday tree collection days announced each winter. Artificial trees go in the garbage or to bulky item pickup.", "split": "core"},
+    {"id": "hair",            "name": "hair and pet fur", "aliases": ["pet hair", "hair clippings"], "material": "organic", "rule": null, "stream": "organics", "prep": [], "note": "", "split": "core"},
+
+    {"id": "diapers",         "name": "diapers", "aliases": ["nappies", "disposable diapers", "incontinence products"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["bag"], "note": "Diapers are not compostable even if they are labelled that way.", "split": "core"},
+    {"id": "pet_waste",       "name": "pet waste", "aliases": ["dog poop", "dog waste"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["bag"], "note": "Pet waste goes in the garbage, not the green organics cart.", "split": "core"},
+    {"id": "cat_litter",      "name": "cat litter", "aliases": ["kitty litter", "used litter"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["bag"], "note": "", "split": "core"},
+    {"id": "vacuum_dust",     "name": "vacuum bags and dust", "aliases": ["vacuum cleaner dust", "floor sweepings"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["bag"], "note": "", "split": "core"},
+    {"id": "cigarette_butts", "name": "cigarette butts", "aliases": ["cigarettes", "ashtray contents"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["extinguished", "bag"], "note": "", "split": "core"},
+    {"id": "ashes",           "name": "ashes", "aliases": ["fireplace ashes", "barbecue ashes", "charcoal"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["cool", "bag"], "note": "Hot ashes can start cart fires.", "split": "core"},
+    {"id": "dryer_lint",      "name": "dryer lint", "aliases": ["lint"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "gum",             "name": "chewing gum", "aliases": ["gum"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "wipes",           "name": "wet wipes", "aliases": ["baby wipes", "cleaning wipes", "makeup wipes"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "Never flush wipes, even ones labelled flushable.", "split": "core"},
+    {"id": "cotton_swabs",    "name": "cotton swabs", "aliases": ["cotton buds", "cotton balls"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "sponges",         "name": "sponges", "aliases": ["kitchen sponges", "scrubbers"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "rubber_gloves",   "name": "rubber gloves", "aliases": ["disposable gloves", "latex gloves"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "coffee_pods",     "name": "coffee pods", "aliases": ["single-serve coffee pods", "coffee capsules"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "pens",            "name": "pens and markers", "aliases": ["ballpoint pens", "felt markers", "highlighters"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+    {"id": "bandages",        "name": "bandages", "aliases": ["band-aids", "gauze"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": ["bag"], "note": "", "split": "core"},
+    {"id": "umbrella",        "name": "broken umbrellas", "aliases": ["umbrellas"], "material": "mixed", "rule": "R19", "stream": "garbage", "prep": [], "note": "", "split": "core"},
+
+    {"id": "paint",           "name": "leftover paint", "aliases": ["latex paint", "oil paint", "paint cans"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container"], "note": "Completely empty, dried-out paint cans can go in the garbage.", "split": "core"},
+    {"id": "solvents",        "name": "paint thinner and solvents", "aliases": ["paint thinner", "turpentine", "mineral spirits"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "", "split": "core"},
+    {"id": "pesticides",      "name": "pesticides", "aliases": ["insecticides", "herbicides", "bug spray"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "", "split": "core"},
+    {"id": "motor_oil",       "name": "motor oil", "aliases": ["used motor oil", "oil filters"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container"], "note": "", "split": "core"},
+    {"id": "antifreeze",      "name": "antifreeze", "aliases": ["coolant"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "", "split": "core"},
+    {"id": "propane",         "name": "propane tanks", "aliases": ["barbecue tanks", "camping fuel cylinders", "propane cylinders"], "material": "pressurized", "rule": "R12", "stream": "hazardous", "prep": [], "note": "Propane tanks can explode if crushed in a collection truck.", "split": "core"},
+    {"id": "household_batteries","name": "household batteries", "aliases": ["AA batteries", "AAA batteries", "9-volt batteries", "alkaline batteries"], "material": "battery", "rule": "R11", "stream": "hazardous", "prep": ["tape_terminals"], "note": "Batteries can spark and start fires in carts and trucks.", "split": "core"},
+    {"id": "lithium_batteries","name": "lithium-ion batteries", "aliases": ["rechargeable batteries", "phone batteries", "laptop batteries", "power banks"], "material": "battery", "rule": "R11", "stream": "hazardous", "prep": ["tape_terminals"], "note": "Lithium-ion batteries are a leading cause of fires in collection trucks.", "split": "core"},
+    {"id": "car_battery",     "name": "car batteries", "aliases": ["vehicle batteries", "lead-acid batteries"], "material": "battery", "rule": "R11", "stream": "hazardous", "prep": [], "note": "", "split": "core"},
+    {"id": "fluorescent",     "name": "fluorescent tubes and CFL bulbs", "aliases": ["CFL bulbs", "fluorescent bulbs", "compact fluorescent bulbs"], "material": "mercury", "rule": "R12", "stream": "hazardous", "prep": [], "note": "They contain mercury, so do not break them.", "split": "core"},
+    {"id": "thermometer",     "name": "mercury thermometers", "aliases": ["old thermometers"], "material": "mercury", "rule": "R12", "stream": "hazardous", "prep": [], "note": "Digital thermometers are electronics.", "split": "core"},
+    {"id": "pool_chemicals",  "name": "pool chemicals", "aliases": ["chlorine tablets", "pool chlorine"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "", "split": "core"},
+    {"id": "cleaners",        "name": "household cleaners", "aliases": ["bleach", "drain cleaner", "oven cleaner"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "Leftover cleaners are hazardous waste. A completely empty, rinsed plastic bottle can go in recycling.", "split": "core"},
+    {"id": "gasoline",        "name": "gasoline and lighter fluid", "aliases": ["gas cans", "lighter fluid", "fuel"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container"], "note": "", "split": "core"},
+    {"id": "fire_extinguisher","name": "fire extinguishers", "aliases": ["extinguishers"], "material": "pressurized", "rule": "R12", "stream": "hazardous", "prep": [], "note": "", "split": "core"},
+
+    {"id": "cell_phone",      "name": "cell phones", "aliases": ["mobile phones", "smartphones", "tablets"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["wipe_data"], "note": "Many retailers also take back old phones.", "split": "core"},
+    {"id": "computer",        "name": "computers and laptops", "aliases": ["laptops", "desktop computers", "keyboards"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["wipe_data"], "note": "", "split": "core"},
+    {"id": "tv",              "name": "televisions and monitors", "aliases": ["TVs", "computer monitors", "flat screens"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "printer",         "name": "printers", "aliases": ["scanners", "fax machines"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "cords",           "name": "cords and cables", "aliases": ["chargers", "extension cords", "USB cables"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "Cords tangle sorting machines, so never put them in recycling.", "split": "core"},
+    {"id": "small_appliance", "name": "small kitchen appliances", "aliases": ["toasters", "blenders", "coffee makers", "microwaves"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["donate"], "note": "", "split": "core"},
+    {"id": "hair_dryer",      "name": "hair dryers", "aliases": ["hair straighteners", "curling irons"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "vape",            "name": "vapes", "aliases": ["e-cigarettes", "vape pens"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "Vapes contain lithium batteries and must never go in the garbage.", "split": "core"},
+    {"id": "power_tools",     "name": "power tools", "aliases": ["drills", "cordless tools"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["remove_batteries"], "note": "", "split": "core"},
+    {"id": "string_lights",   "name": "string lights", "aliases": ["holiday lights", "Christmas lights", "fairy lights"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "led_bulb",        "name": "LED light bulbs", "aliases": ["LED bulbs"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "game_console",    "name": "game consoles", "aliases": ["video game consoles", "remote controls", "controllers"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["remove_batteries"], "note": "", "split": "core"},
+    {"id": "headphones",      "name": "headphones", "aliases": ["earbuds", "headsets"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+    {"id": "electric_toothbrush","name": "electric toothbrushes", "aliases": ["electric shavers"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "core"},
+
+    {"id": "sofa",            "name": "sofas", "aliases": ["couches", "armchairs", "recliners"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup", "donate"], "note": "", "split": "core"},
+    {"id": "mattress",        "name": "mattresses", "aliases": ["box springs", "bed frames"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "Keep mattresses dry before pickup.", "split": "core"},
+    {"id": "table_chairs",    "name": "tables and chairs", "aliases": ["dining tables", "desks", "office chairs"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup", "donate"], "note": "", "split": "core"},
+    {"id": "dresser",         "name": "dressers", "aliases": ["wardrobes", "cabinets", "chests of drawers"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup", "donate"], "note": "", "split": "core"},
+    {"id": "fridge",          "name": "refrigerators and freezers", "aliases": ["fridges", "freezers", "mini fridges"], "material": "large appliance", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "Mention that it contains refrigerant when you book, and remove or tape the doors shut for child safety.", "split": "core"},
+    {"id": "large_appliance", "name": "large appliances", "aliases": ["washing machines", "dryers", "stoves", "dishwashers"], "material": "large appliance", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "", "split": "core"},
+    {"id": "air_conditioner", "name": "air conditioners", "aliases": ["window air conditioners", "dehumidifiers"], "material": "large appliance", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "Mention that it contains refrigerant when you book.", "split": "core"},
+    {"id": "carpet",          "name": "carpets and rugs", "aliases": ["rugs", "carpet rolls"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["roll_tie", "book_pickup"], "note": "", "split": "core"},
+    {"id": "bbq",             "name": "barbecue grills", "aliases": ["BBQs", "grills"], "material": "large item", "rule": "R13", "stream": "bulky", "prep": ["remove_propane", "book_pickup"], "note": "", "split": "core"},
+    {"id": "bicycle",         "name": "bicycles", "aliases": ["bikes", "kids' bikes"], "material": "large item", "rule": "R13", "stream": "bulky", "prep": ["donate", "book_pickup"], "note": "", "split": "core"},
+    {"id": "exercise_equipment","name": "exercise equipment", "aliases": ["treadmills", "exercise bikes", "weight benches"], "material": "large item", "rule": "R13", "stream": "bulky", "prep": ["book_pickup", "donate"], "note": "", "split": "core"},
+    {"id": "water_heater",    "name": "water heaters", "aliases": ["hot water tanks"], "material": "large appliance", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "", "split": "core"},
+
+    {"id": "clothing",        "name": "clothing", "aliases": ["clothes", "old clothes", "jackets", "t-shirts"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "clean_bagged"], "note": "Even torn or stained clothing can go to a textile drop-off bin.", "split": "core"},
+    {"id": "shoes",           "name": "shoes", "aliases": ["boots", "sneakers", "sandals"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "tie_pairs", "clean_bagged"], "note": "", "split": "core"},
+    {"id": "linens",          "name": "bed sheets and towels", "aliases": ["blankets", "towels", "pillowcases", "linens"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "clean_bagged"], "note": "", "split": "core"},
+    {"id": "curtains",        "name": "curtains", "aliases": ["drapes", "tablecloths"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["clean_bagged"], "note": "", "split": "core"},
+    {"id": "bags_belts",      "name": "handbags and belts", "aliases": ["purses", "backpacks", "belts"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "clean_bagged"], "note": "", "split": "core"},
+    {"id": "stuffed_toys",    "name": "stuffed animals", "aliases": ["plush toys", "teddy bears"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "clean_bagged"], "note": "", "split": "core"},
+
+    {"id": "medications",     "name": "medications", "aliases": ["expired medicine", "pills", "prescription drugs", "unused medication"], "material": "medical", "rule": "R16", "stream": "takeback", "prep": [], "note": "Never flush medications or put them in the garbage.", "split": "core"},
+    {"id": "sharps",          "name": "needles and sharps", "aliases": ["syringes", "lancets", "needles"], "material": "medical", "rule": "R16", "stream": "takeback", "prep": ["sealed_container"], "note": "Sharps containers can also go to a household hazardous waste drop-off. Never put loose needles in any cart.", "split": "core"},
+
+    {"id": "hummus_tub",      "name": "plastic hummus tubs", "aliases": ["hummus containers", "dip tubs"], "material": "rigid plastic", "rule": "R03", "stream": "recycling", "prep": ["scrape", "rinse", "caps_on"], "note": "", "split": "heldout"},
+    {"id": "almond_milk",     "name": "almond milk cartons", "aliases": ["oat milk cartons", "plant milk cartons"], "material": "carton", "rule": "R20", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "heldout"},
+    {"id": "sardine_tin",     "name": "sardine tins", "aliases": ["tuna cans", "fish tins"], "material": "metal", "rule": "R05", "stream": "recycling", "prep": ["empty", "rinse"], "note": "", "split": "heldout"},
+    {"id": "olive_oil_bottle","name": "glass olive oil bottles", "aliases": ["vinegar bottles", "sauce bottles"], "material": "glass container", "rule": "R06", "stream": "recycling", "prep": ["empty", "rinse", "caps_on"], "note": "", "split": "heldout"},
+    {"id": "paper_plates",    "name": "used paper plates", "aliases": ["dirty paper plates", "greasy paper plates"], "material": "soiled paper", "rule": "R02", "stream": "organics", "prep": ["scrape"], "note": "", "split": "heldout"},
+    {"id": "avocado_pit",     "name": "avocado pits", "aliases": ["avocado skins", "fruit pits", "peach pits"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "heldout"},
+    {"id": "corn_cobs",       "name": "corn cobs", "aliases": ["corn husks"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "heldout"},
+    {"id": "watermelon_rind", "name": "watermelon rinds", "aliases": ["melon rinds", "orange peels", "citrus peels"], "material": "food", "rule": "R08", "stream": "organics", "prep": [], "note": "", "split": "heldout"},
+    {"id": "bubble_wrap",     "name": "bubble wrap", "aliases": ["air pillows", "plastic packing film"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": [], "note": "", "split": "heldout"},
+    {"id": "plastic_mailer",  "name": "plastic mailers", "aliases": ["padded envelopes", "poly mailers"], "material": "soft plastic", "rule": "R04", "stream": "garbage", "prep": ["empty"], "note": "", "split": "heldout"},
+    {"id": "yoga_mat",        "name": "yoga mats", "aliases": ["foam exercise mats"], "material": "plastic object", "rule": "R17", "stream": "garbage", "prep": ["donate", "roll_tie"], "note": "", "split": "heldout"},
+    {"id": "broken_vase",     "name": "broken glass vases", "aliases": ["vases", "glass vases"], "material": "non-container glass", "rule": "R07", "stream": "garbage", "prep": ["wrap"], "note": "", "split": "heldout"},
+    {"id": "router",          "name": "wireless routers", "aliases": ["modems", "Wi-Fi routers"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": [], "note": "", "split": "heldout"},
+    {"id": "electric_kettle", "name": "electric kettles", "aliases": ["kettles", "rice cookers"], "material": "electronic", "rule": "R10", "stream": "electronics", "prep": ["donate"], "note": "", "split": "heldout"},
+    {"id": "nail_polish",     "name": "nail polish remover", "aliases": ["nail polish", "acetone"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container"], "note": "", "split": "heldout"},
+    {"id": "weed_killer",     "name": "weed killer", "aliases": ["rat poison", "slug bait"], "material": "chemical", "rule": "R12", "stream": "hazardous", "prep": ["original_container", "no_mix"], "note": "", "split": "heldout"},
+    {"id": "button_battery",  "name": "coin batteries", "aliases": ["button batteries", "watch batteries"], "material": "battery", "rule": "R11", "stream": "hazardous", "prep": ["tape_terminals"], "note": "", "split": "heldout"},
+    {"id": "bookshelf",       "name": "bookshelves", "aliases": ["bookcases", "shelving units"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup", "donate"], "note": "", "split": "heldout"},
+    {"id": "crib",            "name": "cribs", "aliases": ["baby cribs", "playpens"], "material": "furniture", "rule": "R13", "stream": "bulky", "prep": ["book_pickup"], "note": "", "split": "heldout"},
+    {"id": "wool_scarf",      "name": "scarves", "aliases": ["wool scarves", "winter hats", "mittens"], "material": "fabric", "rule": "R14", "stream": "textiles", "prep": ["donate", "clean_bagged"], "note": "", "split": "heldout"}
+  ],
+
+  "topics": {
+    "collection_schedule": {
+      "title": "Collection schedule",
+      "facts": [
+        {"id": "S01", "text": "Your collection day depends on the area you live in; check the collection calendar for your area on the waste service's website or app."},
+        {"id": "S02", "text": "The green organics cart is collected every week."},
+        {"id": "S03", "text": "The blue recycling cart and the black garbage cart are collected on alternating weeks."},
+        {"id": "S04", "text": "Set your carts out the evening before or early on the morning of your collection day."},
+        {"id": "S05", "text": "Bring empty carts back from the curb by the end of collection day."},
+        {"id": "S06", "text": "In a week with a public holiday, collection may be delayed by one day; the area calendar shows any changes."}
+      ]
+    },
+    "cart_placement": {
+      "title": "Setting out your carts",
+      "facts": [
+        {"id": "P01", "text": "Place carts at the curb with the wheels facing your home and the lid fully closed."},
+        {"id": "P02", "text": "Leave space between carts and keep them clear of parked cars, mailboxes, poles and low branches."},
+        {"id": "P03", "text": "Do not overfill carts; anything that keeps the lid from closing may be left behind."},
+        {"id": "P04", "text": "In winter, place carts on a cleared surface, not on top of snowbanks."}
+      ]
+    },
+    "missed_collection": {
+      "title": "Missed collection",
+      "facts": [
+        {"id": "M01", "text": "If your cart was not emptied, first check that it was out on time and that it did not have a warning tag."},
+        {"id": "M02", "text": "Report a missed collection to the waste service by the end of the next day through the website, app or customer service line."},
+        {"id": "M03", "text": "If a cart is damaged, lost or stolen, request a repair or replacement through the waste service."}
+      ]
+    },
+    "apartments": {
+      "title": "Apartments and condos",
+      "facts": [
+        {"id": "A01", "text": "Apartment and condo residents use the shared bins in their building's waste room or collection area."},
+        {"id": "A02", "text": "Sorting rules are the same in apartments as in houses: recycling, organics and garbage are kept separate."},
+        {"id": "A03", "text": "Ask your property manager or building superintendent where the shared bins and the bulky item area are."},
+        {"id": "A04", "text": "Never leave items in hallways, stairwells or beside a full bin; tell the property manager if bins are full."}
+      ]
+    },
+    "drop_off": {
+      "title": "Drop-off depots and events",
+      "facts": [
+        {"id": "D01", "text": "Community drop-off depots accept household hazardous waste, electronics and other items that cannot go in carts."},
+        {"id": "D02", "text": "Household hazardous waste collection events are also held at different locations through the year; dates are posted on the waste service's website and app."},
+        {"id": "D03", "text": "Drop-off of household hazardous waste and electronics is free for residents in normal household quantities."},
+        {"id": "D04", "text": "Transport hazardous products upright, sealed and separate from passengers, ideally in the trunk."},
+        {"id": "D05", "text": "Check the waste service's website or app for the drop-off location nearest to you and its opening hours before you go."}
+      ]
+    },
+    "bulky_items": {
+      "title": "Bulky item pickup",
+      "facts": [
+        {"id": "B01", "text": "Residents of houses book a bulky item pickup in advance through the waste service's website, app or customer service line."},
+        {"id": "B02", "text": "Set booked bulky items at the curb the evening before the scheduled pickup day."},
+        {"id": "B03", "text": "Apartment and condo residents take bulky items to the building's designated bulky item area; each building or complex has its own spot, so ask the property manager."},
+        {"id": "B04", "text": "Leaving bulky items at the curb without a booking is treated as illegal dumping."},
+        {"id": "B05", "text": "Furniture and appliances in good condition can be donated to charities and reuse centres instead."}
+      ]
+    },
+    "contamination_fines": {
+      "title": "Rules, warnings and fines",
+      "facts": [
+        {"id": "F01", "text": "Contamination means putting the wrong items in a cart, such as plastic bags in recycling or plastic in organics."},
+        {"id": "F02", "text": "A contaminated cart may be left unemptied with a warning tag that explains the problem."},
+        {"id": "F03", "text": "If your cart is tagged, remove the wrong items and set it out again on your next collection day."},
+        {"id": "F04", "text": "Repeated contamination after warnings can lead to a fine."},
+        {"id": "F05", "text": "Illegal dumping, including leaving items on curbs, in parks or beside shared bins without permission, can result in a fine."},
+        {"id": "F06", "text": "Putting hazardous waste or batteries in any cart is prohibited because it endangers collection workers."}
+      ]
+    },
+    "reduce_reuse": {
+      "title": "Reduce and reuse",
+      "facts": [
+        {"id": "U01", "text": "The best way to reduce waste is to avoid it: buy only what you need and choose reusable bags, bottles and containers."},
+        {"id": "U02", "text": "Donate usable clothing, furniture, toys and household goods to charities, thrift stores or neighbours."},
+        {"id": "U03", "text": "Repair items when you can instead of replacing them."},
+        {"id": "U04", "text": "Plan meals and store food properly to cut down on food waste."}
+      ]
+    },
+    "home_composting": {
+      "title": "Home composting",
+      "facts": [
+        {"id": "H01", "text": "Residents with a yard can compost at home in a backyard compost bin."},
+        {"id": "H02", "text": "A backyard compost bin can take fruit and vegetable scraps, coffee grounds, eggshells, leaves and grass."},
+        {"id": "H03", "text": "Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the green organics cart instead."},
+        {"id": "H04", "text": "Mix wet green material with dry brown material like leaves, and turn the pile now and then."}
+      ]
+    },
+    "organics_tips": {
+      "title": "Keeping organics clean",
+      "facts": [
+        {"id": "O01", "text": "To reduce odours, wrap food scraps in newspaper or keep them in the freezer until collection day."},
+        {"id": "O02", "text": "Line your kitchen pail or green cart with newspaper or a paper bag; plastic bags of any kind are not allowed."},
+        {"id": "O03", "text": "Keep the green cart lid closed and rinse the cart now and then to keep pests away."}
+      ]
+    },
+    "moving": {
+      "title": "Moving in or out",
+      "facts": [
+        {"id": "V01", "text": "When moving, start sorting early and donate what you no longer need."},
+        {"id": "V02", "text": "Book a bulky item pickup well ahead of your move date, or ask your property manager about the building's bulky item area."},
+        {"id": "V03", "text": "Flatten moving boxes for recycling, or pass them on to someone else who is moving."},
+        {"id": "V04", "text": "Do not leave items behind at the curb or in the building when you move out."}
+      ]
+    },
+    "seasonal": {
+      "title": "Seasonal and holiday waste",
+      "facts": [
+        {"id": "N01", "text": "After the holidays, plain wrapping paper and cardboard boxes go in recycling, while ribbons, bows and foil wrap go in the garbage."},
+        {"id": "N02", "text": "Real holiday trees go in organics once lights, decorations and the stand are removed."},
+        {"id": "N03", "text": "Leaves and garden waste can be set out in paper yard waste bags beside the green cart in spring and fall."}
+      ]
+    },
+    "why_sort": {
+      "title": "Why sorting matters",
+      "facts": [
+        {"id": "W01", "text": "Correct sorting keeps recyclables clean so they can be made into new products."},
+        {"id": "W02", "text": "Organics are turned into compost instead of going to landfill."},
+        {"id": "W03", "text": "Wrong items, especially batteries and plastic bags, can damage equipment, start fires and injure workers."},
+        {"id": "W04", "text": "When in doubt about an ordinary item, put it in the garbage; wishful recycling contaminates whole loads."}
+      ]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments / local config
+.venv/
+venv/
+env/
+.env
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Model checkpoints are large and saved to Google Drive during training.
+# The two final deliverable checkpoints are added separately (see README).
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Course handout (not ours to redistribute)
+Term Project.pdf
+
+# Large training logs from Colab runs (summaries go in results/)
+wandb/
+runs/
