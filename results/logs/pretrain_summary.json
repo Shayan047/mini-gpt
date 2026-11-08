@@ -14,7 +14,7 @@
     "dropout": 0.1,
     "tie_weights": true
   },
-  "train_minutes": 7.338928143183391,
+  "train_minutes": 7.566422728697459,
   "device": "cuda",
   "gpu": "Tesla T4"
 }

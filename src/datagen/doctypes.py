@@ -143,8 +143,8 @@ class DocGen:
             return self.r("q_item_prep", Q.ITEM_PREP_QUESTIONS, ctx), ""
         return self.r("q_item", Q.ITEM_QUESTIONS, ctx), ""
 
-    def answer(self, item, ctx, lead=""):
-        body = self.guidance(item, ctx, p_note=0.6, p_reason=0.35, direct=True)
+    def answer(self, item, ctx, lead="", p_note=0.6, p_reason=0.35):
+        body = self.guidance(item, ctx, p_note=p_note, p_reason=p_reason, direct=True)
         if lead.endswith(",") and body[1:2].islower() and not body.startswith(("I ", "Tidewell")):
             body = body[:1].lower() + body[1:]
         return (lead + " " + body).strip()

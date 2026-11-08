@@ -90,17 +90,17 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] **(OBS)** Held-out generalization = nearest-seen-item substitution via shared tokens: works for material words (olive oil bottles→glass bottles), fails on spurious fragments (watermelon→hot *water* tanks, scarves→*sc*anners)
 - [ ] Optional: dense snapshots for a "knowledge vs training step" curve — only 2 snapshots were saved (bug: snapshot check `step % 500` with eval every 150; fixed in train.py). Re-run pretraining (~7 min) if wanted
 
-## 8. Supervised fine-tuning for QA (spec §7)
-- [ ] Create QA dataset derived from the same KB (multiple phrasings per fact)
-- [ ] Define QA prompt format (e.g. `Question: ... Answer: ...<eos>`)
-- [ ] Reserve a separate QA **evaluation set** incl. unseen question phrasings — never used in fine-tuning
-- [ ] Verify no overlap between SFT train questions and eval questions
-- [ ] Fine-tune starting from the pretrained checkpoint (short run, lower LR; optionally mask loss to answer tokens only)
-- [ ] Log SFT train/val loss; save SFT checkpoint
-- [ ] Run the SAME eval questions on the pretrained and the fine-tuned model
-- [ ] Define scoring (exact match / key-fact match / manual rubric)
-- [ ] **(OBS)** Before vs. after comparison table (accuracy, sample answers)
-- [ ] **(OBS)** What improved, what didn't, limitations (e.g. catastrophic forgetting of general text, memorized phrasing, failures on unseen formulations)
+## 8. Supervised fine-tuning for QA (spec §7) → [src/datagen/build_sft.py](src/datagen/build_sft.py), [src/finetune.py](src/finetune.py), [notebooks/02_finetune.ipynb](notebooks/02_finetune.ipynb)
+- [x] QA dataset from the same KB → `data/sft/train.jsonl` **11,056 pairs**, `val.jsonl` 460 (items open/yes-no/prep, topic facts, streams, material rules, ~4% out-of-scope declines — user approved)
+- [x] QA format `<|user|> question<|assistant|> answer<|endoftext|>`; loss only on answer tokens (+eot) — mask tested (`tests/test_finetune.py`)
+- [x] Separate eval set `data/eval/qa_eval.jsonl` **654 questions**: core items with unseen wordings (441 incl. yes/no), topic facts / streams / rules with held-out wording (83), 20 held-out items (60), 50 hand-written free-form (typos, casual), 20 out-of-scope
+- [x] Leakage checks: 0 eval questions in SFT data (one accidental collision found and fixed), 0 held-out items in SFT, 0 examples > context → `results/tables/sft_data_stats.md`
+- [x] Fine-tune script: init from pretrained best, lr 1e-4 warmup+cosine, 1,000 steps (~2.9 epochs), best by SFT val loss; logs pretraining-corpus val loss to measure forgetting; step-0 row = pretrained baseline. CPU smoke test OK
+- [ ] **USER:** push, run `notebooks/02_finetune.ipynb` on Colab, 📸 screenshots, download `sft/ckpt_best.pt` → `checkpoints/sft/`, results → `results/`
+- [ ] Run the SAME eval questions on the pretrained and the fine-tuned model (pretrained prompted in its native `Q:/A:` format; also in chat format as a sanity row)
+- [ ] Scoring: item questions → destination classifier (+ yes/no lead); topic facts → key words (validated against every trained wording); out-of-scope → decline phrase
+- [ ] **(OBS)** Before vs. after comparison table (accuracy per category, sample answers)
+- [ ] **(OBS)** What improved, what didn't, limitations (forgetting, memorized phrasing, unseen formulations, held-out items)
 
 ## 9. Research investigation (spec §8)
 - [x] Pick ONE research question → generalization to unseen items & phrasings, before vs after SFT
@@ -182,6 +182,8 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `results/samples/pretrain_generation_examples.md` — curated prompts × greedy/sampled — Evaluation (successful/unsuccessful outputs)
 - `results/figures/pretrain_checkpoints.png` — probe accuracy + held-out loss across checkpoints — Evaluation (thin: 3 points)
 - `report/notes/pretrain_evaluation.md` — draft text for the evaluation section — Evaluation
+- `results/tables/sft_data_stats.md` — SFT/eval set sizes per category + leakage checks — Fine-tuning
+- `results/samples/sft_examples.md` — example SFT pairs and eval questions — Fine-tuning / appendix
 
 ---
 
@@ -203,3 +205,5 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-08 — Snapshot bug: only steps 1500 and 3000 saved (step % 500 with evals every 150). Fixed for future runs.
 - 2026-11-08 — Probe scoring bug caught by inspecting failures: classifier read only the first sentence, missing answers after "That's right." → now first destination within 2 sentences; added tests/test_probes.py.
 - 2026-11-08 — Pretrained eval: facts memorized (cloze 100%), item recall frame-dependent (72–100%), held-out 36.7% via token-overlap substitution. Lowest-val-loss checkpoint ≠ best fact recall.
+- 2026-11-08 — Pretraining run 2 (dense snapshots) reproduced run 1 exactly (identical losses to 4 decimals) → fixed seeds make training deterministic on T4. Good reproducibility evidence.
+- 2026-11-08 — SFT data built (11,056 pairs). Pretrained model given the chat format (never seen special tokens) produces garbled continuations ("s go to an electronics drop-off… - What do I do with moving boxes?") — baseline for the SFT comparison.
