@@ -7,6 +7,13 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 
 ---
 
+## ▶ Next session — start here (paused 2026-11-08)
+1. **SFT ablation without decline examples** (user approved): add `--exclude-categories` to `src/finetune.py`, notebook cell → Colab (~1 min) → download checkpoint to `checkpoints/sft_no_decline/` → extend `src/evaluate_qa.py` to a 3-model comparison → decide which fine-tuned model to submit.
+2. Then deliverables: README (install/hardware/inference/examples), demo script for the video, report draft from `report/notes/`, slides, AI Use Statement, member contributions, final reproducibility check.
+- Local checkpoints: `checkpoints/pretrain/` (best = step 1800 + 10 snapshots, run 2), `checkpoints/sft/ckpt_best.pt`. Local CPU torch in `.venv`. All work committed up to the QA evaluation (not pushed by Claude).
+
+---
+
 ## 0. Setup & environment
 - [x] Create project structure (`data/`, `src/`, `notebooks/`, `checkpoints/`, `results/`, `report/`)
 - [x] Initialize git repo
