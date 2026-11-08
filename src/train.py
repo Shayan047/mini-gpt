@@ -60,7 +60,7 @@ def get_args(argv=None):
     # evaluation / saving
     p.add_argument("--eval-every", type=int, default=150)
     p.add_argument("--eval-batches", type=int, default=40)
-    p.add_argument("--snapshot-every", type=int, default=500)
+    p.add_argument("--snapshot-every", type=int, default=300)
     p.add_argument("--seed", type=int, default=1337)
     p.add_argument("--device", default="auto")
     p.add_argument("--no-amp", action="store_true", help="disable fp16 mixed precision on GPU")
