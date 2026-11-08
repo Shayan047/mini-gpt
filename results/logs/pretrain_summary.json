@@ -1,0 +1,20 @@
+{
+  "steps": 3000,
+  "tokens_seen": 24576000,
+  "best_val_loss": 0.8591045200824737,
+  "best_val_ppl": 2.3610454779706465,
+  "params": 11532288,
+  "config": {
+    "vocab_size": 2048,
+    "context_length": 256,
+    "n_layer": 6,
+    "n_head": 6,
+    "d_model": 384,
+    "d_ff": 1536,
+    "dropout": 0.1,
+    "tie_weights": true
+  },
+  "train_minutes": 7.338928143183391,
+  "device": "cuda",
+  "gpu": "Tesla T4"
+}

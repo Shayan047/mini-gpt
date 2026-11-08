@@ -73,11 +73,11 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] Sample generations from 6 fixed prompts (greedy + T=0.8) at every eval → `samples.jsonl` (checkpoint-evolution evidence)
 - [x] Loss-curve plot script → [src/plot_losses.py](src/plot_losses.py)
 - [x] CPU smoke test incl. disconnect/resume: OK
-- [ ] **USER:** push to GitHub, run `notebooks/01_pretrain.ipynb` on Colab T4, take 📸 screenshots, download `MyDrive/mini-gpt/results/` into repo `results/`
-- [ ] **(OBS)** Record training time, steps/epochs, tokens seen, final train/val loss, val perplexity (from `summary.json`)
-- [ ] **(OBS)** Watch for overfitting (val loss diverging from train) — note when/if it happens
-- [ ] **(OBS)** Review sample generations across checkpoints
-- [ ] Final loss-curve figure → `results/figures/pretrain_loss.png`
+- [x] **USER:** push to GitHub, run `notebooks/01_pretrain.ipynb` on Colab T4, take 📸 screenshots, download `MyDrive/mini-gpt/results/` into repo `results/`
+- [x] **(OBS)** Tesla T4, **7.3 min**, 3,000 steps (~20.7 epochs), 24.6M tokens seen. Best val **0.859 (ppl 2.36) at step 1800**; final train 0.281 / val 0.887
+- [x] **(OBS)** Mild overfitting: val minimum at step 1800, then rises ~3% (0.859→0.887) while train keeps falling (0.36→0.28); train–val gap ≈0.6 nats = partial memorization of training docs. Best checkpoint (step 1800) kept as the official pretrained model
+- [x] **(OBS)** Samples across checkpoints: step 150 fragments/blank lines/wrong facts → 450 grammatical but stream mix-ups (green cart described with blue-cart items) and repetition loops ("plastic straws") → 1800 fluent + factually correct + document structure → 3000 same, but Q/A prompt about batteries answered about *thermometers* (related item, not the asked one) ⇒ motivates SFT
+- [x] Final loss-curve figure → `results/figures/pretrain_loss.png`
 
 ## 7. Text generation & evaluation (spec §6)
 - [ ] Autoregressive generation function (greedy, temperature, top-k / top-p)
@@ -168,6 +168,12 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `results/samples/tokenization_examples.md` — how sentences, core and held-out item names are split; first/last merges — Tokenization / Research question
 - `report/notes/tokenization.md` — draft text for the tokenization section incl. embedding/LM-head explanation — Tokenization
 - `report/notes/architecture.md` — architecture description, hyperparameter table, parameter breakdown — Model architecture
+- `results/figures/pretrain_loss.png` — train/val loss curves, best val marked — Training procedure / Results
+- `results/logs/pretrain_log.csv`, `pretrain_train_log.txt`, `pretrain_summary.json` — full pretraining logs — Results (training logs deliverable)
+- `results/samples/pretrain_samples_during_training.jsonl` — fixed-prompt generations at every 150 steps — Evaluation / checkpoint evolution
+- `results/screenshots/colab_gpu_nvidia_smi.png` — T4 GPU used — Hardware / README
+- `results/screenshots/model_config_param_count.png` — config + parameter breakdown — Architecture
+- `results/screenshots/pretrain_training_log_end.png` — end of training log + summary — Training procedure
 
 ---
 
@@ -185,3 +191,4 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-07 — Held-out item names fragment into many pieces (e.g. "avocado pits" → 9 tokens) while material words (plastic, glass, batteries, milk, cartons) stay whole → generalization must come through those material tokens. Good evidence for the research question.
 - 2026-11-07 — Data-generation docs updated: final corpus = 1,310,522 tokens.
 - 2026-11-07 — Model: 11,532,288 params. Test caught a subtle point worth explaining in Q&A: with tied embeddings, loss for 'predict the input token itself' starts below ln V because the residual stream already contains that token's embedding.
+- 2026-11-08 — Pretraining done on Colab T4 (7.3 min). Best val 0.859 @1800, mild overfitting after. Pretrained model answers Q/A-formatted prompts fluently but about the wrong (related) item → good before/after SFT contrast.
