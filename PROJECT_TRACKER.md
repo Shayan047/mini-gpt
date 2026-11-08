@@ -50,30 +50,34 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] Write explanation: vocab size → embedding matrix V×d and LM head d×V (V logits) → in tokenization notes; fill in final d once model config is chosen
 - [ ] SFT prompt format fixed as `<|user|> question<|assistant|> answer<|endoftext|>` (no space before special tokens — a space produces a stray `·` token)
 
-## 5. Transformer implementation (spec §4) — from scratch in PyTorch
-- [ ] Token embedding layer
-- [ ] Positional information (learned or sinusoidal) — justify choice
-- [ ] Causal multi-head self-attention with explicit W_Q, W_K, W_V, W_O
-- [ ] Causal mask (lower-triangular) — unit test that future tokens don't affect earlier outputs
-- [ ] Feed-forward network (MLP) per block
-- [ ] Residual connections + LayerNorm (pre-norm or post-norm — justify)
-- [ ] Stack N decoder blocks
-- [ ] LM head → one logit per vocab token
-- [ ] Config object (n_layers, n_heads, d_model, context_len, dropout, vocab_size) saved alongside checkpoints
-- [ ] Choose hyperparameters suited to CPU-only hardware
-- [ ] **(OBS)** Record parameter count (total and per component)
-- [ ] Sanity check: initial loss ≈ ln(V); model can overfit a tiny batch
+## 5. Transformer implementation (spec §4) — from scratch in PyTorch → [src/model.py](src/model.py)
+- [x] Token embedding layer (V×d = 2048×384)
+- [x] Positional information → learned position embeddings (256×384)
+- [x] Causal multi-head self-attention with explicit, separate W_Q, W_K, W_V, W_O (attention math written out, not fused)
+- [x] Causal mask (lower-triangular) — tested: future tokens don't change earlier logits; attention weights zero above diagonal
+- [x] Feed-forward network (384→1536→384, GELU)
+- [x] Residual connections + LayerNorm → pre-LN
+- [x] Stack 6 decoder blocks
+- [x] LM head → 2048 logits per position, weight-tied to token embedding
+- [x] Config object (GPTConfig) saved inside every checkpoint
+- [x] Hyperparameters for free T4: 6 layers, 6 heads, d=384, context 256, dropout 0.1
+- [x] **(OBS)** Parameter count: **11,532,288** (blocks 10.65M, token emb 0.79M, pos emb 0.10M) — matches hand calculation
+- [x] Sanity checks: initial loss ≈ ln V (7.62); overfits one batch → [tests/test_model.py](tests/test_model.py), 8/8 pass (local CPU torch 2.15 in .venv)
+- [x] Architecture notes for report → [report/notes/architecture.md](report/notes/architecture.md)
 
-## 6. Pretraining — next-token prediction (spec §5)
-- [ ] Data loader producing (input, target-shifted-by-one) windows
-- [ ] Cross-entropy loss, optimizer (AdamW), LR schedule (warmup + decay), grad clipping
-- [ ] Train from random init
-- [ ] Log training and validation loss at regular intervals (to file — CSV/JSON)
-- [ ] Save checkpoints periodically (several intermediate ones help the research question) + best/final
-- [ ] **(OBS)** Record training time, steps/epochs, tokens seen, final train/val loss, val perplexity
+## 6. Pretraining — next-token prediction (spec §5) → [src/train.py](src/train.py), [notebooks/01_pretrain.ipynb](notebooks/01_pretrain.ipynb)
+- [x] Data loader: random 256-token windows from uint16 memmap; targets shifted by one
+- [x] Cross-entropy loss, AdamW (β 0.9/0.95, wd 0.1 on matrices only), warmup 150 + cosine 6e-4→6e-5, grad clip 1.0, fp16 AMP on GPU
+- [x] Train/val loss on fixed eval windows every 150 steps → `log.csv`, `train_log.txt`
+- [x] Checkpoints: `ckpt_last.pt` (resume, atomic save), `ckpt_best.pt` (lowest val), `snapshots/step_*.pt` every 500 steps
+- [x] Sample generations from 6 fixed prompts (greedy + T=0.8) at every eval → `samples.jsonl` (checkpoint-evolution evidence)
+- [x] Loss-curve plot script → [src/plot_losses.py](src/plot_losses.py)
+- [x] CPU smoke test incl. disconnect/resume: OK
+- [ ] **USER:** push to GitHub, run `notebooks/01_pretrain.ipynb` on Colab T4, take 📸 screenshots, download `MyDrive/mini-gpt/results/` into repo `results/`
+- [ ] **(OBS)** Record training time, steps/epochs, tokens seen, final train/val loss, val perplexity (from `summary.json`)
 - [ ] **(OBS)** Watch for overfitting (val loss diverging from train) — note when/if it happens
-- [ ] **(OBS)** Save sample generations at each checkpoint during training
-- [ ] Plot train vs. validation loss curves
+- [ ] **(OBS)** Review sample generations across checkpoints
+- [ ] Final loss-curve figure → `results/figures/pretrain_loss.png`
 
 ## 7. Text generation & evaluation (spec §6)
 - [ ] Autoregressive generation function (greedy, temperature, top-k / top-p)
@@ -163,6 +167,7 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `results/tables/vocab_size_comparison.md` — vocab 1k/2k/3k/4k trade-off — Tokenization (justifies 2,048)
 - `results/samples/tokenization_examples.md` — how sentences, core and held-out item names are split; first/last merges — Tokenization / Research question
 - `report/notes/tokenization.md` — draft text for the tokenization section incl. embedding/LM-head explanation — Tokenization
+- `report/notes/architecture.md` — architecture description, hyperparameter table, parameter breakdown — Model architecture
 
 ---
 
@@ -179,3 +184,4 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-07 — Tokenizer: corpus has only 3,358 distinct pre-token chunks → 4,096 vocab ≈ word-level (90% of val word types single-token, rarest merge seen 19×). Switched to 2,048 (rarest merge 147×). User approved.
 - 2026-11-07 — Held-out item names fragment into many pieces (e.g. "avocado pits" → 9 tokens) while material words (plastic, glass, batteries, milk, cartons) stay whole → generalization must come through those material tokens. Good evidence for the research question.
 - 2026-11-07 — Data-generation docs updated: final corpus = 1,310,522 tokens.
+- 2026-11-07 — Model: 11,532,288 params. Test caught a subtle point worth explaining in Q&A: with tied embeddings, loss for 'predict the input token itself' starts below ln V because the residual stream already contains that token's embedding.
