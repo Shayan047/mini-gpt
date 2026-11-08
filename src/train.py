@@ -231,7 +231,9 @@ def main(argv=None):
             with open(out / "samples.jsonl", "a", encoding="utf-8") as f:
                 for s in sample_texts(model, tok, device, step):
                     f.write(json.dumps(s) + "\n")
-            if step % a.snapshot_every == 0 or step == a.max_steps:
+            # snapshot at the first evaluation on/after each multiple of snapshot_every
+            # (a plain step % snapshot_every check misses most multiples when eval_every does not divide it)
+            if step // a.snapshot_every > (step - a.eval_every) // a.snapshot_every or step == a.max_steps:
                 save_weights(out / "snapshots" / f"step_{step:05d}.pt", step, vl)
             save_last(step)
 

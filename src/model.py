@@ -49,15 +49,24 @@ class CausalSelfAttention(nn.Module):
         self.last_attn = None          # set when store_attn=True (for analysis / figures)
         self.store_attn = False
 
-    def forward(self, x):
+    def forward(self, x, cache=None, start_pos=0):
+        """cache: optional dict holding keys/values of earlier positions (inference only).
+        start_pos: absolute position of the first token in x."""
         B, T, D = x.shape
         # (B, T, D) -> (B, n_head, T, d_head)
         q = self.W_Q(x).view(B, T, self.n_head, self.d_head).transpose(1, 2)
         k = self.W_K(x).view(B, T, self.n_head, self.d_head).transpose(1, 2)
         v = self.W_V(x).view(B, T, self.n_head, self.d_head).transpose(1, 2)
-        # scaled dot-product scores: (B, n_head, T, T)
+        if cache is not None:                                  # reuse keys/values of earlier tokens
+            if "k" in cache:
+                k = torch.cat([cache["k"], k], dim=2)
+                v = torch.cat([cache["v"], v], dim=2)
+            cache["k"], cache["v"] = k, v
+        S = k.shape[2]                                         # number of key positions
+        # scaled dot-product scores: (B, n_head, T, S)
         scores = (q @ k.transpose(-2, -1)) / math.sqrt(self.d_head)
-        scores = scores.masked_fill(~self.causal_mask[:, :, :T, :T], float("-inf"))
+        mask = self.causal_mask[:, :, start_pos:start_pos + T, :S]   # query i may see keys 0..i
+        scores = scores.masked_fill(~mask, float("-inf"))
         attn = F.softmax(scores.float(), dim=-1).to(q.dtype)
         if self.store_attn:
             self.last_attn = attn.detach()
@@ -88,8 +97,8 @@ class Block(nn.Module):
         self.ln2 = nn.LayerNorm(cfg.d_model)
         self.ffn = FeedForward(cfg)
 
-    def forward(self, x):
-        x = x + self.attn(self.ln1(x))     # residual connection around attention
+    def forward(self, x, cache=None, start_pos=0):
+        x = x + self.attn(self.ln1(x), cache, start_pos)   # residual connection around attention
         x = x + self.ffn(self.ln2(x))      # residual connection around feed-forward
         return x
 
@@ -141,15 +150,16 @@ class GPT(nn.Module):
             "total": total,
         }
 
-    def forward(self, idx, targets=None, loss_mask=None):
+    def forward(self, idx, targets=None, loss_mask=None, caches=None, start_pos=0):
         """idx: (B, T) token ids. targets: (B, T) next-token ids. loss_mask: (B, T) 1 where the
-        loss counts (used in fine-tuning to train only on answer tokens). Returns (logits, loss)."""
+        loss counts (used in fine-tuning to train only on answer tokens). caches/start_pos: optional
+        key/value cache for fast generation. Returns (logits, loss)."""
         B, T = idx.shape
-        assert T <= self.cfg.context_length, f"sequence length {T} > context length {self.cfg.context_length}"
-        pos = torch.arange(T, device=idx.device)
+        assert start_pos + T <= self.cfg.context_length, f"sequence length {start_pos + T} > context length {self.cfg.context_length}"
+        pos = torch.arange(start_pos, start_pos + T, device=idx.device)
         x = self.drop(self.tok_emb(idx) + self.pos_emb(pos))      # (B, T, d)
-        for block in self.blocks:
-            x = block(x)
+        for i, block in enumerate(self.blocks):
+            x = block(x, caches[i] if caches is not None else None, start_pos)
         logits = self.lm_head(self.ln_f(x))                       # (B, T, V): one logit per vocab token
         loss = None
         if targets is not None:
@@ -163,11 +173,17 @@ class GPT(nn.Module):
 
     @torch.no_grad()
     def generate(self, idx, max_new_tokens, temperature=1.0, top_k=None, top_p=None, stop_ids=(), generator=None):
-        """Autoregressive sampling. temperature=0 means greedy decoding."""
+        """Autoregressive sampling. temperature=0 means greedy decoding.
+        Uses a key/value cache while the sequence fits in the context window; once it is longer,
+        falls back to re-running the last context_length tokens each step (sliding window)."""
         self.eval()
+        caches, n_cached = [{} for _ in self.blocks], 0
         for _ in range(max_new_tokens):
-            ctx = idx[:, -self.cfg.context_length:]               # crop to the context window
-            logits, _ = self(ctx)
+            if idx.shape[1] <= self.cfg.context_length:
+                logits, _ = self(idx[:, n_cached:], caches=caches, start_pos=n_cached)
+                n_cached = idx.shape[1]
+            else:
+                logits, _ = self(idx[:, -self.cfg.context_length:])   # crop to the context window
             logits = logits[:, -1, :].float()                     # next-token logits
             if temperature == 0:
                 nxt = logits.argmax(dim=-1, keepdim=True)

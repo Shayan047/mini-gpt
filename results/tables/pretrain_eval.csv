@@ -1,0 +1,4 @@
+checkpoint,step,val_loss,val_ppl,test_loss,test_ppl,core_item_acc,core_statement,core_directory,core_faq,heldout_item_acc,fact_cloze_acc
+snapshot step 1500,1500,0.872,2.392,0.813,2.255,0.943,0.83,1.0,1.0,0.417,1.0
+best step 1800,1800,0.8628,2.37,0.8009,2.228,0.907,0.721,1.0,1.0,0.367,1.0
+snapshot step 3000,3000,0.8929,2.442,0.8245,2.281,0.95,0.85,1.0,1.0,0.4,1.0

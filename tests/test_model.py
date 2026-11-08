@@ -88,6 +88,20 @@ def test_generate_greedy_deterministic():
     assert torch.equal(a, b) and a.shape == (1, 15)
 
 
+def test_kv_cache_matches_full_recompute():
+    """Generation with the key/value cache must equal recomputing the whole sequence each step,
+    including past the context window (sliding-window fallback)."""
+    torch.manual_seed(0)
+    m = GPT(CFG).eval()
+    x = torch.randint(0, CFG.vocab_size, (1, 6))
+    fast = m.generate(x, 40, temperature=0)                    # 46 tokens > context 32
+    slow = x
+    for _ in range(40):
+        logits, _ = m(slow[:, -CFG.context_length:])
+        slow = torch.cat([slow, logits[:, -1].argmax(-1, keepdim=True)], dim=1)
+    assert torch.equal(fast, slow)
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):

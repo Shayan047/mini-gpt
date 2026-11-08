@@ -79,13 +79,16 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] **(OBS)** Samples across checkpoints: step 150 fragments/blank lines/wrong facts → 450 grammatical but stream mix-ups (green cart described with blue-cart items) and repetition loops ("plastic straws") → 1800 fluent + factually correct + document structure → 3000 same, but Q/A prompt about batteries answered about *thermometers* (related item, not the asked one) ⇒ motivates SFT
 - [x] Final loss-curve figure → `results/figures/pretrain_loss.png`
 
-## 7. Text generation & evaluation (spec §6)
-- [ ] Autoregressive generation function (greedy, temperature, top-k / top-p)
-- [ ] Evaluate on held-out test set: test loss / perplexity
-- [ ] Prompt tests: plausible domain text, completion of familiar statements, reproduction of KB relationships
-- [ ] Build a fact-completion probe set from the KB (e.g. "Bags must be reported within ___") and score accuracy
-- [ ] **(OBS)** Document successful outputs
-- [ ] **(OBS)** Document unsuccessful outputs (hallucinations, wrong facts, repetition, incoherence) with possible explanations
+## 7. Text generation & evaluation (spec §6) → [src/evaluate_pretrain.py](src/evaluate_pretrain.py), [src/generate.py](src/generate.py), notes [report/notes/pretrain_evaluation.md](report/notes/pretrain_evaluation.md)
+- [x] Autoregressive generation (greedy, temperature, top-k, top-p) + key/value cache (3× faster, identical output — tested) + CLI `src/generate.py` (single prompt / interactive / `--qa`)
+- [x] Test loss / perplexity over full splits → best ckpt: val 0.863 (ppl 2.37), **test 0.801 (ppl 2.23)**
+- [x] Prompt tests: familiar statements, novel framing, held-out items, off-domain → `results/samples/pretrain_generation_examples.md`
+- [x] Fact probes: item→stream probe (3 frames × 147 core + 20 held-out items) and 25 fact clozes → `results/tables/pretrain_eval.md`, per-prompt CSVs; destination classifier tested (`tests/test_probes.py`)
+- [x] **(OBS)** Successful outputs documented (see notes)
+- [x] **(OBS)** Unsuccessful outputs documented: yes/no contradiction ("Yes! Plastic bags go in the black cart"), wrong-item answers, spurious subword associations, greedy repetition, narrative prompts, off-domain collapse
+- [x] **(OBS)** Fact cloze 100% at all checkpoints; core items 90.7% (directory/FAQ 100%, "X belong…" frame 72% because of the fixed phrase "belong in the garbage, not the recycling" — prep steps still item-correct); held-out items 36.7% (chance 12.5%, majority 29.9%)
+- [x] **(OBS)** Held-out generalization = nearest-seen-item substitution via shared tokens: works for material words (olive oil bottles→glass bottles), fails on spurious fragments (watermelon→hot *water* tanks, scarves→*sc*anners)
+- [ ] Optional: dense snapshots for a "knowledge vs training step" curve — only 2 snapshots were saved (bug: snapshot check `step % 500` with eval every 150; fixed in train.py). Re-run pretraining (~7 min) if wanted
 
 ## 8. Supervised fine-tuning for QA (spec §7)
 - [ ] Create QA dataset derived from the same KB (multiple phrasings per fact)
@@ -174,6 +177,11 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `results/screenshots/colab_gpu_nvidia_smi.png` — T4 GPU used — Hardware / README
 - `results/screenshots/model_config_param_count.png` — config + parameter breakdown — Architecture
 - `results/screenshots/pretrain_training_log_end.png` — end of training log + summary — Training procedure
+- `results/tables/pretrain_eval.md` / `.csv` — loss/ppl + probe accuracies per checkpoint — Evaluation
+- `results/tables/pretrain_item_probe.csv`, `pretrain_fact_cloze.csv` — every probe prompt, completion, verdict — Evaluation / appendix
+- `results/samples/pretrain_generation_examples.md` — curated prompts × greedy/sampled — Evaluation (successful/unsuccessful outputs)
+- `results/figures/pretrain_checkpoints.png` — probe accuracy + held-out loss across checkpoints — Evaluation (thin: 3 points)
+- `report/notes/pretrain_evaluation.md` — draft text for the evaluation section — Evaluation
 
 ---
 
@@ -192,3 +200,6 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-07 — Data-generation docs updated: final corpus = 1,310,522 tokens.
 - 2026-11-07 — Model: 11,532,288 params. Test caught a subtle point worth explaining in Q&A: with tied embeddings, loss for 'predict the input token itself' starts below ln V because the residual stream already contains that token's embedding.
 - 2026-11-08 — Pretraining done on Colab T4 (7.3 min). Best val 0.859 @1800, mild overfitting after. Pretrained model answers Q/A-formatted prompts fluently but about the wrong (related) item → good before/after SFT contrast.
+- 2026-11-08 — Snapshot bug: only steps 1500 and 3000 saved (step % 500 with evals every 150). Fixed for future runs.
+- 2026-11-08 — Probe scoring bug caught by inspecting failures: classifier read only the first sentence, missing answers after "That's right." → now first destination within 2 sentences; added tests/test_probes.py.
+- 2026-11-08 — Pretrained eval: facts memorized (cloze 100%), item recall frame-dependent (72–100%), held-out 36.7% via token-overlap substitution. Lowest-val-loss checkpoint ≠ best fact recall.
