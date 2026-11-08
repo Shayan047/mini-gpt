@@ -1,6 +1,279 @@
 fact,prompt,expected,completion,correct,checkpoint,step
 S02,The green organics cart is collected every,week," week.
 
+- Do not guess with plastic cutlery:",1,snapshot step 300,300
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," the black cart.
+
+- The rule for plastic takeout",0,snapshot step 300,300
+S04,Set your carts out the evening before or early on the,morning," curb the curb the curb the area.
+
+- What",0,snapshot step 300,300
+M02,Report a missed collection to the waste service by the end of the,next day," day.
+Caller: What do I do with plastic takeout",0,snapshot step 300,300
+S06,"In a week with a public holiday, collection may be delayed by",one day," one day.
+
+Q: How do I put my",1,snapshot step 300,300
+P01,Place carts at the curb with the wheels facing,home," the curb without a booking.
+
+Let carts and",0,snapshot step 300,300
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank," every week.
+
+- What do I do with plastic",0,snapshot step 300,300
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area.
+
+- Backs with the",1,snapshot step 300,300
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+- What do I do",1,snapshot step 300,300
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," hazardous waste.
+
+- What do I do with old",0,snapshot step 300,300
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+Caller: Thanks for sorting carefully.",1,snapshot step 300,300
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag.
+
+Q: How do I put my",1,snapshot step 300,300
+O02,Line your kitchen pail with newspaper or a,paper bag," paper bag.
+
+- What do I do with old",1,snapshot step 300,300
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," green cart.
+
+- What do I do with old",0,snapshot step 300,300
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green cart.
+
+Question: What do I do with",1,snapshot step 300,300
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Q: How do I put my",1,snapshot step 300,300
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off.
+
+- Cheels",1,snapshot step 300,300
+R06,Glass bottles and jars go in the,blue," blue cart.
+
+Where: blue recycling
+How:",1,snapshot step 300,300
+W04,"When you are unsure about an ordinary item, put it in the",garbage," garbage.
+
+Q: How do I put my cart",1,snapshot step 300,300
+R16,Unused or expired medications should be returned to a,pharmacy," drop-off.
+
+Where: hazardous waste drop-",0,snapshot step 300,300
+W02,Organics are turned into,compost," compost.
+
+- Broken umbrellas: wrong cart.",1,snapshot step 300,300
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+- What do I do with old",1,snapshot step 300,300
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving," a resident asks about an ordinary item, put it in the",0,snapshot step 300,300
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage.
+
+Where: the black cart
+How:",1,snapshot step 300,300
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+Where: blue recycling cart
+How",1,snapshot step 300,300
+S02,The green organics cart is collected every,week," week.
+- Line your kitchen pail with newspaper or",1,snapshot step 600,600
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+Thank you",1,snapshot step 600,600
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+
+Thank you,
+",1,snapshot step 600,600
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 600,600
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 600,600
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 600,600
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank," snowbanks.
+
+Thank you,
+Cond",1,snapshot step 600,600
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area and check with the property manager first.
+",1,snapshot step 600,600
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+Thank you,
+C",1,snapshot step 600,600
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+- How do I get rid",1,snapshot step 600,600
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+
+Thank you,
+Customer Service Lead",1,snapshot step 600,600
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 600,600
+O02,Line your kitchen pail with newspaper or a,paper bag," paper bag if you want to.
+
+Where:",1,snapshot step 600,600
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer, freezer until collection day to keep smells,1,snapshot step 600,600
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+Q: What do I",1,snapshot step 600,600
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Examples:
+- Our guide",1,snapshot step 600,600
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 600,600
+R06,Glass bottles and jars go in the,blue, blue cart. Scrape them clean of food. Rinse them out,1,snapshot step 600,600
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminating them.,1,snapshot step 600,600
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+General rules:
+- Never",1,snapshot step 600,600
+W02,Organics are turned into,compost," compost.
+
+The basics:
+- No plastic",1,snapshot step 600,600
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+In the spotlight: bed sheets and",1,snapshot step 600,600
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving, moving.,1,snapshot step 600,600
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+Thank you,
+",1,snapshot step 600,600
+R01,Clean paper and cardboard go in the,blue," blue recycling cart.
+
+Coffee pods
+Where:",1,snapshot step 600,600
+S02,The green organics cart is collected every,week," week.
+
+What do I do with old plastic water",1,snapshot step 900,900
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," a black cart.
+
+- Do not guess with plastic",0,snapshot step 900,900
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+
+Thank you,
+",1,snapshot step 900,900
+M02,Report a missed collection to the waste service by the end of the,next day," next day.
+
+How do I get rid of plastic",1,snapshot step 900,900
+S06,"In a week with a public holiday, collection may be delayed by",one day," one day.
+
+What happens if someone d",1,snapshot step 900,900
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+What do",1,snapshot step 900,900
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank, snowbanks.,1,snapshot step 900,900
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area and check with the property manager first.
+",1,snapshot step 900,900
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+- I have some plastic",1,snapshot step 900,900
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+What happens if I keep",1,snapshot step 900,900
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+
+Thank you for helping keep Tidewell clean.",1,snapshot step 900,900
+F02,A contaminated cart may be left unemptied with a,warning tag, warning tag that explains the wrong items that explains the,1,snapshot step 900,900
+O02,Line your kitchen pail with newspaper or a,paper bag," paper bag, but never with plastic.
+
+- How",1,snapshot step 900,900
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 900,900
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+How do I get rid",1,snapshot step 900,900
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Q: How do I get rid",1,snapshot step 900,900
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 900,900
+R06,Glass bottles and jars go in the,blue, blue cart. Scrape them clean of food. Rinse them with,1,snapshot step 900,900
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 900,900
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+Medications do not belong in the garbage",1,snapshot step 900,900
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 900,900
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+- I have some plastic toys.",1,snapshot step 900,900
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving, moving.,1,snapshot step 900,900
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+What do I do",1,snapshot step 900,900
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+- Do not guess with cereal",1,snapshot step 900,900
+S02,The green organics cart is collected every,week," week.
+
+Key rules:
+- All food",1,snapshot step 1200,1200
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+Got",1,snapshot step 1200,1200
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+
+Thank you for helping",1,snapshot step 1200,1200
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 1200,1200
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 1200,1200
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 1200,1200
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank," snowbanks.
+
+Thank you for helping keep Tidewell",1,snapshot step 1200,1200
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area.
+
+Common questions in our building",1,snapshot step 1200,1200
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+Thank you,
+Resident",1,snapshot step 1200,1200
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+Drop-off of household",1,snapshot step 1200,1200
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+
+Thank you,
+Residential Waste Guidance",1,snapshot step 1200,1200
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 1200,1200
+O02,Line your kitchen pail with newspaper or a,paper bag, paper bag; plastic bags of any kind are not allowed.,1,snapshot step 1200,1200
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 1200,1200
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+Item spotlight: meat,",1,snapshot step 1200,1200
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+Teach residents this rule: Small",1,snapshot step 1200,1200
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 1200,1200
+R06,Glass bottles and jars go in the,blue, blue cart. Scrape them clean of food. Rinse them out,1,snapshot step 1200,1200
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 1200,1200
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+General rules:
+- W",1,snapshot step 1200,1200
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 1200,1200
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+Drop-off of household hazardous",1,snapshot step 1200,1200
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving," moving.
+
+General rules:
+- Put",1,snapshot step 1200,1200
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+- How do I",1,snapshot step 1200,1200
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+- Toilet paper rolls: blue",1,snapshot step 1200,1200
+S02,The green organics cart is collected every,week," week.
+
 The basics:
 - Never put",1,snapshot step 1500,1500
 S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
@@ -73,6 +346,255 @@ Any ",1,snapshot step 1500,1500
 R01,Clean paper and cardboard go in the,blue," blue cart.
 
 And milk cartons? They are",1,snapshot step 1500,1500
+S02,The green organics cart is collected every,week," week.
+
+The basics:
+- Line",1,snapshot step 1800,1800
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+The sorting",1,snapshot step 1800,1800
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+
+Thank you,
+",1,snapshot step 1800,1800
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 1800,1800
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 1800,1800
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 1800,1800
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank, snowbanks.,1,snapshot step 1800,1800
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area.
+
+The basics:
+-",1,snapshot step 1800,1800
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+Thank you,
+Resident",1,snapshot step 1800,1800
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+Thank you for your coo",1,snapshot step 1800,1800
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+
+Thank you,
+Residential Waste Guidance",1,snapshot step 1800,1800
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 1800,1800
+O02,Line your kitchen pail with newspaper or a,paper bag, paper bag; plastic bags of any kind are not allowed.,1,snapshot step 1800,1800
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 1800,1800
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+Q: What's the",1,snapshot step 1800,1800
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Before you start:
+- W",1,snapshot step 1800,1800
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 1800,1800
+R06,Glass bottles and jars go in the,blue, blue cart. Empty them fully first. Rinse them with a,1,snapshot step 1800,1800
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 1800,1800
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+Plastic water bottles - blue cart. Empty",1,snapshot step 1800,1800
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 1800,1800
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+Thank you for your cooper",1,snapshot step 1800,1800
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving, moving.,1,snapshot step 1800,1800
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+Q: How do",1,snapshot step 1800,1800
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+The rule for recycling is simple:",1,snapshot step 1800,1800
+S02,The green organics cart is collected every,week," week.
+
+Green cart collection happens once a",1,snapshot step 2100,2100
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+Thank you",1,snapshot step 2100,2100
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+- Take your carts back",1,snapshot step 2100,2100
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 2100,2100
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 2100,2100
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 2100,2100
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank, snowbanks.,1,snapshot step 2100,2100
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area.
+
+Common questions in our building",1,snapshot step 2100,2100
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping," illegal dumping.
+
+Thank you for helping keep",1,snapshot step 2100,2100
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+Thank you for helping keep Tidewell",1,snapshot step 2100,2100
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+Caller: Thanks!
+Rep: Thanks for",1,snapshot step 2100,2100
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 2100,2100
+O02,Line your kitchen pail with newspaper or a,paper bag," paper bag if you want to.
+
+Items residents",1,snapshot step 2100,2100
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 2100,2100
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+How do I get rid",1,snapshot step 2100,2100
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Before you start:
+- W",1,snapshot step 2100,2100
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 2100,2100
+R06,Glass bottles and jars go in the,blue, blue cart. Empty them out first. Rinse them with a,1,snapshot step 2100,2100
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 2100,2100
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+General rules:
+- Never",1,snapshot step 2100,2100
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 2100,2100
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+Thank you for helping keep Tidewell clean",1,snapshot step 2100,2100
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving," moving.
+
+Thank you for helping keep Tidewell clean.",1,snapshot step 2100,2100
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+Thank you for helping",1,snapshot step 2100,2100
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+- Sponges go in the",1,snapshot step 2100,2100
+S02,The green organics cart is collected every,week," week.
+
+Green cart collection happens once a",1,snapshot step 2400,2400
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+Thank you",1,snapshot step 2400,2400
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+
+Thank you for your",1,snapshot step 2400,2400
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 2400,2400
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 2400,2400
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 2400,2400
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank, snowbanks.,1,snapshot step 2400,2400
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area and check with the property manager first.
+",1,snapshot step 2400,2400
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping, illegal dumping. Reuse centres and char,1,snapshot step 2400,2400
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+Thank you for your coo",1,snapshot step 2400,2400
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+Caller: Thanks!
+Rep: Hope that",1,snapshot step 2400,2400
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 2400,2400
+O02,Line your kitchen pail with newspaper or a,paper bag, paper bag; plastic bags of any kind are not allowed.,1,snapshot step 2400,2400
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 2400,2400
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+How do I get rid",1,snapshot step 2400,2400
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Before you start:
+- W",1,snapshot step 2400,2400
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 2400,2400
+R06,Glass bottles and jars go in the,blue, blue cart. Scrape them clean of food. Rinse them with,1,snapshot step 2400,2400
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 2400,2400
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+General rules:
+- Never",1,snapshot step 2400,2400
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 2400,2400
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+What can I take to a drop",1,snapshot step 2400,2400
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving," moving.
+
+Thank you for helping keep Tidewell clean.",1,snapshot step 2400,2400
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+What do I do",1,snapshot step 2400,2400
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+And paper bags? They are",1,snapshot step 2400,2400
+S02,The green organics cart is collected every,week," week.
+
+Green cart collection happens once a",1,snapshot step 2700,2700
+S03,The blue recycling cart and the black garbage cart are collected on,alternating," alternating weeks.
+
+Feat",1,snapshot step 2700,2700
+S04,Set your carts out the evening before or early on the,morning," morning of your collection day.
+- Take your carts back",1,snapshot step 2700,2700
+M02,Report a missed collection to the waste service by the end of the,next day," next day through the website, app or customer service line.",1,snapshot step 2700,2700
+S06,"In a week with a public holiday, collection may be delayed by",one day, one day; the area calendar shows any changes,1,snapshot step 2700,2700
+P01,Place carts at the curb with the wheels facing,home," your home and the lid fully closed.
+
+Thank you",1,snapshot step 2700,2700
+P04,"In winter, place carts on a cleared surface, not on top of",snowbank, snowbanks.,1,snapshot step 2700,2700
+B03,Apartment and condo residents should use their building's designated,bulky item area," bulky item area and check with the property manager first.
+",1,snapshot step 2700,2700
+B04,Leaving bulky items at the curb without a booking is treated as,illegal dumping, illegal dumping. Reuse centres and char,1,snapshot step 2700,2700
+D03,Drop-off of household hazardous waste and electronics is free for residents in normal household,quantities," quantities.
+
+Thank you for your coo",1,snapshot step 2700,2700
+F04,Repeated contamination after warnings can lead to a,fine," fine.
+
+Thank you,
+Residential Waste Guidance",1,snapshot step 2700,2700
+F02,A contaminated cart may be left unemptied with a,warning tag," warning tag that explains the problem.
+
+",1,snapshot step 2700,2700
+O02,Line your kitchen pail with newspaper or a,paper bag, paper bag; plastic bags of any kind are not allowed.,1,snapshot step 2700,2700
+O01,"To reduce odours, wrap food scraps in newspaper or keep them in the",freezer," freezer until collection day.
+
+Thank you",1,snapshot step 2700,2700
+H03,"Keep meat, fish, bones, dairy and oils out of a backyard compost bin; put them in the",green," green organics cart instead.
+
+Featured item",1,snapshot step 2700,2700
+R10,"Anything with a plug, cord or battery is",electronic," electronic waste.
+
+Before you start:
+- W",1,snapshot step 2700,2700
+R11,Batteries of every kind go to a household,hazardous," hazardous waste drop-off, never in a cart.
+",1,snapshot step 2700,2700
+R06,Glass bottles and jars go in the,blue, blue cart. Scrape out food scraps first. Rinse them with,1,snapshot step 2700,2700
+W04,"When you are unsure about an ordinary item, put it in the",garbage, garbage; wishful recycling contaminates whole load,1,snapshot step 2700,2700
+R16,Unused or expired medications should be returned to a,pharmacy," pharmacy.
+
+Plastic bags - black garbage cart. Plastic",1,snapshot step 2700,2700
+W02,Organics are turned into,compost," compost instead of going to landfill.
+",1,snapshot step 2700,2700
+D04,"Transport hazardous products upright, sealed and separate from passengers, ideally in the",trunk," trunk.
+
+- Before you go, l",1,snapshot step 2700,2700
+V03,"Flatten moving boxes for recycling, or give them to someone else who is",moving," moving.
+
+Item spotlight: juice boxes
+And",1,snapshot step 2700,2700
+R04,"Soft plastic such as bags, wrap, wrappers and pouches goes in the",garbage," garbage, never in recycling.
+
+- How do I",1,snapshot step 2700,2700
+R01,Clean paper and cardboard go in the,blue," blue cart.
+
+- To dispose of paper bags correctly",1,snapshot step 2700,2700
 S02,The green organics cart is collected every,week," week.
 
 The green organics cart is collected every week",1,snapshot step 3000,3000

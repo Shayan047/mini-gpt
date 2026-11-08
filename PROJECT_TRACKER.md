@@ -88,7 +88,7 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] **(OBS)** Unsuccessful outputs documented: yes/no contradiction ("Yes! Plastic bags go in the black cart"), wrong-item answers, spurious subword associations, greedy repetition, narrative prompts, off-domain collapse
 - [x] **(OBS)** Fact cloze 100% at all checkpoints; core items 90.7% (directory/FAQ 100%, "X belong…" frame 72% because of the fixed phrase "belong in the garbage, not the recycling" — prep steps still item-correct); held-out items 36.7% (chance 12.5%, majority 29.9%)
 - [x] **(OBS)** Held-out generalization = nearest-seen-item substitution via shared tokens: works for material words (olive oil bottles→glass bottles), fails on spurious fragments (watermelon→hot *water* tanks, scarves→*sc*anners)
-- [ ] Optional: dense snapshots for a "knowledge vs training step" curve — only 2 snapshots were saved (bug: snapshot check `step % 500` with eval every 150; fixed in train.py). Re-run pretraining (~7 min) if wanted
+- [x] Dense snapshots (run 2, every 300 steps): facts learned between steps 300→600 (core 39→89%, cloze 64→100%), saturated by 900; held-out peaks 48% @900 then 35–43%; best-val ckpt ≠ best probe ckpt → `results/figures/pretrain_checkpoints.png`
 
 ## 8. Supervised fine-tuning for QA (spec §7) → [src/datagen/build_sft.py](src/datagen/build_sft.py), [src/finetune.py](src/finetune.py), [notebooks/02_finetune.ipynb](notebooks/02_finetune.ipynb)
 - [x] QA dataset from the same KB → `data/sft/train.jsonl` **11,056 pairs**, `val.jsonl` 460 (items open/yes-no/prep, topic facts, streams, material rules, ~4% out-of-scope declines — user approved)
@@ -96,11 +96,12 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [x] Separate eval set `data/eval/qa_eval.jsonl` **654 questions**: core items with unseen wordings (441 incl. yes/no), topic facts / streams / rules with held-out wording (83), 20 held-out items (60), 50 hand-written free-form (typos, casual), 20 out-of-scope
 - [x] Leakage checks: 0 eval questions in SFT data (one accidental collision found and fixed), 0 held-out items in SFT, 0 examples > context → `results/tables/sft_data_stats.md`
 - [x] Fine-tune script: init from pretrained best, lr 1e-4 warmup+cosine, 1,000 steps (~2.9 epochs), best by SFT val loss; logs pretraining-corpus val loss to measure forgetting; step-0 row = pretrained baseline. CPU smoke test OK
-- [ ] **USER:** push, run `notebooks/02_finetune.ipynb` on Colab, 📸 screenshots, download `sft/ckpt_best.pt` → `checkpoints/sft/`, results → `results/`
-- [ ] Run the SAME eval questions on the pretrained and the fine-tuned model (pretrained prompted in its native `Q:/A:` format; also in chat format as a sanity row)
-- [ ] Scoring: item questions → destination classifier (+ yes/no lead); topic facts → key words (validated against every trained wording); out-of-scope → decline phrase
-- [ ] **(OBS)** Before vs. after comparison table (accuracy per category, sample answers)
-- [ ] **(OBS)** What improved, what didn't, limitations (forgetting, memorized phrasing, unseen formulations, held-out items)
+- [x] **USER:** push, run `notebooks/02_finetune.ipynb` on Colab, 📸 screenshots, download `sft/ckpt_best.pt` → `checkpoints/sft/`, results → `results/`
+- [x] **(OBS)** SFT: 1.0 min on T4; SFT val 0.969 → 0.268 (best at last step, no overfitting); **forgetting: pretraining-corpus val loss 0.876 → 1.339 (+53%)**
+- [x] Run the SAME eval questions on the pretrained and the fine-tuned model → [src/evaluate_qa.py](src/evaluate_qa.py) (`--rescore` re-scores saved answers)
+- [x] Scoring: item questions → destination classifier (+ yes/no lead); topic facts → key words; out-of-scope → decline phrase; declines never count as a destination
+- [x] **(OBS)** Before vs. after: overall 76.3% → **82.3%**; yes/no 66.7 → 85.0; bins/rules 46.4 → 67.9; out-of-scope declines 0 → 75; known items 100 → 99.7; topic facts 80 → 76; **held-out items 50.0 → 38.3**; free-form ≈47 both → `results/tables/qa_eval.md`, `results/figures/qa_before_after.png`, `results/samples/qa_examples.md`
+- [x] **(OBS)** Improved: answers the asked item (names other item 13.2% → 6.0%), yes/no logic, stopping, chat format, declines. Not improved: knowledge itself (destination 90.2 vs 88.7%). **New failure: over-generalized declines** — 0% on familiar wording but 11.7% of held-out-item and 20% of free-form questions declined ("painting the bedroom" → construction decline). Off-topic lexical triggers ("sky blue" → blue cart, "cook rice" → organics). Typos break item recognition. Notes: [report/notes/sft_evaluation.md](report/notes/sft_evaluation.md)
 
 ## 9. Research investigation (spec §8)
 - [x] Pick ONE research question → generalization to unseen items & phrasings, before vs after SFT
@@ -184,6 +185,14 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `report/notes/pretrain_evaluation.md` — draft text for the evaluation section — Evaluation
 - `results/tables/sft_data_stats.md` — SFT/eval set sizes per category + leakage checks — Fine-tuning
 - `results/samples/sft_examples.md` — example SFT pairs and eval questions — Fine-tuning / appendix
+- `results/figures/sft_loss.png` — SFT loss + pretraining-corpus loss (forgetting) — Fine-tuning
+- `results/logs/sft_log.csv`, `sft_train_log.txt`, `sft_summary.json`; `results/samples/sft_samples_during_training.jsonl` — SFT logs — Results
+- `results/screenshots/sft_data_summary.png`, `sft_training_log.png`, `sft_loss_curves.png` — Colab SFT run — Fine-tuning
+- `results/tables/qa_eval.md` / `.csv` — **main before/after table** + behaviour table — Fine-tuning evaluation / Research question
+- `results/tables/qa_eval_answers.csv` — every answer from every system with verdicts — appendix
+- `results/figures/qa_before_after.png` — grouped bar chart before vs after — Fine-tuning evaluation
+- `results/samples/qa_examples.md` — side-by-side answers (fixed by SFT / still wrong) — Fine-tuning evaluation
+- `report/notes/sft_evaluation.md` — draft text: setup, results, improved / not improved / limitations, research-question summary — Fine-tuning + Research
 
 ---
 
@@ -207,3 +216,4 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-08 — Pretrained eval: facts memorized (cloze 100%), item recall frame-dependent (72–100%), held-out 36.7% via token-overlap substitution. Lowest-val-loss checkpoint ≠ best fact recall.
 - 2026-11-08 — Pretraining run 2 (dense snapshots) reproduced run 1 exactly (identical losses to 4 decimals) → fixed seeds make training deterministic on T4. Good reproducibility evidence.
 - 2026-11-08 — SFT data built (11,056 pairs). Pretrained model given the chat format (never seen special tokens) produces garbled continuations ("s go to an electronics drop-off… - What do I do with moving boxes?") — baseline for the SFT comparison.
+- 2026-11-08 — QA eval: pretrained model already answers known items 100% in Q:/A: format (corpus had FAQ-style docs) → SFT changed the interface, not the knowledge. SFT's decline behaviour over-generalizes to unfamiliar phrasing (held-out 50→38%). Candidate ablation: SFT without decline examples.

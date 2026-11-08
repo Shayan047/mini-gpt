@@ -1,0 +1,10 @@
+{
+  "steps": 1000,
+  "epochs": 2.894356005788712,
+  "best_sft_val_loss": 0.26804641880204955,
+  "init": "/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt",
+  "sft_train_pairs": 11056,
+  "train_minutes": 1.0172821203867595,
+  "device": "cuda",
+  "gpu": "Tesla T4"
+}

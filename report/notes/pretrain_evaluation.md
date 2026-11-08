@@ -48,7 +48,21 @@ Source: `results/tables/pretrain_eval.md`.
    - bookshelves → *delivery boxes* ❌
 
    Generalization works when the shared token is a **material word**, and fails when it is an unrelated fragment. This links to the tokenizer: unseen names are split into unfamiliar pieces, as shown in `tokenization_examples.md`.
-4. **Checkpoints differ little.** By step 1,500, the knowledge probes are already saturated. The lowest-validation-loss checkpoint (1,800) is not the best on the item probe, because validation loss measures fluency on all text, not recall of specific facts.
+4. **When knowledge appears during training.** Run 2 saved a snapshot every 300 steps; see `results/figures/pretrain_checkpoints.png`.
+
+    | Step | Tokens seen | Core items | Fact cloze | Held-out items | Statement frame | Val loss |
+    |---:|---:|---:|---:|---:|---:|---:|
+    | 300 | 2.5M | 39% | 64% | 23% | 54% | 1.68 |
+    | 600 | 4.9M | 89% | 100% | 40% | **85%** | 0.98 |
+    | 900 | 7.4M | 92% | 96% | **48%** | 78% | 0.90 |
+    | 1,800 (best val) | 14.7M | 91% | 100% | 37% | 72% | 0.86 |
+    | 3,000 | 24.6M | 95% | 100% | 40% | 85% | 0.89 |
+
+    - Facts are learned **early**, between steps 300 and 600 (roughly 2–4 passes over the corpus), and the probes saturate by step 900. The remaining two-thirds of training mostly lowers training loss, which is memorization.
+    - Held-out generalization peaks at step 900, then fluctuates between 35% and 43%. With 20 items (about 5 points per item), this is a tendency, not a significant result.
+    - The memorized-phrase effect from finding 2 is **not monotonic**: the statement frame is best at step 600 (85%), falls to 72% at step 1,800, and recovers to 85% by step 3,000.
+    - The lowest-validation-loss checkpoint (1,800) is **not** the best on the knowledge probes, because validation loss measures fluency on all text, not recall of specific facts.
+    - The two training runs produced identical losses, so the training is fully deterministic.
 5. **Test perplexity (2.23) is slightly lower than validation (2.37).** Both splits use held-out phrasing, so this is sampling variation between two small splits, not a sign of leakage.
 
 ## 2. Qualitative results
