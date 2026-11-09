@@ -26,6 +26,8 @@ checkpoints/
 *.pt
 *.pth
 *.ckpt
+# ...except the two submitted models (deliverable d), committed so graders can run inference directly
+!models/*.pt
 
 # Course handout (not ours to redistribute)
 Term Project.pdf

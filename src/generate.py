@@ -64,7 +64,7 @@ def main(argv=None):
 
     if a.prompt is not None:
         reply, n, dt = run(model, tok, a.prompt, a, a.device)
-        print(reply if a.qa else a.prompt + reply)
+        print(reply.strip() if a.qa else a.prompt + reply)
         return
     label = "Question" if a.qa else "Prompt"
     while True:

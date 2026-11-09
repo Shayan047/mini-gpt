@@ -1,0 +1,51 @@
+{
+  "pretrained": {
+    "file": "models/pretrained.pt",
+    "sha256": "970c78a404f2032b1f3ce50e7bd3475559f94bced91684c2c41c3b82610e55de",
+    "training_step": 1800,
+    "stage": "pretraining (next-token prediction), best validation loss",
+    "validation_loss": 0.8591,
+    "prompt_format": "plain text continuation",
+    "parameters": 11532288,
+    "config": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "n_layer": 6,
+      "n_head": 6,
+      "d_model": 384,
+      "d_ff": 1536,
+      "dropout": 0.1,
+      "tie_weights": true
+    }
+  },
+  "finetuned": {
+    "file": "models/finetuned.pt",
+    "sha256": "2c10b4cbbb5cfa5bb1c6833b124cc532a65ca5f1b86399a93067adc210cde02a",
+    "training_step": 1000,
+    "stage": "supervised fine-tuning for QA (with out-of-scope declines), started from models/pretrained.pt",
+    "validation_loss": 0.268,
+    "prompt_format": "<|user|> {question}<|assistant|>  (answer ends with <|endoftext|>)",
+    "parameters": 11532288,
+    "config": {
+      "vocab_size": 2048,
+      "context_length": 256,
+      "n_layer": 6,
+      "n_head": 6,
+      "d_model": 384,
+      "d_ff": 1536,
+      "dropout": 0.1,
+      "tie_weights": true
+    }
+  },
+  "tokenizer": {
+    "file": "data/tokenizer/tokenizer.json",
+    "type": "byte-level BPE",
+    "vocab_size": 2048,
+    "special_tokens": [
+      "<|endoftext|>",
+      "<|pad|>",
+      "<|user|>",
+      "<|assistant|>"
+    ]
+  }
+}

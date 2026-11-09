@@ -13,8 +13,8 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
    - [x] `src/evaluate_qa.py --add LABEL CKPT` evaluates only the new model and merges it with saved answers (rescore verified identical)
    - [x] **USER:** `git push`, run notebook 03 on Colab (~1–2 min), 📸 log, download `sft_no_decline/ckpt_best.pt` → `checkpoints/sft_no_decline/ckpt_best.pt`, results → `results/`
    - [x] Evaluate, compare 4 systems (+ McNemar significance → `results/tables/qa_significance.md`, `src/significance.py`)
-   - [ ] **USER DECISION:** which fine-tuned model to submit (with declines vs. no declines)
-2. Then deliverables: README (install/hardware/inference/examples), demo script for the video, report draft from `report/notes/`, slides, AI Use Statement, member contributions, final reproducibility check.
+   - [x] **USER DECISION:** submit the fine-tuned model **with declines** (no-decline model kept as the ablation)
+2. Deliverables: [x] README · [x] models committed (`models/`) · [x] demo script · [ ] report draft · [ ] slides · [ ] AI Use Statement · [ ] member contributions (need names/roles from user) · [ ] demo video (user records) · [ ] final reproducibility check from a fresh clone
 - Local checkpoints: `checkpoints/pretrain/` (best = step 1800 + 10 snapshots, run 2), `checkpoints/sft/ckpt_best.pt`. Local CPU torch in `.venv`. All work committed up to the QA evaluation (not pushed by Claude).
 
 ---
@@ -126,10 +126,10 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 - [ ] **a) Research report (5–7 pages):** dataset, research question, architecture, training procedure, evaluation, findings, limitations
 - [ ] **b) Synthetic dataset:** corpus, knowledge base, data-generation methodology
 - [ ] **c) Source code:** data processing, model, training, evaluation, generation
-- [ ] **d) Two checkpoints:** after pretraining + after SFT, plus tokenizer/vocab and config to load both
+- [x] **d) Two checkpoints:** `models/pretrained.pt` (step 1800) + `models/finetuned.pt` (SFT with declines, step 1000), committed to the repo; tokenizer `data/tokenizer/tokenizer.json`; configs inside checkpoints + `models/model_info.json` (with SHA-256)
 - [ ] **e) Results:** loss curves, training logs, generated samples, experimental findings
-- [ ] **f) Demo video (3–5 min):** live screen recording loading the model and generating from several prompts, at least one prompt NOT from training examples
-- [ ] **g) README:** install requirements, hardware requirements, inference commands, required files, example inputs — runnable without retraining
+- [ ] **f) Demo video (3–5 min):** live screen recording loading the model and generating from several prompts, at least one prompt NOT from training → script ready: [report/demo_script.md](report/demo_script.md) (outputs verified); **USER records** examples
+- [x] **g) README:** install requirements, hardware requirements, inference commands, required files, example inputs — runnable without retraining → [README.md](README.md) (all examples verified on CPU)
 - [ ] **h) Slide presentation + Q&A prep:** dataset, architecture, training, research question, results, conclusions; all 4 members must be able to explain every part
 - [ ] **i) AI Use Statement:** tools used and how (code, design, analysis, writing) — includes Claude Code
 - [ ] **j) Reproducibility check:** fresh clone/env → load both checkpoints → generate from new prompts; confirm code/tokenizer/config compatibility
@@ -233,3 +233,5 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-08 — QA eval: pretrained model already answers known items 100% in Q:/A: format (corpus had FAQ-style docs) → SFT changed the interface, not the knowledge. SFT's decline behaviour over-generalizes to unfamiliar phrasing (held-out 50→38%). Candidate ablation: SFT without decline examples.
 - 2026-11-09 — Ablation (SFT without declines): false declines → 0, casual known-item questions 48.6→62.9% (p=0.06), but held-out only 38.3→41.7% and off-topic questions get confident nonsense. Of 23 questions the decline model declined, the no-decline model answers only 9 correctly → declines mostly land on questions the model can't answer (uncertainty signal). Held-out drop vs pretrained is NOT significant (p=0.14). Significant: overall SFT gain, yes/no, declines (all p<0.001).
 - 2026-11-09 — Note for README: checkpoints saved on GPU must be loaded with map_location (load_checkpoint does this) — plain torch.load fails on CPU-only machines.
+- 2026-11-09 — Final model choice: fine-tuned WITH declines (user). Models committed to `models/` (~46 MB each).
+- 2026-11-09 — Demo testing: short direct questions work; long chatty ones fail ("party … beer cans" → lancets; "son left his old bike…" → declined). Held-out "almond milk cartons" answered perfectly. Yes/no slip found on "Can I put plastic bags in the blue cart?" ("Yes." + correct cart) → documented in README limitations.
