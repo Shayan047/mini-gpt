@@ -48,6 +48,8 @@ def get_args(argv=None):
     p.add_argument("--device", default="auto")
     p.add_argument("--no-amp", action="store_true")
     p.add_argument("--no-resume", action="store_true")
+    p.add_argument("--exclude-categories", nargs="*", default=[],
+                   help="drop SFT examples of these categories from train and val (ablation), e.g. out_of_scope")
     return p.parse_args(argv)
 
 
@@ -58,11 +60,13 @@ def lr_at(step, a):
     return a.min_lr + 0.5 * (a.lr - a.min_lr) * (1 + math.cos(math.pi * progress))
 
 
-def encode_pairs(path, tok, T):
+def encode_pairs(path, tok, T, exclude=()):
     """Returns list of (ids, n_prompt) per example; ids = prompt + answer tokens."""
     out = []
     for line in open(path, encoding="utf-8"):
         e = json.loads(line)
+        if e["category"] in exclude:
+            continue
         prompt = tok.encode(f"<|user|> {e['question']}<|assistant|>", allow_special=True)
         answer = tok.encode(f" {e['answer']}<|endoftext|>", allow_special=True)
         ids = (prompt + answer)[: T + 1]
@@ -124,11 +128,12 @@ def main(argv=None):
     cfg = GPTConfig(**init["config"])
     model = GPT(cfg).to(device)
     model.load_state_dict(init["model"])
-    train = encode_pairs(Path(a.data_dir) / "sft" / "train.jsonl", tok, cfg.context_length)
-    val = encode_pairs(Path(a.data_dir) / "sft" / "val.jsonl", tok, cfg.context_length)
+    train = encode_pairs(Path(a.data_dir) / "sft" / "train.jsonl", tok, cfg.context_length, a.exclude_categories)
+    val = encode_pairs(Path(a.data_dir) / "sft" / "val.jsonl", tok, cfg.context_length, a.exclude_categories)
     corpus_val = TokenData(Path(a.data_dir) / "tokens" / "val.bin", cfg.context_length)
     corpus_offsets = corpus_val.random_offsets(a.corpus_eval_batches * a.batch_size, np.random.default_rng(0))
-    sample_qs = [json.loads(l)["question"] for l in open(Path(a.data_dir) / "sft" / "val.jsonl", encoding="utf-8")][:8]
+    sample_qs = [e["question"] for e in map(json.loads, open(Path(a.data_dir) / "sft" / "val.jsonl", encoding="utf-8"))
+                 if e["category"] not in a.exclude_categories][:8]
 
     opt = configure_optimizer(model, a)
     scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
@@ -211,6 +216,7 @@ def main(argv=None):
             save(last, full=True)
 
     summary = {"steps": step, "epochs": step * a.batch_size / len(train), "best_sft_val_loss": best,
+               "excluded_categories": a.exclude_categories,
                "init": a.init, "sft_train_pairs": len(train), "train_minutes": (elapsed_before + time.time() - t_start) / 60,
                "device": device, "gpu": torch.cuda.get_device_name(0) if device == "cuda" else None}
     json.dump(summary, open(out / "summary.json", "w"), indent=2)

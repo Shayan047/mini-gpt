@@ -118,6 +118,9 @@ def main(argv=None):
     ap.add_argument("--limit", type=int, default=None, help="evaluate only the first N questions (debugging)")
     ap.add_argument("--rescore", action="store_true",
                     help="re-score the answers saved in results/tables/qa_eval_answers.csv instead of generating")
+    ap.add_argument("--add", nargs=2, action="append", metavar=("LABEL", "CHECKPOINT"), default=[],
+                    help="evaluate an extra fine-tuned model (chat prompt) and merge it with the saved answers of "
+                         "the other systems, e.g. --add \"fine-tuned, no declines\" checkpoints/sft_no_decline/ckpt_best.pt")
     a = ap.parse_args(argv)
     torch.manual_seed(0)
     kb = load_kb()
@@ -132,13 +135,15 @@ def main(argv=None):
                 "question": e["question"], "answer": ans, "reference": e.get("reference", ""), **score(e, ans, matcher)}
 
     rows = []
-    if a.rescore:
+    added = [(label, path, "chat") for label, path in a.add]
+    if a.rescore or added:                    # reuse saved answers; regenerate only the added systems
         by_id = {e["id"]: e for e in ev}
         for old in csv.DictReader(open(TABLES / "qa_eval_answers.csv", encoding="utf-8")):
-            if old["id"] in by_id:
+            if old["id"] in by_id and old["system"] not in {s[0] for s in added}:
                 rows.append(row(old["system"], by_id[old["id"]], old["answer"]))
-    else:
-        for name, path, fmt in systems:
+    to_generate = added if (a.rescore or added) else systems
+    if to_generate:
+        for name, path, fmt in to_generate:
             model, _, ck = load_checkpoint(path, "cpu")
             print(f"== {name}: {path} (step {ck['step']})")
             for i, e in enumerate(ev):
@@ -147,7 +152,7 @@ def main(argv=None):
                     print(f"  {i + 1}/{len(ev)}")
 
     # ---- summary table
-    names = [s[0] for s in systems]
+    names = list(dict.fromkeys(r["system"] for r in rows))     # every system present, in order
     def rate(sel, key):
         vals = [r[key] for r in sel if key in r]
         return sum(vals) / len(vals) if vals else None
@@ -205,17 +210,17 @@ def main(argv=None):
     import matplotlib.pyplot as plt
     labels = [g for g, _ in GROUPS]
     fig, ax = plt.subplots(figsize=(10, 4.2), dpi=150)
-    colors = ["#9aa5b1", "#d0d7de", "#1f6feb"]
-    width = 0.27
+    colors = ["#9aa5b1", "#d0d7de", "#1f6feb", "#bf8700", "#2da44e"]
+    width = 0.8 / len(names)
     for k, n in enumerate(names):
         vals = [next(t[n] for t in table if t["group"] == g) or 0 for g in labels]
-        bars = ax.bar([i + (k - 1) * width for i in range(len(labels))], vals, width, label=n, color=colors[k],
+        bars = ax.bar([i + (k - (len(names) - 1) / 2) * width for i in range(len(labels))], vals, width, label=n, color=colors[k],
                       edgecolor="#57606a", linewidth=0.5)
         for b, v in zip(bars, vals):
             ax.text(b.get_x() + b.get_width() / 2, v + 0.01, f"{v:.0%}", ha="center", fontsize=6)
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels([l.replace(", ", ",\n").replace(" (", "\n(") for l in labels], fontsize=7)
-    ax.set_ylim(0, 1.1); ax.set_ylabel("accuracy"); ax.legend(frameon=False, fontsize=8, ncol=3, loc="upper left")
+    ax.set_ylim(0, 1.1); ax.set_ylabel("accuracy"); ax.legend(frameon=False, fontsize=8, ncol=len(names), loc="upper left")
     ax.set_title("Same evaluation questions before and after supervised fine-tuning"); ax.grid(axis="y", alpha=.3)
     fig.tight_layout()
     FIGURES.mkdir(parents=True, exist_ok=True)
@@ -227,7 +232,7 @@ def main(argv=None):
         by_id[r["id"]][r["system"]] = r
     ex = ["# QA examples: same question, pretrained vs. fine-tuned", "",
           "Greedy decoding. ✅/❌ = automatic verdict. Pretrained shown with its native `Q:/A:` prompt.", ""]
-    pre, fin = names[0], names[2]
+    pre, fin = "pretrained (Q/A prompt)", "fine-tuned (chat prompt)"
     for label, cats in GROUPS:
         ids = [i for i, d in by_id.items() if d[pre]["category"] in cats]
         improved = [i for i in ids if by_id[i][fin]["correct"] and not by_id[i][pre]["correct"]][:3]
