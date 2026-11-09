@@ -23,7 +23,9 @@ Both trained models are included in this repository, so **no training is needed 
 ```bash
 git clone https://github.com/Shayan047/mini-gpt.git
 cd mini-gpt
-pip install torch numpy matplotlib        # CPU-only build: add  --index-url https://download.pytorch.org/whl/cpu
+pip install torch numpy matplotlib
+# Linux only, optional: the PyPI build bundles ~2-3 GB of CUDA libraries; for a smaller CPU-only install use
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu   (then: pip install numpy matplotlib)
 ```
 
 All commands are run from the repository root.
