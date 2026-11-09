@@ -11,8 +11,9 @@ Legend: `[ ]` todo · `[x]` done · **(OBS)** = something to observe, measure, o
 1. **SFT ablation without decline examples** (user approved):
    - [x] `--exclude-categories` in `src/finetune.py` (no-decline set: 10,639 train pairs; everything else identical) + [notebooks/03_sft_ablation.ipynb](notebooks/03_sft_ablation.ipynb)
    - [x] `src/evaluate_qa.py --add LABEL CKPT` evaluates only the new model and merges it with saved answers (rescore verified identical)
-   - [ ] **USER:** `git push`, run notebook 03 on Colab (~1–2 min), 📸 log, download `sft_no_decline/ckpt_best.pt` → `checkpoints/sft_no_decline/ckpt_best.pt`, results → `results/`
-   - [ ] Evaluate, compare 4 systems, decide which fine-tuned model to submit
+   - [x] **USER:** `git push`, run notebook 03 on Colab (~1–2 min), 📸 log, download `sft_no_decline/ckpt_best.pt` → `checkpoints/sft_no_decline/ckpt_best.pt`, results → `results/`
+   - [x] Evaluate, compare 4 systems (+ McNemar significance → `results/tables/qa_significance.md`, `src/significance.py`)
+   - [ ] **USER DECISION:** which fine-tuned model to submit (with declines vs. no declines)
 2. Then deliverables: README (install/hardware/inference/examples), demo script for the video, report draft from `report/notes/`, slides, AI Use Statement, member contributions, final reproducibility check.
 - Local checkpoints: `checkpoints/pretrain/` (best = step 1800 + 10 snapshots, run 2), `checkpoints/sft/ckpt_best.pt`. Local CPU torch in `.venv`. All work committed up to the QA evaluation (not pushed by Claude).
 
@@ -203,7 +204,9 @@ _Every figure/table/sample saved for the report gets a line here (file — what 
 - `results/tables/qa_eval_answers.csv` — every answer from every system with verdicts — appendix
 - `results/figures/qa_before_after.png` — grouped bar chart before vs after — Fine-tuning evaluation
 - `results/samples/qa_examples.md` — side-by-side answers (fixed by SFT / still wrong) — Fine-tuning evaluation
-- `report/notes/sft_evaluation.md` — draft text: setup, results, improved / not improved / limitations, research-question summary — Fine-tuning + Research
+- `report/notes/sft_evaluation.md` — draft text: setup, results, improved / not improved / limitations, ablation, significance, research-question summary — Fine-tuning + Research
+- `results/tables/qa_significance.md` — exact McNemar tests between systems — Fine-tuning evaluation / Research
+- `results/figures/sft_no_decline_loss.png`, `results/logs/sft_no_decline_*`, `results/screenshots/sft_no_decline_training_log.png` — ablation run — Research (ablation)
 
 ---
 
@@ -228,3 +231,5 @@ _Record findings here as work progresses (date — observation)._
 - 2026-11-08 — Pretraining run 2 (dense snapshots) reproduced run 1 exactly (identical losses to 4 decimals) → fixed seeds make training deterministic on T4. Good reproducibility evidence.
 - 2026-11-08 — SFT data built (11,056 pairs). Pretrained model given the chat format (never seen special tokens) produces garbled continuations ("s go to an electronics drop-off… - What do I do with moving boxes?") — baseline for the SFT comparison.
 - 2026-11-08 — QA eval: pretrained model already answers known items 100% in Q:/A: format (corpus had FAQ-style docs) → SFT changed the interface, not the knowledge. SFT's decline behaviour over-generalizes to unfamiliar phrasing (held-out 50→38%). Candidate ablation: SFT without decline examples.
+- 2026-11-09 — Ablation (SFT without declines): false declines → 0, casual known-item questions 48.6→62.9% (p=0.06), but held-out only 38.3→41.7% and off-topic questions get confident nonsense. Of 23 questions the decline model declined, the no-decline model answers only 9 correctly → declines mostly land on questions the model can't answer (uncertainty signal). Held-out drop vs pretrained is NOT significant (p=0.14). Significant: overall SFT gain, yes/no, declines (all p<0.001).
+- 2026-11-09 — Note for README: checkpoints saved on GPU must be loaded with map_location (load_checkpoint does this) — plain torch.load fails on CPU-only machines.

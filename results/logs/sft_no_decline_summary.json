@@ -1,0 +1,13 @@
+{
+  "steps": 1000,
+  "epochs": 3.007801485101983,
+  "best_sft_val_loss": 0.2757658049496761,
+  "excluded_categories": [
+    "out_of_scope"
+  ],
+  "init": "/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt",
+  "sft_train_pairs": 10639,
+  "train_minutes": 1.1505486249923706,
+  "device": "cuda",
+  "gpu": "Tesla T4"
+}

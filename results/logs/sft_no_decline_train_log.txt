@@ -1,0 +1,14 @@
+
+=== 2026-11-09 19:07:54 device=cuda amp=True init=/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt (pretrain step 1800) sft_train=10,639 sft_val=442 steps=1000 (~3.0 epochs)
+{"init": "/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt", "data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/sft_no_decline", "batch_size": 32, "max_steps": 1000, "lr": 0.0001, "min_lr": 1e-05, "warmup_steps": 50, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 100, "corpus_eval_batches": 20, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false, "exclude_categories": ["out_of_scope"]}
+step     0 | (pretrained) sft val 0.7708 | corpus val 0.8758
+step   100 | sft train(run) 0.4033 | sft val 0.3262 | corpus val 0.9819 | 0.1 min  *best*
+step   200 | sft train(run) 0.3280 | sft val 0.3008 | corpus val 1.0425 | 0.2 min  *best*
+step   300 | sft train(run) 0.3169 | sft val 0.2917 | corpus val 1.1103 | 0.3 min  *best*
+step   400 | sft train(run) 0.2918 | sft val 0.2907 | corpus val 1.1726 | 0.4 min  *best*
+step   500 | sft train(run) 0.2825 | sft val 0.2867 | corpus val 1.2258 | 0.5 min  *best*
+step   600 | sft train(run) 0.2783 | sft val 0.2818 | corpus val 1.2584 | 0.6 min  *best*
+step   700 | sft train(run) 0.2713 | sft val 0.2801 | corpus val 1.2862 | 0.7 min  *best*
+step   800 | sft train(run) 0.2592 | sft val 0.2779 | corpus val 1.2983 | 0.8 min  *best*
+step   900 | sft train(run) 0.2542 | sft val 0.2772 | corpus val 1.3087 | 1.0 min  *best*
+step  1000 | sft train(run) 0.2577 | sft val 0.2758 | corpus val 1.3220 | 1.1 min  *best*

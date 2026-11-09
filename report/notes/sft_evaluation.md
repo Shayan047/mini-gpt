@@ -98,10 +98,61 @@ Source: `results/tables/qa_eval.md` and `results/figures/qa_before_after.png`.
   - The free-form and held-out groups are small (15–60 questions), so differences of a few questions are not significant.
   - The pretrained model is given a hand-written answer cut-off that the fine-tuned model does not need.
 
+## Ablation: fine-tuning without the decline examples
+
+- **Hypothesis:** the roughly 4% out-of-scope "decline" examples taught the model to decline anything unfamiliar, and that caused the held-out and free-form problems.
+- **Experiment:** a second fine-tuning run with everything identical (same pretrained start, seed, 1,000 steps, learning rate), except that the 417 out-of-scope examples were removed, leaving 10,639 pairs. Run on a T4 in 1.2 minutes. Files: [notebooks/03_sft_ablation.ipynb](../../notebooks/03_sft_ablation.ipynb), `results/logs/sft_no_decline_*`.
+
+| Question group | Pretrained (Q/A) | Fine-tuned | **Fine-tuned, no declines** |
+|---|---:|---:|---:|
+| Known items, unseen wording | 100.0% | 99.7% | 100.0% |
+| Known items, yes/no | 66.7% | 85.0% | 83.7% |
+| Held-out items | 50.0% | 38.3% | 41.7% |
+| Free-form, known items | 45.7% | 48.6% | **62.9%** |
+| Free-form, held-out items | 26.7% | 26.7% | 20.0% |
+| Topic facts | 80.0% | 76.4% | 74.5% |
+| Bins & material rules | 46.4% | 67.9% | 71.4% |
+| Out-of-scope (declines) | 0% | 75.0% | **0%** |
+| **All** | 76.3% | **82.3%** | 80.7% |
+| False declines on in-domain questions | 0% | 3.6% | 0% |
+| Forgetting (pretraining-corpus loss after fine-tuning) | 0.876 | 1.339 | 1.322 |
+
+### What the ablation shows
+
+1. **The decline examples cause the false declines, but not the held-out drop.**
+   - Without them, false declines fall to 0%, yet held-out accuracy recovers only from 38.3% to 41.7%. It stays below the pretrained model's 50%.
+   - Of the 23 in-domain questions the original fine-tuned model declined, the no-decline model answers only **9 correctly (39%)**. The other 14 get confidently wrong answers, e.g. *"How do I dispose of corn cobs?"* → *"If you live in an apartment, you share bins with your building."*
+   - So the model mostly declined questions it could not answer anyway. Its declines partly act as an **uncertainty signal**.
+2. **The cost of declining is concentrated in casual wording of known items:** 48.6% → 62.9% when declines are removed. Five questions flipped to correct and none flipped to wrong, a trend at p = 0.06. Examples: *"my kid broke a drinking glass, which bin?"* and *"a fluorescent tube broke, where does it go"*.
+3. **Without decline training, off-topic questions get confident nonsense:**
+   - *"What is the capital of Italy?"* → *"…leaves are collected in the green organics cart."*
+   - *"What's a good exercise routine?"* → *"Exercise equipment goes out through bulky item collection."*
+4. **Forgetting is the same with and without declines** (1.34 vs 1.32), so it comes from fine-tuning itself.
+
+## Statistical significance
+
+Source: `results/tables/qa_significance.md`; exact McNemar tests on the same questions.
+
+**Significant** (p < 0.05):
+- the overall improvement from fine-tuning (+74 / −35 questions, p < 0.001)
+- yes/no logic (+35 / −8, p < 0.001)
+- declining off-topic questions (+15 / −0, p < 0.001)
+
+**Not significant** with these group sizes:
+- the held-out drop (p = 0.14)
+- topic facts (p = 0.79)
+- the bins & rules gain (p = 0.07)
+- free-form changes (p ≥ 0.06)
+
+The report should present these as tendencies, not effects.
+
 ## Research question: summary
 
 *How well does a small Transformer generalize waste-sorting rules to unseen items and unseen question wordings, and how does supervised fine-tuning change that?*
 
 - **Unseen wordings of known facts:** generalization is excellent before and after fine-tuning: 100% and 99.7% on open questions, with 0% false declines.
 - **Unseen items:** generalization is weak, at 37–50% across the probe and QA tasks (chance 12.5%, majority 30%). It works only when the item name shares a **material word** with known items (glass, milk cartons, tins, batteries).
-- **What fine-tuning changed:** it taught the model *how to answer* — the chat format, answering the asked item, yes/no logic, stopping and declining. It did not make the model better at *what* it knows about unseen items. Combined with the decline behaviour, held-out accuracy actually fell.
+- **What fine-tuning changed:** it taught the model *how to answer* — the chat format, answering the asked item, yes/no logic (significant), stopping and declining (significant). It did not make the model better at *what* it knows about unseen items.
+  - Held-out accuracy fell from 50% to 38–42%, which is not significant.
+  - The ablation shows this drop is **not** mainly caused by decline training.
+  - Decline training does trade about 14 points of casual-question coverage for the ability to refuse off-topic questions. Its declines mostly land on questions the model would have answered wrongly anyway.
