@@ -62,7 +62,7 @@ Type `quit` to exit.
 ## 3:30–4:15 · Before vs. after fine-tuning (same question, both models)
 
 ```bash
-python -m src.generate --ckpt models/pretrained.pt --temperature 0 --max-new-tokens 60 --prompt "Q: Can I put my old electric kettle in the garbage?
+python -m src.generate --ckpt models/pretrained.pt --temperature 0 --max-new-tokens 22 --prompt "Q: Can I put my old electric kettle in the garbage?
 A:"
 python -m src.generate --ckpt models/finetuned.pt --qa --temperature 0 --prompt "Can I put my old electric kettle in the garbage?"
 ```
