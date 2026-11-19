@@ -36,14 +36,16 @@ def get_args(argv=None):
     p.add_argument("--data-dir", default=str(ROOT / "data"))
     p.add_argument("--out-dir", default=str(ROOT / "checkpoints" / "sft"))
     p.add_argument("--batch-size", type=int, default=32)
-    p.add_argument("--max-steps", type=int, default=1000)          # ~2.9 epochs over 11k pairs
-    p.add_argument("--lr", type=float, default=1e-4)
-    p.add_argument("--min-lr", type=float, default=1e-5)
-    p.add_argument("--warmup-steps", type=int, default=50)
+    p.add_argument("--max-steps", type=int, default=1500)          # v1.1: a bit longer with replay
+    p.add_argument("--lr", type=float, default=8e-5)
+    p.add_argument("--min-lr", type=float, default=8e-6)
+    p.add_argument("--warmup-steps", type=int, default=75)
     p.add_argument("--weight-decay", type=float, default=0.1)
     p.add_argument("--grad-clip", type=float, default=1.0)
     p.add_argument("--eval-every", type=int, default=100)
     p.add_argument("--corpus-eval-batches", type=int, default=20)
+    p.add_argument("--replay-ratio", type=float, default=0.15,
+                   help="fraction of steps that train on pretrain corpus chunks (full next-token loss) to reduce forgetting")
     p.add_argument("--seed", type=int, default=1337)
     p.add_argument("--device", default="auto")
     p.add_argument("--no-amp", action="store_true")
@@ -131,7 +133,9 @@ def main(argv=None):
     train = encode_pairs(Path(a.data_dir) / "sft" / "train.jsonl", tok, cfg.context_length, a.exclude_categories)
     val = encode_pairs(Path(a.data_dir) / "sft" / "val.jsonl", tok, cfg.context_length, a.exclude_categories)
     corpus_val = TokenData(Path(a.data_dir) / "tokens" / "val.bin", cfg.context_length)
+    corpus_train = TokenData(Path(a.data_dir) / "tokens" / "train.bin", cfg.context_length)
     corpus_offsets = corpus_val.random_offsets(a.corpus_eval_batches * a.batch_size, np.random.default_rng(0))
+    replay_rng = np.random.default_rng(a.seed + 7)
     sample_qs = [e["question"] for e in map(json.loads, open(Path(a.data_dir) / "sft" / "val.jsonl", encoding="utf-8"))
                  if e["category"] not in a.exclude_categories][:8]
 
@@ -148,7 +152,8 @@ def main(argv=None):
         print(f"resumed from step {step}")
 
     header = (f"device={device} amp={use_amp} init={a.init} (pretrain step {init.get('step')}) sft_train={len(train):,} "
-              f"sft_val={len(val):,} steps={a.max_steps} (~{a.max_steps * a.batch_size / len(train):.1f} epochs)")
+              f"sft_val={len(val):,} steps={a.max_steps} replay={a.replay_ratio:.0%} "
+              f"(~{a.max_steps * a.batch_size * (1 - a.replay_ratio) / len(train):.1f} SFT epochs)")
     print(header)
     log_txt = open(out / "train_log.txt", "a", encoding="utf-8")
     log_txt.write(f"\n=== {time.strftime('%Y-%m-%d %H:%M:%S')} {header}\n{json.dumps(vars(a))}\n")
@@ -182,11 +187,17 @@ def main(argv=None):
     while step < a.max_steps:
         for g in opt.param_groups:
             g["lr"] = lr_at(step, a)
-        if pos + a.batch_size > len(order):
-            rng.shuffle(order)
-            pos = 0
-        x, y, m = make_batch([train[i] for i in order[pos:pos + a.batch_size]], tok.pad_id, device)
-        pos += a.batch_size
+        use_replay = a.replay_ratio > 0 and rng.random() < a.replay_ratio
+        if use_replay:
+            idx = corpus_train.random_offsets(a.batch_size, replay_rng)
+            x, y = corpus_train.batch(idx, device)
+            m = None
+        else:
+            if pos + a.batch_size > len(order):
+                rng.shuffle(order)
+                pos = 0
+            x, y, m = make_batch([train[i] for i in order[pos:pos + a.batch_size]], tok.pad_id, device)
+            pos += a.batch_size
         with amp_ctx():
             _, loss = model(x, y, loss_mask=m)
         opt.zero_grad(set_to_none=True)

@@ -29,7 +29,9 @@ from .doctypes import DocGen
 from .expand import Bank, cap
 
 SFT_DIR, EVAL_DIR = ROOT / "data" / "sft", ROOT / "data" / "eval"
-N_PER_ITEM, N_PER_FACT, N_PER_STREAM, N_PER_RULE = 64, 22, 30, 20
+# v1.1: slightly fewer copies per item (more items), more rule/material drills for transfer.
+N_PER_ITEM, N_PER_FACT, N_PER_STREAM, N_PER_RULE = 48, 22, 30, 48
+N_PER_MATERIAL = 24
 N_OOS_GENERAL, N_OOS_COMMERCIAL = 10, 15
 VAL_FRACTION = 0.04
 SFT_ANSWER = {"p_note": 0.45, "p_reason": 0.15}     # keep fine-tuning answers short and consistent
@@ -98,6 +100,26 @@ def build_sft(kb, rng):
             if exs and rng.random() < 0.6:
                 a += " For example: " + ", ".join(i["name"] for i in rng.sample(exs, min(len(exs), rng.randint(1, 3)))) + "."
             ex.append({"category": "rule", "question": vary(rng.choice(qs[:-1]), rng), "answer": a, "rule_id": rid})
+    # Material-class questions (no brand/item name): teach rule transfer without memorizing names.
+    for rid, rule in gen.rules.items():
+        mats = sorted({i.get("material") for i in core if i["rule"] == rid and i.get("material")})
+        if not mats:
+            continue
+        dest = rng.choice(L.BIN_NAME[rule["stream"]])
+        for _ in range(N_PER_MATERIAL):
+            mat = rng.choice(mats)
+            q = rng.choice([
+                f"Where do {mat} items go?",
+                f"How should I dispose of something made of {mat}?",
+                f"What bin is correct for {mat}?",
+                f"If an item is {mat}, where does it go?",
+                f"Apply the Tidewell rule for {mat}.",
+            ])
+            a = gen.rule_text(rid) + f" Destination: {dest}."
+            exs = [i for i in core if i["rule"] == rid]
+            if exs and rng.random() < 0.5:
+                a += " For example: " + ", ".join(i["name"] for i in rng.sample(exs, min(len(exs), 2))) + "."
+            ex.append({"category": "material", "question": vary(q, rng), "answer": a, "rule_id": rid, "material": mat})
     for q in C.OOS_GENERAL_TRAIN:
         for _ in range(N_OOS_GENERAL):
             ex.append({"category": "out_of_scope", "question": vary(q, rng), "answer": rng.choice(C.DECLINE_GENERAL)})
@@ -192,6 +214,14 @@ def main():
 
     # ---- leakage checks
     norm = lambda s: re.sub(r"[^a-z0-9 ]", "", s.lower()).strip()
+    # Prefer a clean eval set: drop rare SFT collisions (e.g. stream template == item template).
+    eval_qs = {norm(e["question"]) for e in ev}
+    before = len(train) + len(val)
+    train = [e for e in train if norm(e["question"]) not in eval_qs]
+    val = [e for e in val if norm(e["question"]) not in eval_qs]
+    dropped = before - len(train) - len(val)
+    if dropped:
+        print(f"dropped {dropped} SFT pair(s) that collided with evaluation questions")
     sft_qs = {norm(e["question"]) for e in train + val}
     overlap = [e for e in ev if norm(e["question"]) in sft_qs]
     held_ids = {i["id"] for i in kb["items"] if i["split"] == "heldout"}

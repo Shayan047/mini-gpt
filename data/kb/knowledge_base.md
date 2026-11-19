@@ -161,6 +161,7 @@ Medications and medical sharps.
 | power tools | drills, cordless tools | electronics | R10 | Remove the batteries if you can and drop them off separately. |  |
 | printers | scanners, fax machines | electronics | R10 |  |  |
 | small kitchen appliances | toasters, blenders, coffee makers, microwaves | electronics | R10 | If it is still in good condition, donate it instead. |  |
+| smart speakers | voice assistants, wifi speakers | electronics | R10 | Back up and wipe your personal data first. |  |
 | string lights | holiday lights, Christmas lights, fairy lights | electronics | R10 |  |  |
 | televisions and monitors | TVs, computer monitors, flat screens | electronics | R10 |  |  |
 | vapes | e-cigarettes, vape pens | electronics | R10 |  | Vapes contain lithium batteries and must never go in the garbage. |
@@ -187,6 +188,7 @@ Medications and medical sharps.
 | foam takeout containers | styrofoam containers, foam cups | garbage | R15 | Scrape any leftover food into the green organics cart. |  |
 | frozen food bags | frozen vegetable bags, bread bags | garbage | R04 | Empty it completely. |  |
 | garden hoses | hoses | garbage | R17 | Cut or break it so it fits in the cart with the lid closed. | Hoses wrap around sorting machines, so never put them in recycling. |
+| glass cookware lids | casserole lids, baking dish lids | garbage | R07 | Wrap it in newspaper or put it in a box labelled as broken glass. |  |
 | glass ovenware | baking dishes, glass casserole dishes | garbage | R07 | If it is still in good condition, donate it instead.; Wrap it in newspaper or put it in a box labelled as broken glass. |  |
 | incandescent light bulbs | regular light bulbs, halogen bulbs | garbage | R07 | Wrap it in newspaper or put it in a box labelled as broken glass. | Fluorescent and CFL bulbs are hazardous waste, and LED bulbs are electronics. |
 | mirrors | small mirrors, picture frame glass | garbage | R07 | Wrap it in newspaper or put it in a box labelled as broken glass. | Large mirrors that do not fit in the cart are bulky items. |
@@ -195,6 +197,7 @@ Medications and medical sharps.
 | pens and markers | ballpoint pens, felt markers, highlighters | garbage | R17 |  |  |
 | pet waste | dog poop, dog waste | garbage | R19 | Put it in a tied bag before it goes in the cart. | Pet waste goes in the garbage, not the green organics cart. |
 | plastic bags | plastic grocery bags, shopping bags, produce bags | garbage | R04 |  | Plastic bags tangle sorting machines. Reuse them as long as you can, then put them in the garbage. |
+| plastic buckets | utility buckets, cleaning buckets | garbage | R17 | Empty it completely. |  |
 | plastic cutlery | plastic forks, plastic spoons, plastic knives | garbage | R18 |  |  |
 | plastic hangers | clothes hangers | garbage | R17 | If it is still in good condition, donate it instead. |  |
 | plastic straws | drinking straws | garbage | R18 |  |  |
@@ -209,6 +212,7 @@ Medications and medical sharps.
 | vacuum bags and dust | vacuum cleaner dust, floor sweepings | garbage | R19 | Put it in a tied bag before it goes in the cart. |  |
 | wet wipes | baby wipes, cleaning wipes, makeup wipes | garbage | R19 |  | Never flush wipes, even ones labelled flushable. |
 | antifreeze | coolant | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
+| camera batteries | camcorder batteries, camera battery packs | hazardous | R11 | Cover the terminals with clear tape. |  |
 | car batteries | vehicle batteries, lead-acid batteries | hazardous | R11 |  |  |
 | fire extinguishers | extinguishers | hazardous | R12 |  |  |
 | fluorescent tubes and CFL bulbs | CFL bulbs, fluorescent bulbs, compact fluorescent bulbs | hazardous | R12 |  | They contain mercury, so do not break them. |
@@ -221,28 +225,36 @@ Medications and medical sharps.
 | motor oil | used motor oil, oil filters | hazardous | R12 | Keep it in its original, labelled container with the lid sealed. |  |
 | paint thinner and solvents | paint thinner, turpentine, mineral spirits | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
 | pesticides | insecticides, herbicides, bug spray | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
+| photographic chemicals | photo developer, darkroom chemicals | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
 | pool chemicals | chlorine tablets, pool chlorine | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
+| power tool batteries | drill batteries, cordless tool packs | hazardous | R11 | Cover the terminals with clear tape. |  |
 | propane tanks | barbecue tanks, camping fuel cylinders, propane cylinders | hazardous | R12 |  | Propane tanks can explode if crushed in a collection truck. |
+| solvent-based hobby glues | model cement, contact cement | hazardous | R12 | Keep it in its original, labelled container with the lid sealed.; Never mix it with other products. |  |
 | branches and twigs | tree branches, hedge trimmings, pruning waste | organics | R09 | Cut or break it so it fits in the cart with the lid closed. |  |
 | bread, pasta and rice | stale bread, leftover pasta, cooked rice | organics | R08 | Take the food out of any packaging first. |  |
+| buttery parchment paper | greasy baking paper, oiled parchment sheets | organics | R02 | Scrape any leftover food into the green organics cart. |  |
 | coffee grounds | paper coffee filters, used coffee | organics | R08 |  | Paper filters can go in with the grounds. Single-serve coffee pods go in the garbage. |
 | cooking grease | cooking oil, bacon fat, frying oil | organics | R08 | Let it cool completely for several days in a metal container. | Never pour grease down the drain. Let small amounts harden, or soak them up with paper towel, and put them in organics. Large amounts of used cooking oil go to a drop-off depot. |
 | dairy products | cheese, spoiled milk solids, leftover yogurt | organics | R08 | Take the food out of any packaging first. | Pour small amounts of liquid milk down the drain; solids go in organics. |
 | eggshells | egg shells | organics | R08 |  |  |
 | fruit and vegetable scraps | peels, apple cores, banana peels, vegetable trimmings | organics | R08 |  |  |
 | grass clippings | lawn clippings, cut grass | organics | R09 |  | Leaving clippings on the lawn is an even better option. |
+| greasy takeout boxes | oily cardboard food boxes, stained takeout cartons | organics | R02 | Scrape any leftover food into the green organics cart. |  |
 | hair and pet fur | pet hair, hair clippings | organics | - |  |  |
 | holiday trees | Christmas trees, real trees | organics | R09 | Remove all lights, decorations and the stand.; Cut or break it so it fits in the cart with the lid closed. | Trees can be cut to fit in the green cart or set out whole on the holiday tree collection days announced each winter. Artificial trees go in the garbage or to bulky item pickup. |
 | houseplants and cut flowers | dead plants, old flowers, bouquets | organics | R09 |  | Remove any plastic pot, wrapping or elastic bands first. |
 | leaves | fallen leaves, autumn leaves | organics | R09 |  | Extra leaves can be set out in paper yard waste bags beside the green cart. |
 | meat, fish and bones | chicken bones, fish scraps, meat scraps | organics | R08 | Take the food out of any packaging first. | Wrapping meat scraps in newspaper helps control odours. |
 | nut shells | peanut shells, pistachio shells | organics | R08 |  |  |
+| onion skins | garlic skins, vegetable peelings | organics | R08 |  |  |
 | pet food | dry pet food, old kibble | organics | R08 | Take the food out of any packaging first. |  |
 | pizza boxes | greasy pizza boxes | organics | R02 | Scrape any leftover food into the green organics cart. | Greasy pizza boxes go in organics. A clean, grease-free lid can be torn off and recycled. |
 | pumpkins | jack-o'-lanterns, carved pumpkins | organics | R08 | Remove all lights, decorations and the stand. | Remove candles and any paint or decorations. |
 | shredded paper | paper shreds | organics | - |  | Loose shreds jam sorting equipment, so shredded paper goes in the green organics cart instead of recycling. |
+| shrimp shells | seafood shells, crab shells | organics | R08 |  |  |
 | spoiled leftovers | old leftovers, expired food, moldy food | organics | R08 | Take the food out of any packaging first. |  |
 | tea bags | loose tea leaves, used tea | organics | R08 |  |  |
+| used muffin liners | paper cupcake liners, greasy baking cups | organics | R02 | Scrape any leftover food into the green organics cart. |  |
 | used paper napkins | paper towels, used tissues, kitchen roll | organics | R02 |  |  |
 | aerosol cans | spray cans, hairspray cans, spray paint cans | recycling | R05 | Empty it completely. | Only completely empty aerosol cans go in recycling. Cans that still contain product are hazardous waste. |
 | aluminum cans | soda cans, pop cans, beer cans, drink cans | recycling | R05 | Empty it completely.; Give it a quick rinse. |  |
@@ -251,11 +263,20 @@ Medications and medical sharps.
 | berry clamshells | clear plastic clamshells, salad containers | recycling | R03 | Empty it completely.; Give it a quick rinse. |  |
 | cardboard boxes | shipping boxes, moving boxes, delivery boxes | recycling | R01 | Empty it completely.; Flatten it.; Keep it clean and dry. | Small amounts of tape and shipping labels are fine to leave on. |
 | cereal boxes | cracker boxes, boxboard boxes | recycling | R01 | Remove the plastic liner and put the liner in the garbage.; Flatten it. |  |
+| coconut water cartons | boxed coconut water, coconut drink cartons | recycling | R20 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| coffee cans | metal coffee tins, empty coffee cans | recycling | R05 | Empty it completely.; Give it a quick rinse. |  |
+| cream cartons | whipping cream cartons, cooking cream cartons | recycling | R20 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | dish soap bottles | hand soap bottles | recycling | R03 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| eggnog cartons | holiday drink cartons, seasonal eggnog cartons | recycling | R20 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| empty prescription vials | empty pill bottles, empty medicine vials | recycling | R03 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. | Only empty plastic vials go in recycling; leftover medications go to pharmacy take-back. |
 | food cans | tin cans, soup cans, pet food cans | recycling | R05 | Empty it completely.; Give it a quick rinse. | Put the lid inside the can and pinch the top closed so the sharp edge is covered. |
 | glass bottles | wine bottles, beer bottles | recycling | R06 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | glass jars | pasta sauce jars, pickle jars, jam jars | recycling | R06 | Scrape any leftover food into the green organics cart.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| glass kombucha bottles | fermented tea bottles, glass kombucha jars | recycling | R06 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| glass sparkling water bottles | glass seltzer bottles, carbonated water bottles | recycling | R06 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
+| glass spice jars | empty spice jars, herb jars | recycling | R06 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | greeting cards | birthday cards, holiday cards | recycling | R01 | Keep it clean and dry. | Cards with glitter, foil, batteries or sound chips go in the garbage. |
+| honey jars | glass honey pots, empty honey jars | recycling | R06 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | juice boxes | drink boxes | recycling | R20 | Empty it completely. | Push the straw inside the box. |
 | junk mail | envelopes, mail, window envelopes | recycling | R01 | Keep it clean and dry.; Place it loose in the cart, not in a bag. | Envelopes with plastic windows are accepted. |
 | laundry detergent jugs | detergent bottles, fabric softener jugs | recycling | R03 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
@@ -273,8 +294,10 @@ Medications and medical sharps.
 | plastic soda bottles | pop bottles, soft drink bottles | recycling | R03 | Empty it completely.; Put the cap or lid back on. |  |
 | plastic takeout containers | plastic food containers, deli containers | recycling | R03 | Scrape any leftover food into the green organics cart.; Give it a quick rinse. | Foam takeout containers are not recyclable and go in the garbage. |
 | plastic water bottles | plastic bottles, drink bottles | recycling | R03 | Empty it completely.; Put the cap or lid back on. |  |
+| protein shake cartons | boxed protein drinks, meal-replacement cartons | recycling | R20 | Empty it completely.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | shampoo bottles | conditioner bottles, body wash bottles | recycling | R03 | Empty it completely.; Give it a quick rinse. | Pumps contain metal springs, so remove pumps and put them in the garbage. |
 | toilet paper rolls | paper towel rolls, cardboard tubes | recycling | R01 | Place it loose in the cart, not in a bag. |  |
+| tomato paste cans | tomato sauce cans, puree cans | recycling | R05 | Empty it completely.; Give it a quick rinse. |  |
 | wrapping paper | gift wrap, tissue gift paper | recycling | R01 | Keep it clean and dry. | Plain wrapping paper is recyclable, but foil, glitter and metallic wrap go in the garbage. Ribbons and bows go in the garbage too. |
 | yogurt containers | yogurt tubs, sour cream tubs | recycling | R03 | Scrape any leftover food into the green organics cart.; Give it a quick rinse.; Put the cap or lid back on. |  |
 | medications | expired medicine, pills, prescription drugs, unused medication | takeback | R16 |  | Never flush medications or put them in the garbage. |
@@ -282,8 +305,11 @@ Medications and medical sharps.
 | bed sheets and towels | blankets, towels, pillowcases, linens | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. |  |
 | clothing | clothes, old clothes, jackets, t-shirts | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. | Even torn or stained clothing can go to a textile drop-off bin. |
 | curtains | drapes, tablecloths | textiles | R14 | Make sure it is clean and dry and bring it in a tied bag. |  |
+| fabric gloves | cloth gloves, cotton work gloves | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. |  |
+| fabric remnants | sewing scraps, cloth leftovers | textiles | R14 | Make sure it is clean and dry and bring it in a tied bag. |  |
 | handbags and belts | purses, backpacks, belts | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. |  |
 | shoes | boots, sneakers, sandals | textiles | R14 | If it is still in good condition, donate it instead.; Tie pairs together.; Make sure it is clean and dry and bring it in a tied bag. |  |
+| socks | mismatched socks, worn socks | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. |  |
 | stuffed animals | plush toys, teddy bears | textiles | R14 | If it is still in good condition, donate it instead.; Make sure it is clean and dry and bring it in a tied bag. |  |
 
 ## Held-out items (never in corpus or fine-tuning; evaluation only)
