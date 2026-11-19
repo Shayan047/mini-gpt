@@ -11,16 +11,16 @@
   ],
   "splits": {
     "train": {
-      "documents": 6135,
-      "tokens": 1184188
+      "documents": 12135,
+      "tokens": 2501119
     },
     "val": {
-      "documents": 327,
-      "tokens": 62115
+      "documents": 507,
+      "tokens": 105600
     },
     "test": {
-      "documents": 327,
-      "tokens": 64219
+      "documents": 507,
+      "tokens": 103188
     }
   }
 }

@@ -1,148 +1,174 @@
 item_id,name,stream,docs_featuring,text_mentions
-cardboard_box,cardboard boxes,recycling,121,456
-cereal_box,cereal boxes,recycling,123,233
-newspaper,newspapers,recycling,121,232
-magazine,magazines,recycling,123,223
-office_paper,office paper,recycling,120,249
-junk_mail,junk mail,recycling,119,363
-paper_bag,paper bags,recycling,121,324
-egg_carton_paper,paper egg cartons,recycling,124,215
-paper_tube,toilet paper rolls,recycling,121,226
-book,old books,recycling,119,230
-greeting_card,greeting cards,recycling,121,231
-wrapping_paper,wrapping paper,recycling,123,413
-shredded_paper,shredded paper,organics,120,259
-receipt,receipts,garbage,125,307
-carton,milk cartons,recycling,121,312
-juice_box,juice boxes,recycling,123,266
-pizza_box,pizza boxes,organics,119,321
-paper_cup,paper coffee cups,garbage,123,231
-water_bottle,plastic water bottles,recycling,121,352
-soda_bottle,plastic soda bottles,recycling,122,220
-milk_jug,plastic milk jugs,recycling,123,224
-detergent_jug,laundry detergent jugs,recycling,121,233
-shampoo_bottle,shampoo bottles,recycling,120,236
-yogurt_container,yogurt containers,recycling,123,241
-takeout_container,plastic takeout containers,recycling,123,241
-clamshell,berry clamshells,recycling,122,230
-peanut_butter_jar,plastic peanut butter jars,recycling,122,219
-margarine_tub,margarine tubs,recycling,119,229
-dish_soap_bottle,dish soap bottles,recycling,119,208
-plant_pot,plastic plant pots,recycling,120,238
-plastic_cutlery,plastic cutlery,garbage,124,357
-straw,plastic straws,garbage,125,246
-plastic_bag,plastic bags,garbage,124,588
-plastic_wrap,plastic wrap,garbage,123,235
-chip_bag,chip bags,garbage,124,235
-candy_wrapper,candy wrappers,garbage,124,239
-food_pouch,squeeze pouches,garbage,124,241
-frozen_bag,frozen food bags,garbage,124,234
-foam_takeout,foam takeout containers,garbage,125,295
-foam_egg_carton,foam egg cartons,garbage,123,279
-packing_peanuts,packing peanuts,garbage,125,314
-foam_block,foam packaging blocks,garbage,124,248
-plastic_toy,plastic toys,garbage,125,249
-hanger,plastic hangers,garbage,125,232
-garden_hose,garden hoses,garbage,125,265
-toothpaste_tube,toothpaste tubes,garbage,124,221
-toothbrush,toothbrushes,garbage,125,485
-razor,disposable razors,garbage,124,230
-cd,CDs and DVDs,garbage,123,227
-blister_pack,blister packs,garbage,125,231
-aluminum_can,aluminum cans,recycling,121,269
-food_can,food cans,recycling,118,249
-aluminum_foil,aluminum foil,recycling,121,283
-foil_tray,aluminum trays,recycling,120,227
-aerosol_can,aerosol cans,recycling,122,314
-glass_bottle,glass bottles,recycling,122,547
-glass_jar,glass jars,recycling,122,290
-drinking_glass,drinking glasses,garbage,124,298
-broken_glass,broken glass,garbage,124,419
-mirror,mirrors,garbage,125,307
-ceramics,ceramic dishes,garbage,125,291
-ovenware,glass ovenware,garbage,124,246
-incandescent_bulb,incandescent light bulbs,garbage,125,239
-fruit_veg_scraps,fruit and vegetable scraps,organics,119,377
-meat_bones,"meat, fish and bones",organics,121,315
-dairy,dairy products,organics,121,235
-bread_grains,"bread, pasta and rice",organics,121,225
-eggshells,eggshells,organics,122,282
-coffee_grounds,coffee grounds,organics,121,303
-tea_bags,tea bags,organics,119,228
-napkins,used paper napkins,organics,118,276
-leftovers,spoiled leftovers,organics,118,216
-cooking_grease,cooking grease,organics,119,322
-nut_shells,nut shells,organics,116,222
-pet_food,pet food,organics,119,254
-grass_clippings,grass clippings,organics,121,321
-leaves,leaves,organics,119,689
-branches,branches and twigs,organics,119,264
-plants_flowers,houseplants and cut flowers,organics,118,262
-pumpkin,pumpkins,organics,118,243
-holiday_tree,holiday trees,organics,121,330
-hair,hair and pet fur,organics,122,209
-diapers,diapers,garbage,124,422
-pet_waste,pet waste,garbage,124,390
-cat_litter,cat litter,garbage,124,220
-vacuum_dust,vacuum bags and dust,garbage,124,203
-cigarette_butts,cigarette butts,garbage,124,273
-ashes,ashes,garbage,123,313
-dryer_lint,dryer lint,garbage,125,225
-gum,chewing gum,garbage,124,225
-wipes,wet wipes,garbage,124,251
-cotton_swabs,cotton swabs,garbage,124,235
-sponges,sponges,garbage,124,229
-rubber_gloves,rubber gloves,garbage,124,221
-coffee_pods,coffee pods,garbage,125,297
-pens,pens and markers,garbage,124,239
-bandages,bandages,garbage,125,218
-umbrella,broken umbrellas,garbage,124,222
-paint,leftover paint,hazardous,115,335
-solvents,paint thinner and solvents,hazardous,117,248
-pesticides,pesticides,hazardous,118,237
-motor_oil,motor oil,hazardous,118,232
-antifreeze,antifreeze,hazardous,117,217
-propane,propane tanks,hazardous,117,305
-household_batteries,household batteries,hazardous,117,275
-lithium_batteries,lithium-ion batteries,hazardous,117,330
-car_battery,car batteries,hazardous,117,232
-fluorescent,fluorescent tubes and CFL bulbs,hazardous,115,306
-thermometer,mercury thermometers,hazardous,116,207
-pool_chemicals,pool chemicals,hazardous,116,227
-cleaners,household cleaners,hazardous,117,245
-gasoline,gasoline and lighter fluid,hazardous,116,261
-fire_extinguisher,fire extinguishers,hazardous,117,206
-cell_phone,cell phones,electronics,117,262
-computer,computers and laptops,electronics,116,232
-tv,televisions and monitors,electronics,117,229
-printer,printers,electronics,118,237
-cords,cords and cables,electronics,116,240
-small_appliance,small kitchen appliances,electronics,116,221
-hair_dryer,hair dryers,electronics,116,235
-vape,vapes,electronics,119,275
-power_tools,power tools,electronics,118,220
-string_lights,string lights,electronics,118,250
-led_bulb,LED light bulbs,electronics,117,295
-game_console,game consoles,electronics,118,249
-headphones,headphones,electronics,116,225
-electric_toothbrush,electric toothbrushes,electronics,118,271
-sofa,sofas,bulky,123,245
-mattress,mattresses,bulky,122,470
-table_chairs,tables and chairs,bulky,121,231
-dresser,dressers,bulky,124,260
-fridge,refrigerators and freezers,bulky,124,245
-large_appliance,large appliances,bulky,123,544
-air_conditioner,air conditioners,bulky,122,248
-carpet,carpets and rugs,bulky,123,233
-bbq,barbecue grills,bulky,123,229
-bicycle,bicycles,bulky,124,265
-exercise_equipment,exercise equipment,bulky,125,240
-water_heater,water heaters,bulky,123,224
-clothing,clothing,textiles,111,583
-shoes,shoes,textiles,109,273
-linens,bed sheets and towels,textiles,109,308
-curtains,curtains,textiles,114,221
-bags_belts,handbags and belts,textiles,114,240
-stuffed_toys,stuffed animals,textiles,112,207
-medications,medications,takeback,115,506
-sharps,needles and sharps,takeback,115,427
+cardboard_box,cardboard boxes,recycling,193,825
+cereal_box,cereal boxes,recycling,196,397
+newspaper,newspapers,recycling,198,397
+magazine,magazines,recycling,204,426
+office_paper,office paper,recycling,199,421
+junk_mail,junk mail,recycling,190,789
+paper_bag,paper bags,recycling,200,554
+egg_carton_paper,paper egg cartons,recycling,205,384
+paper_tube,toilet paper rolls,recycling,202,393
+book,old books,recycling,204,393
+greeting_card,greeting cards,recycling,200,406
+wrapping_paper,wrapping paper,recycling,203,658
+shredded_paper,shredded paper,organics,170,371
+receipt,receipts,garbage,193,458
+carton,milk cartons,recycling,220,713
+juice_box,juice boxes,recycling,217,473
+pizza_box,pizza boxes,organics,213,570
+paper_cup,paper coffee cups,garbage,200,409
+water_bottle,plastic water bottles,recycling,193,675
+soda_bottle,plastic soda bottles,recycling,195,387
+milk_jug,plastic milk jugs,recycling,200,380
+detergent_jug,laundry detergent jugs,recycling,200,399
+shampoo_bottle,shampoo bottles,recycling,198,398
+yogurt_container,yogurt containers,recycling,195,386
+takeout_container,plastic takeout containers,recycling,201,399
+clamshell,berry clamshells,recycling,192,377
+peanut_butter_jar,plastic peanut butter jars,recycling,197,371
+margarine_tub,margarine tubs,recycling,207,427
+dish_soap_bottle,dish soap bottles,recycling,199,379
+plant_pot,plastic plant pots,recycling,196,380
+plastic_cutlery,plastic cutlery,garbage,247,938
+straw,plastic straws,garbage,247,636
+plastic_bag,plastic bags,garbage,220,1096
+plastic_wrap,plastic wrap,garbage,226,498
+chip_bag,chip bags,garbage,226,511
+candy_wrapper,candy wrappers,garbage,223,488
+food_pouch,squeeze pouches,garbage,229,496
+frozen_bag,frozen food bags,garbage,221,486
+foam_takeout,foam takeout containers,garbage,246,688
+foam_egg_carton,foam egg cartons,garbage,241,648
+packing_peanuts,packing peanuts,garbage,241,687
+foam_block,foam packaging blocks,garbage,244,559
+plastic_toy,plastic toys,garbage,201,440
+hanger,plastic hangers,garbage,203,422
+garden_hose,garden hoses,garbage,200,502
+toothpaste_tube,toothpaste tubes,garbage,205,389
+toothbrush,toothbrushes,garbage,207,945
+razor,disposable razors,garbage,207,440
+cd,CDs and DVDs,garbage,199,402
+blister_pack,blister packs,garbage,212,462
+aluminum_can,aluminum cans,recycling,223,505
+food_can,food cans,recycling,227,493
+aluminum_foil,aluminum foil,recycling,236,717
+foil_tray,aluminum trays,recycling,229,497
+aerosol_can,aerosol cans,recycling,222,577
+glass_bottle,glass bottles,recycling,223,1454
+glass_jar,glass jars,recycling,225,527
+drinking_glass,drinking glasses,garbage,222,744
+broken_glass,broken glass,garbage,225,804
+mirror,mirrors,garbage,218,565
+ceramics,ceramic dishes,garbage,223,565
+ovenware,glass ovenware,garbage,226,465
+incandescent_bulb,incandescent light bulbs,garbage,223,477
+fruit_veg_scraps,fruit and vegetable scraps,organics,193,737
+meat_bones,"meat, fish and bones",organics,186,494
+dairy,dairy products,organics,183,405
+bread_grains,"bread, pasta and rice",organics,195,392
+eggshells,eggshells,organics,189,506
+coffee_grounds,coffee grounds,organics,190,534
+tea_bags,tea bags,organics,191,387
+napkins,used paper napkins,organics,221,547
+leftovers,spoiled leftovers,organics,188,391
+cooking_grease,cooking grease,organics,194,530
+nut_shells,nut shells,organics,194,404
+pet_food,pet food,organics,189,450
+grass_clippings,grass clippings,organics,236,761
+leaves,leaves,organics,234,1557
+branches,branches and twigs,organics,235,572
+plants_flowers,houseplants and cut flowers,organics,229,548
+pumpkin,pumpkins,organics,196,372
+holiday_tree,holiday trees,organics,232,696
+hair,hair and pet fur,organics,173,306
+diapers,diapers,garbage,200,642
+pet_waste,pet waste,garbage,187,579
+cat_litter,cat litter,garbage,193,391
+vacuum_dust,vacuum bags and dust,garbage,190,376
+cigarette_butts,cigarette butts,garbage,189,422
+ashes,ashes,garbage,194,542
+dryer_lint,dryer lint,garbage,195,350
+gum,chewing gum,garbage,187,356
+wipes,wet wipes,garbage,191,392
+cotton_swabs,cotton swabs,garbage,193,378
+sponges,sponges,garbage,196,375
+rubber_gloves,rubber gloves,garbage,194,401
+coffee_pods,coffee pods,garbage,198,510
+pens,pens and markers,garbage,201,444
+bandages,bandages,garbage,192,400
+umbrella,broken umbrellas,garbage,198,373
+paint,leftover paint,hazardous,194,554
+solvents,paint thinner and solvents,hazardous,191,411
+pesticides,pesticides,hazardous,191,412
+motor_oil,motor oil,hazardous,185,369
+antifreeze,antifreeze,hazardous,183,353
+propane,propane tanks,hazardous,192,490
+household_batteries,household batteries,hazardous,231,543
+lithium_batteries,lithium-ion batteries,hazardous,232,641
+car_battery,car batteries,hazardous,228,510
+fluorescent,fluorescent tubes and CFL bulbs,hazardous,185,496
+thermometer,mercury thermometers,hazardous,190,359
+pool_chemicals,pool chemicals,hazardous,191,409
+cleaners,household cleaners,hazardous,191,422
+gasoline,gasoline and lighter fluid,hazardous,182,443
+fire_extinguisher,fire extinguishers,hazardous,182,340
+cell_phone,cell phones,electronics,188,479
+computer,computers and laptops,electronics,189,395
+tv,televisions and monitors,electronics,194,403
+printer,printers,electronics,180,370
+cords,cords and cables,electronics,191,409
+small_appliance,small kitchen appliances,electronics,185,379
+hair_dryer,hair dryers,electronics,181,345
+vape,vapes,electronics,182,448
+power_tools,power tools,electronics,182,360
+string_lights,string lights,electronics,183,381
+led_bulb,LED light bulbs,electronics,188,453
+game_console,game consoles,electronics,182,398
+headphones,headphones,electronics,183,369
+electric_toothbrush,electric toothbrushes,electronics,187,437
+sofa,sofas,bulky,208,430
+mattress,mattresses,bulky,196,848
+table_chairs,tables and chairs,bulky,202,413
+dresser,dressers,bulky,202,430
+fridge,refrigerators and freezers,bulky,196,429
+large_appliance,large appliances,bulky,208,1017
+air_conditioner,air conditioners,bulky,206,433
+carpet,carpets and rugs,bulky,195,392
+bbq,barbecue grills,bulky,195,389
+bicycle,bicycles,bulky,196,453
+exercise_equipment,exercise equipment,bulky,202,423
+water_heater,water heaters,bulky,196,374
+clothing,clothing,textiles,198,1367
+shoes,shoes,textiles,198,699
+linens,bed sheets and towels,textiles,205,786
+curtains,curtains,textiles,199,424
+bags_belts,handbags and belts,textiles,200,452
+stuffed_toys,stuffed animals,textiles,195,398
+medications,medications,takeback,237,1318
+sharps,needles and sharps,takeback,237,1067
+greasy_takeout_boxes,greasy takeout boxes,organics,213,466
+buttery_parchment,buttery parchment paper,organics,210,476
+muffin_liners,used muffin liners,organics,207,489
+kombucha_bottles,glass kombucha bottles,recycling,222,494
+sparkling_water_bottles,glass sparkling water bottles,recycling,225,483
+honey_jars,honey jars,recycling,224,493
+spice_jars,glass spice jars,recycling,223,485
+coconut_water_cartons,coconut water cartons,recycling,225,500
+protein_shake_cartons,protein shake cartons,recycling,209,463
+eggnog_cartons,eggnog cartons,recycling,215,476
+cream_cartons,cream cartons,recycling,205,480
+coffee_cans,coffee cans,recycling,219,481
+tomato_paste_cans,tomato paste cans,recycling,221,479
+prescription_vials,empty prescription vials,recycling,192,363
+glass_cookware_lids,glass cookware lids,garbage,225,486
+shrimp_shells,shrimp shells,organics,195,385
+onion_skins,onion skins,organics,194,387
+power_tool_batteries,power tool batteries,hazardous,232,543
+camera_batteries,camera batteries,hazardous,223,494
+smart_speakers,smart speakers,electronics,187,364
+hobby_glues,solvent-based hobby glues,hazardous,199,388
+photographic_chemicals,photographic chemicals,hazardous,186,378
+socks,socks,textiles,195,428
+fabric_gloves,fabric gloves,textiles,204,452
+fabric_remnants,fabric remnants,textiles,200,438
+plastic_buckets,plastic buckets,garbage,203,412

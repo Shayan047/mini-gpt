@@ -20,8 +20,8 @@ This document describes how the synthetic pretraining corpus for the Tidewell Re
 | Disposal streams (blue recycling cart, green organics cart, black garbage cart, hazardous waste drop-off, electronics drop-off, bulky item pickup, textile drop-off, pharmacy take-back) | 8 |
 | Material rules, e.g. "rigid plastic containers go in the blue cart" | 20 |
 | Preparation codes (empty, rinse, flatten, tape terminals, ...) | 27 |
-| Household items: 147 core + 20 held-out | 167 |
-| Item names and aliases | 541 |
+| Household items: 173 core + 20 held-out (v1.1; was 147+20) | 193 |
+| Item names and aliases | 619 |
 | Topics (collection schedule, cart placement, missed collection, apartments, drop-off depots, bulky items, rules and fines, reduce/reuse, home composting, organics tips, moving, seasonal, why sorting matters) | 13 |
 | Topic facts | 55 |
 
@@ -53,7 +53,7 @@ Claude Code wrote paraphrase banks for every fact in the knowledge base, along w
 
 Templates use a small mini-language: `[a|b]` picks one alternative, `{slot}` fills in a value, and `{v:go}` conjugates the verb to agree with the item ("cans go" / "foil goes"). This multiplies the number of distinct surface forms.
 
-The generator produces **17 document types**:
+The generator produces **18 document types**:
 - guide pages
 - A–Z directory entries
 - FAQs
@@ -71,6 +71,7 @@ The generator produces **17 document types**:
 - contamination reports
 - "common mistakes" sheets
 - "rules of thumb" sheets
+- **material sort drills** (v1.1: material class → rule → stream with worked examples)
 
 **Balanced exposure.** Items, topic facts and rules are drawn from shuffled cycles, so each one appears about equally often and no single answer dominates.
 
@@ -106,15 +107,17 @@ Run with `python -m src.datagen.check_corpus`. The report is saved to `results/t
 
 Regenerate with `python -m src.datagen.generate_corpus`; the fixed seeds make it fully reproducible. Per-type statistics are in `results/tables/corpus_stats.md`.
 
+**v1.1 defaults** (after KB expansion + material drills; see `RETRAIN_V2.md`):
+
 | Split | Documents | Words | Characters |
 |---|---:|---:|---:|
-| train | 6,135 | 802,227 | 4,659,607 |
-| val | 327 | 41,784 | 242,747 |
-| test | 327 | 42,839 | 250,532 |
+| train | 12,135 | 1,689,504 | 9,837,177 |
+| val | 507 | 70,573 | 411,963 |
+| test | 507 | 69,547 | 406,367 |
 
-- **Token count:** 1,310,522 tokens after tokenization with the byte-level BPE tokenizer (vocabulary 2,048): train 1,184,188, val 62,115, test 64,219. See `results/tables/token_stats.md`.
-- **Exposure in training:** each core item is mentioned 203–689 times, with a median of 245. Each topic fact is used in 82–200 documents and each material rule in 124–193 documents. Per-item and per-fact counts are in `results/tables/item_coverage.csv` and `results/tables/fact_coverage.csv`.
-- **Phrasing overlap:** 72–75% of validation and test sentences also appear verbatim in training. This is expected for a corpus built from a fixed knowledge base, since short fact sentences recur. It means validation loss mostly measures in-domain fluency. Generalization is measured separately, with unseen question wordings and held-out items in the QA evaluation set.
+- **Token count:** ~2.71M tokens after tokenization with the byte-level BPE tokenizer (vocabulary 2,048): train 2,501,119, val 105,600, test 103,188. See `results/tables/token_stats.md`.
+- **Exposure in training:** each core item is mentioned hundreds of times (median text mentions ~450). Material-rule documents are heavily upsampled (roughly 516–628 docs per rule). Per-item and per-fact counts are in `results/tables/item_coverage.csv` and `results/tables/fact_coverage.csv`.
+- **Phrasing overlap:** ~73–74% of validation and test sentences also appear verbatim in training. This is expected for a corpus built from a fixed knowledge base, since short fact sentences recur. It means validation loss mostly measures in-domain fluency. Generalization is measured separately, with unseen question wordings and held-out items in the QA evaluation set.
 
 ## 6. Output format
 

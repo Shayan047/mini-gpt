@@ -1,14 +1,19 @@
 
-=== 2026-11-08 04:46:17 device=cuda amp=True init=/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt (pretrain step 1800) sft_train=11,056 sft_val=460 steps=1000 (~2.9 epochs)
-{"init": "/content/drive/MyDrive/mini-gpt/pretrain_run2/ckpt_best.pt", "data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/sft", "batch_size": 32, "max_steps": 1000, "lr": 0.0001, "min_lr": 1e-05, "warmup_steps": 50, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 100, "corpus_eval_batches": 20, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false}
-step     0 | (pretrained) sft val 0.9691 | corpus val 0.8758
-step   100 | sft train(run) 0.4662 | sft val 0.3201 | corpus val 0.9679 | 0.1 min  *best*
-step   200 | sft train(run) 0.3268 | sft val 0.3030 | corpus val 1.0510 | 0.2 min  *best*
-step   300 | sft train(run) 0.3093 | sft val 0.2916 | corpus val 1.1282 | 0.3 min  *best*
-step   400 | sft train(run) 0.2895 | sft val 0.2833 | corpus val 1.1898 | 0.4 min  *best*
-step   500 | sft train(run) 0.2773 | sft val 0.2791 | corpus val 1.2417 | 0.5 min  *best*
-step   600 | sft train(run) 0.2709 | sft val 0.2767 | corpus val 1.2760 | 0.6 min  *best*
-step   700 | sft train(run) 0.2709 | sft val 0.2713 | corpus val 1.3140 | 0.7 min  *best*
-step   800 | sft train(run) 0.2514 | sft val 0.2721 | corpus val 1.3190 | 0.8 min
-step   900 | sft train(run) 0.2512 | sft val 0.2694 | corpus val 1.3319 | 0.9 min  *best*
-step  1000 | sft train(run) 0.2480 | sft val 0.2680 | corpus val 1.3391 | 1.0 min  *best*
+=== 2026-11-19 01:49:10 device=cuda amp=True init=/content/drive/MyDrive/mini-gpt/pretrain_v2/ckpt_best.pt (pretrain step 4000) sft_train=10,954 sft_val=456 steps=1500 replay=15% (~3.7 SFT epochs)
+{"init": "/content/drive/MyDrive/mini-gpt/pretrain_v2/ckpt_best.pt", "data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/sft_v2", "batch_size": 32, "max_steps": 1500, "lr": 8e-05, "min_lr": 8e-06, "warmup_steps": 75, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 100, "corpus_eval_batches": 20, "replay_ratio": 0.15, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false, "exclude_categories": []}
+step     0 | (pretrained) sft val 0.8749 | corpus val 0.8597
+step   100 | sft train(run) 0.5067 | sft val 0.2890 | corpus val 0.8808 | 0.1 min  *best*
+step   200 | sft train(run) 0.3193 | sft val 0.2734 | corpus val 0.8756 | 0.2 min  *best*
+step   300 | sft train(run) 0.3057 | sft val 0.2649 | corpus val 0.8748 | 0.3 min  *best*
+step   400 | sft train(run) 0.3059 | sft val 0.2608 | corpus val 0.8619 | 0.5 min  *best*
+step   500 | sft train(run) 0.2824 | sft val 0.2556 | corpus val 0.8645 | 0.7 min  *best*
+step   600 | sft train(run) 0.2831 | sft val 0.2553 | corpus val 0.8617 | 0.9 min  *best*
+step   700 | sft train(run) 0.2799 | sft val 0.2535 | corpus val 0.8650 | 1.0 min  *best*
+step   800 | sft train(run) 0.2786 | sft val 0.2512 | corpus val 0.8658 | 1.2 min  *best*
+step   900 | sft train(run) 0.2639 | sft val 0.2523 | corpus val 0.8719 | 1.4 min
+step  1000 | sft train(run) 0.2639 | sft val 0.2503 | corpus val 0.8694 | 1.5 min  *best*
+step  1100 | sft train(run) 0.2674 | sft val 0.2485 | corpus val 0.8708 | 1.7 min  *best*
+step  1200 | sft train(run) 0.2622 | sft val 0.2492 | corpus val 0.8695 | 1.9 min
+step  1300 | sft train(run) 0.2605 | sft val 0.2481 | corpus val 0.8701 | 2.1 min  *best*
+step  1400 | sft train(run) 0.2580 | sft val 0.2481 | corpus val 0.8699 | 2.3 min
+step  1500 | sft train(run) 0.2533 | sft val 0.2479 | corpus val 0.8698 | 2.4 min  *best*

@@ -1,23 +1,43 @@
 
-=== 2026-11-08 04:12:18 device=cuda amp=True params=11,532,288 train_tokens=1,184,188 tokens/step=8,192 steps=3000 (~20.8 epochs)
-{"data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/pretrain_run2", "n_layer": 6, "n_head": 6, "d_model": 384, "context_length": 256, "dropout": 0.1, "batch_size": 32, "max_steps": 3000, "lr": 0.0006, "min_lr": 6e-05, "warmup_steps": 150, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 150, "eval_batches": 40, "snapshot_every": 300, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false}
-step   150 | lr 6.00e-04 | train(run) 4.5831 | train 2.8098 | val 2.9654 | val ppl 19.40 | 0.3 min  *best*
-step   300 | lr 5.96e-04 | train(run) 2.2472 | train 1.4038 | val 1.6794 | val ppl 5.36 | 0.6 min  *best*
-step   450 | lr 5.85e-04 | train(run) 1.1810 | train 0.7858 | val 1.1288 | val ppl 3.09 | 1.0 min  *best*
-step   600 | lr 5.68e-04 | train(run) 0.8008 | train 0.6070 | val 0.9721 | val ppl 2.64 | 1.4 min  *best*
-step   750 | lr 5.43e-04 | train(run) 0.6565 | train 0.5283 | val 0.9157 | val ppl 2.50 | 1.8 min  *best*
-step   900 | lr 5.13e-04 | train(run) 0.5817 | train 0.4803 | val 0.8953 | val ppl 2.45 | 2.1 min  *best*
-step  1050 | lr 4.78e-04 | train(run) 0.5335 | train 0.4507 | val 0.8771 | val ppl 2.40 | 2.5 min  *best*
-step  1200 | lr 4.39e-04 | train(run) 0.5022 | train 0.4250 | val 0.8650 | val ppl 2.37 | 2.9 min  *best*
-step  1350 | lr 3.97e-04 | train(run) 0.4697 | train 0.4060 | val 0.8629 | val ppl 2.37 | 3.3 min  *best*
-step  1500 | lr 3.53e-04 | train(run) 0.4507 | train 0.3918 | val 0.8696 | val ppl 2.39 | 3.7 min
-step  1650 | lr 3.08e-04 | train(run) 0.4301 | train 0.3769 | val 0.8618 | val ppl 2.37 | 4.1 min  *best*
-step  1800 | lr 2.64e-04 | train(run) 0.4104 | train 0.3614 | val 0.8591 | val ppl 2.36 | 4.5 min  *best*
-step  1950 | lr 2.22e-04 | train(run) 0.3952 | train 0.3480 | val 0.8666 | val ppl 2.38 | 4.8 min
-step  2100 | lr 1.83e-04 | train(run) 0.3809 | train 0.3349 | val 0.8599 | val ppl 2.36 | 5.2 min
-step  2250 | lr 1.47e-04 | train(run) 0.3656 | train 0.3234 | val 0.8702 | val ppl 2.39 | 5.6 min
-step  2400 | lr 1.17e-04 | train(run) 0.3541 | train 0.3120 | val 0.8756 | val ppl 2.40 | 6.0 min
-step  2550 | lr 9.27e-05 | train(run) 0.3452 | train 0.3035 | val 0.8785 | val ppl 2.41 | 6.4 min
-step  2700 | lr 7.47e-05 | train(run) 0.3374 | train 0.2943 | val 0.8824 | val ppl 2.42 | 6.7 min
-step  2850 | lr 6.37e-05 | train(run) 0.3310 | train 0.2866 | val 0.8821 | val ppl 2.42 | 7.1 min
-step  3000 | lr 6.00e-05 | train(run) 0.3270 | train 0.2807 | val 0.8872 | val ppl 2.43 | 7.5 min
+=== 2026-11-19 01:29:02 device=cuda amp=True params=11,532,288 train_tokens=2,501,119 tokens/step=8,192 steps=8000 (~26.2 epochs)
+{"data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/pretrain_v2", "n_layer": 6, "n_head": 6, "d_model": 384, "context_length": 256, "dropout": 0.12, "batch_size": 32, "max_steps": 8000, "lr": 0.0006, "min_lr": 6e-05, "warmup_steps": 300, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 200, "eval_batches": 40, "snapshot_every": 400, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false}
+step   200 | lr 4.00e-04 | train(run) 4.6398 | train 2.8555 | val 2.9714 | val ppl 19.52 | 0.4 min  *best*
+step   400 | lr 6.00e-04 | train(run) 2.1566 | train 1.2062 | val 1.4689 | val ppl 4.34 | 0.8 min  *best*
+step   600 | lr 5.98e-04 | train(run) 1.0173 | train 0.6835 | val 1.0266 | val ppl 2.79 | 1.2 min  *best*
+step   800 | lr 5.94e-04 | train(run) 0.6986 | train 0.5453 | val 0.9362 | val ppl 2.55 | 1.7 min  *best*
+step  1000 | lr 5.89e-04 | train(run) 0.5891 | train 0.4883 | val 0.9008 | val ppl 2.46 | 2.1 min  *best*
+step  1200 | lr 5.82e-04 | train(run) 0.5302 | train 0.4621 | val 0.8949 | val ppl 2.45 | 2.6 min  *best*
+step  1400 | lr 5.73e-04 | train(run) 0.5042 | train 0.4407 | val 0.8742 | val ppl 2.40 | 3.0 min  *best*
+step  1600 | lr 5.63e-04 | train(run) 0.4784 | train 0.4263 | val 0.8702 | val ppl 2.39 | 3.5 min  *best*
+step  1800 | lr 5.51e-04 | train(run) 0.4603 | train 0.4157 | val 0.8689 | val ppl 2.38 | 4.0 min  *best*
+step  2000 | lr 5.38e-04 | train(run) 0.4428 | train 0.4083 | val 0.8650 | val ppl 2.37 | 4.4 min  *best*
+step  2200 | lr 5.23e-04 | train(run) 0.4377 | train 0.4021 | val 0.8747 | val ppl 2.40 | 4.9 min
+step  2400 | lr 5.07e-04 | train(run) 0.4286 | train 0.3964 | val 0.8614 | val ppl 2.37 | 5.4 min  *best*
+step  2600 | lr 4.90e-04 | train(run) 0.4182 | train 0.3902 | val 0.8742 | val ppl 2.40 | 5.8 min
+step  2800 | lr 4.71e-04 | train(run) 0.4139 | train 0.3823 | val 0.8661 | val ppl 2.38 | 6.3 min
+step  3000 | lr 4.52e-04 | train(run) 0.4066 | train 0.3754 | val 0.8662 | val ppl 2.38 | 6.8 min
+step  3200 | lr 4.32e-04 | train(run) 0.3996 | train 0.3731 | val 0.8574 | val ppl 2.36 | 7.2 min  *best*
+step  3400 | lr 4.11e-04 | train(run) 0.3953 | train 0.3675 | val 0.8703 | val ppl 2.39 | 7.7 min
+step  3600 | lr 3.90e-04 | train(run) 0.3869 | train 0.3653 | val 0.8521 | val ppl 2.34 | 8.2 min  *best*
+step  3800 | lr 3.69e-04 | train(run) 0.3859 | train 0.3575 | val 0.8517 | val ppl 2.34 | 8.7 min  *best*
+step  4000 | lr 3.47e-04 | train(run) 0.3775 | train 0.3522 | val 0.8418 | val ppl 2.32 | 9.1 min  *best*
+step  4200 | lr 3.25e-04 | train(run) 0.3750 | train 0.3467 | val 0.8458 | val ppl 2.33 | 9.6 min
+step  4400 | lr 3.03e-04 | train(run) 0.3676 | train 0.3421 | val 0.8583 | val ppl 2.36 | 10.1 min
+step  4600 | lr 2.81e-04 | train(run) 0.3624 | train 0.3372 | val 0.8563 | val ppl 2.35 | 10.6 min
+step  4800 | lr 2.59e-04 | train(run) 0.3585 | train 0.3339 | val 0.8607 | val ppl 2.36 | 11.0 min
+step  5000 | lr 2.38e-04 | train(run) 0.3546 | train 0.3288 | val 0.8659 | val ppl 2.38 | 11.5 min
+step  5200 | lr 2.18e-04 | train(run) 0.3499 | train 0.3238 | val 0.8588 | val ppl 2.36 | 12.0 min
+step  5400 | lr 1.98e-04 | train(run) 0.3465 | train 0.3196 | val 0.8619 | val ppl 2.37 | 12.4 min
+step  5600 | lr 1.80e-04 | train(run) 0.3417 | train 0.3158 | val 0.8526 | val ppl 2.35 | 12.9 min
+step  5800 | lr 1.62e-04 | train(run) 0.3402 | train 0.3112 | val 0.8693 | val ppl 2.39 | 13.4 min
+step  6000 | lr 1.45e-04 | train(run) 0.3332 | train 0.3074 | val 0.8652 | val ppl 2.38 | 13.8 min
+step  6200 | lr 1.30e-04 | train(run) 0.3316 | train 0.3035 | val 0.8670 | val ppl 2.38 | 14.3 min
+step  6400 | lr 1.16e-04 | train(run) 0.3270 | train 0.2997 | val 0.8717 | val ppl 2.39 | 14.8 min
+step  6600 | lr 1.03e-04 | train(run) 0.3234 | train 0.2961 | val 0.8808 | val ppl 2.41 | 15.3 min
+step  6800 | lr 9.18e-05 | train(run) 0.3211 | train 0.2923 | val 0.8743 | val ppl 2.40 | 15.7 min
+step  7000 | lr 8.22e-05 | train(run) 0.3185 | train 0.2902 | val 0.8854 | val ppl 2.42 | 16.2 min
+step  7200 | lr 7.43e-05 | train(run) 0.3159 | train 0.2871 | val 0.8879 | val ppl 2.43 | 16.7 min
+step  7400 | lr 6.81e-05 | train(run) 0.3130 | train 0.2847 | val 0.8905 | val ppl 2.44 | 17.1 min
+step  7600 | lr 6.36e-05 | train(run) 0.3123 | train 0.2819 | val 0.8873 | val ppl 2.43 | 17.6 min
+step  7800 | lr 6.09e-05 | train(run) 0.3102 | train 0.2803 | val 0.8896 | val ppl 2.43 | 18.1 min
+step  8000 | lr 6.00e-05 | train(run) 0.3093 | train 0.2794 | val 0.8899 | val ppl 2.43 | 18.6 min

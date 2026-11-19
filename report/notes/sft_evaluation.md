@@ -62,7 +62,7 @@ Source: `results/tables/qa_eval.md` and `results/figures/qa_before_after.png`.
    - Before: *"Where should used needles go?"* → *"In short, used **motor oil** should be brought to a hazardous waste drop-off."*
    - After: *"…used medicine and needles never go in a cart; take it to a pharmacy."*
 2. **Yes/no logic** (lead word correct: 64% → 82%).
-   - Before: *"Can I put my old electric kettle in the garbage?"* → *"**Yes!** … televisions and monitors go to an electronics drop-off."*
+   - Before: *"Can I put my old electric kettle in the garbage?"* → *"No, sorry … electric toothbrushes … electronics drop-off."* (right lead/category, wrong item)
    - After: *"**No, sorry.** They count as electronic waste."*
    - The pretrained model had learned only how often answers start with "Yes", not when a yes is correct.
 3. **Bin and material-rule questions** (46% → 68%). These are general questions such as *"Which things can I put in my blue bin?"*, which pretraining text rarely phrased as questions.

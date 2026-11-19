@@ -67,13 +67,13 @@ A:"
 python -m src.generate --ckpt models/finetuned.pt --qa --temperature 0 --prompt "Can I put my old electric kettle in the garbage?"
 ```
 
-> "On our 654-question evaluation set, fine-tuning raised accuracy from 76% to 82%. The clearest gains were yes/no questions, answering about the item that was actually asked, and declining off-topic questions."
+> "On our 732-question evaluation set, fine-tuning raised accuracy from 81.1% to 88.9%. The clearest gains were yes/no questions, bins and material rules, and declining off-topic questions. Held-out items improved but stay hard."
 
-Electric kettles are a held-out item. The expected results, taken from the evaluation run:
-- **Pretrained:** *"Yes! … televisions and monitors go to an electronics drop-off."* The yes is wrong and it talks about a different item.
-- **Fine-tuned:** *"No, sorry. They count as electronic waste."*
+Electric kettles are a held-out item. Expected live outputs with the current checkpoints:
+- **Pretrained:** *"No, sorry. In short, electric toothbrushes have to go to an electronics drop-off…"* Right lead and category, wrong appliance; truncated by `--max-new-tokens`.
+- **Fine-tuned:** *"No, sorry. Electric shavers should be brought to an e-waste drop-off…"* Still the wrong appliance, but one clean answer that stops by itself.
 
-If the pretrained output differs on camera, say so; the evaluation numbers come from the saved evaluation run.
+If the live output differs on camera, say so; the evaluation numbers come from the saved evaluation tables.
 
 ## 4:15–4:45 · Wrap-up
 

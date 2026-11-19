@@ -477,10 +477,59 @@ class DocGen:
             lines.append(line)
         return self.doc("rules_of_thumb", lines, [], [], rids)
 
+    def material_sort_drill(self):
+        """Compositional drills: material class → rule → stream, with several core examples.
+
+        Upsampled so the model sees rule transfer more often than item-name memorization.
+        """
+        rid = self.rule_cycle.next()
+        rule = self.rules[rid]
+        ex = [it for it in self.items if it["rule"] == rid]
+        lines = [self.pick(["Material sorting drill", "Sort by what it is made of", "Rule practice sheet",
+                            "How to place an unfamiliar item", "Material → destination practice"]), ""]
+        lines.append(self.pick([
+            "When an item is not listed by name, identify the material first, then apply the matching rule.",
+            "Do not guess from the product brand. Ask: what material is this, and which rule covers that material?",
+            "Residents often ask about items that are not in the A-Z list. Teach the material rule, then give examples.",
+            "Unlisted items are sorted by material class, not by guessing a similar brand name.",
+        ]))
+        lines += ["", self.pick(["Rule: ", "Material rule: ", "Apply this: "]) + self.rule_text(rid)]
+        dest = self.pick(L.BIN_NAME[rule["stream"]])
+        lines.append(self.pick([
+            f"Destination: {dest}.",
+            f"Correct stream: {dest}.",
+            f"That material belongs in {dest}.",
+        ]))
+        chosen = []
+        if ex:
+            n = min(len(ex), self.rng.randint(3, 6))
+            chosen = self.rng.sample(ex, n)
+            lines += ["", self.pick(["Worked examples:", "Items that follow this rule:", "Practice with these:",
+                                     "Same rule, different names:"])]
+            for it in chosen:
+                ctx = self.ictx(it)
+                mat = it.get("material") or "this material"
+                lines.append(
+                    f"- {cap(ctx['item'])} ({mat}): " +
+                    self.pick([
+                        self.guidance(it, ctx, p_note=0.2, p_reason=0.85),
+                        f"material class → {mat}. " + self.rule_text(rid) + " " + self.statement(it, ctx),
+                        self.statement(it, ctx) + " " + self.pick(["Because: ", "Rule: ", ""]) + self.rule_text(rid),
+                    ])
+                )
+        lines += ["", self.pick([
+            "If a future item is made of the same material, use the same destination.",
+            "New product names still follow the material rule above.",
+            "Remember the material class; the brand name does not change the cart.",
+            "",
+        ])]
+        return self.doc("material_sort_drill", lines, chosen, [], [rid])
+
 
 DOC_TYPES = {
-    # name: weight
-    "guide_page": 9, "az_entries": 10, "faq": 12, "newsletter": 5, "staff_memo": 5, "training_note": 6, "cs_email": 10,
-    "chat": 10, "social_post": 5, "topic_page": 9, "notice": 4, "forum_thread": 6, "school_handout": 3,
-    "building_notice": 3, "contamination_report": 2, "common_mistakes": 3, "rules_of_thumb": 5,
+    # name: weight  (material_sort_drill + higher rules_of_thumb → more compositional pretraining)
+    "guide_page": 8, "az_entries": 9, "faq": 10, "newsletter": 4, "staff_memo": 4, "training_note": 5, "cs_email": 8,
+    "chat": 8, "social_post": 4, "topic_page": 8, "notice": 3, "forum_thread": 5, "school_handout": 3,
+    "building_notice": 3, "contamination_report": 2, "common_mistakes": 3, "rules_of_thumb": 10,
+    "material_sort_drill": 12,
 }
