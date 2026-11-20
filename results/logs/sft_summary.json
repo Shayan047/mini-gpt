@@ -3,7 +3,7 @@
   "epochs": 4.381960927515063,
   "best_sft_val_loss": 0.24790163691194494,
   "excluded_categories": [],
-  "init": "/content/drive/MyDrive/mini-gpt/pretrain_v2/ckpt_best.pt",
+  "init": "checkpoints/pretrain/ckpt_best.pt",
   "sft_train_pairs": 10954,
   "train_minutes": 2.478737016518911,
   "device": "cuda",

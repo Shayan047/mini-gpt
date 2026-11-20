@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "1.1",
-    "description": "Fictional knowledge base for the Tidewell Residential Waste Guide (v1.1). v1.1 adds compositional core items on thin material rules to improve rule→item transfer without exposing held-out evaluation names.",
+    "version": "1.0",
+    "description": "Fictional knowledge base for the Tidewell Residential Waste Guide. Includes compositional core items on thin material rules to improve rule→item transfer without exposing held-out evaluation names.",
     "notes": [
       "Items with \"split\": \"heldout\" must NEVER appear in the pretraining corpus or the fine-tuning set. They exist only to test whether the model can apply the general material rules to items it has never seen.",
       "prep codes are canonical instructions; the corpus generator paraphrases them in many ways."

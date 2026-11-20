@@ -25,7 +25,7 @@ OUT_DIR = ROOT / "data" / "corpus"
 TABLES = ROOT / "results" / "tables"
 SAMPLES = ROOT / "results" / "samples"
 
-# v1.1 defaults: ~2× train docs so longer pretraining stays under the overfitting knee.
+# Defaults: ~2× train docs so longer pretraining stays under the overfitting knee.
 DEFAULT_SIZES = {"train": 12000, "val": 500, "test": 500}
 SEEDS = {"train": 1234, "val": 5678, "test": 9012}
 

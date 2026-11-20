@@ -1,6 +1,6 @@
 
 === 2026-11-19 01:29:02 device=cuda amp=True params=11,532,288 train_tokens=2,501,119 tokens/step=8,192 steps=8000 (~26.2 epochs)
-{"data_dir": "/content/mini-gpt/data", "out_dir": "/content/drive/MyDrive/mini-gpt/pretrain_v2", "n_layer": 6, "n_head": 6, "d_model": 384, "context_length": 256, "dropout": 0.12, "batch_size": 32, "max_steps": 8000, "lr": 0.0006, "min_lr": 6e-05, "warmup_steps": 300, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 200, "eval_batches": 40, "snapshot_every": 400, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false}
+{"data_dir": "/content/mini-gpt/data", "out_dir": "checkpoints/pretrain", "n_layer": 6, "n_head": 6, "d_model": 384, "context_length": 256, "dropout": 0.12, "batch_size": 32, "max_steps": 8000, "lr": 0.0006, "min_lr": 6e-05, "warmup_steps": 300, "weight_decay": 0.1, "grad_clip": 1.0, "eval_every": 200, "eval_batches": 40, "snapshot_every": 400, "seed": 1337, "device": "auto", "no_amp": false, "no_resume": false}
 step   200 | lr 4.00e-04 | train(run) 4.6398 | train 2.8555 | val 2.9714 | val ppl 19.52 | 0.4 min  *best*
 step   400 | lr 6.00e-04 | train(run) 2.1566 | train 1.2062 | val 1.4689 | val ppl 4.34 | 0.8 min  *best*
 step   600 | lr 5.98e-04 | train(run) 1.0173 | train 0.6835 | val 1.0266 | val ppl 2.79 | 1.2 min  *best*

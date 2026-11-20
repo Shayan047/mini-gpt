@@ -29,7 +29,7 @@ from .doctypes import DocGen
 from .expand import Bank, cap
 
 SFT_DIR, EVAL_DIR = ROOT / "data" / "sft", ROOT / "data" / "eval"
-# v1.1: slightly fewer copies per item (more items), more rule/material drills for transfer.
+# Slightly fewer copies per item (more items), more rule/material drills for transfer.
 N_PER_ITEM, N_PER_FACT, N_PER_STREAM, N_PER_RULE = 48, 22, 30, 48
 N_PER_MATERIAL = 24
 N_OOS_GENERAL, N_OOS_COMMERCIAL = 10, 15

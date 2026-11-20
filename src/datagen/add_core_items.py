@@ -1,4 +1,4 @@
-"""Append compositional core items that strengthen thin material rules (KB v1.1).
+"""Append compositional core items that strengthen thin material rules.
 
 Does not touch held-out items. Run:
 
@@ -187,8 +187,8 @@ def main():
     kb["items"] = core + added + other + held
     kb["meta"]["version"] = "1.1"
     kb["meta"]["description"] = (
-        "Fictional knowledge base for the Tidewell Residential Waste Guide (v1.1). "
-        "v1.1 adds compositional core items on thin material rules to improve rule→item transfer "
+        "Fictional knowledge base for the Tidewell Residential Waste Guide. "
+        "Includes compositional core items on thin material rules to improve rule→item transfer "
         "without exposing held-out evaluation names."
     )
     errs = validate(kb)

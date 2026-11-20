@@ -20,7 +20,7 @@ This document describes how the synthetic pretraining corpus for the Tidewell Re
 | Disposal streams (blue recycling cart, green organics cart, black garbage cart, hazardous waste drop-off, electronics drop-off, bulky item pickup, textile drop-off, pharmacy take-back) | 8 |
 | Material rules, e.g. "rigid plastic containers go in the blue cart" | 20 |
 | Preparation codes (empty, rinse, flatten, tape terminals, ...) | 27 |
-| Household items: 173 core + 20 held-out (v1.1; was 147+20) | 193 |
+| Household items: 173 core + 20 held-out | 193 |
 | Item names and aliases | 619 |
 | Topics (collection schedule, cart placement, missed collection, apartments, drop-off depots, bulky items, rules and fines, reduce/reuse, home composting, organics tips, moving, seasonal, why sorting matters) | 13 |
 | Topic facts | 55 |
@@ -71,7 +71,7 @@ The generator produces **18 document types**:
 - contamination reports
 - "common mistakes" sheets
 - "rules of thumb" sheets
-- **material sort drills** (v1.1: material class → rule → stream with worked examples)
+- **material sort drills** (material class → rule → stream with worked examples)
 
 **Balanced exposure.** Items, topic facts and rules are drawn from shuffled cycles, so each one appears about equally often and no single answer dominates.
 
@@ -107,7 +107,7 @@ Run with `python -m src.datagen.check_corpus`. The report is saved to `results/t
 
 Regenerate with `python -m src.datagen.generate_corpus`; the fixed seeds make it fully reproducible. Per-type statistics are in `results/tables/corpus_stats.md`.
 
-**v1.1 defaults** (after KB expansion + material drills; see `RETRAIN_V2.md`):
+**Current defaults** (after KB expansion + material drills; see `RETRAIN.md`):
 
 | Split | Documents | Words | Characters |
 |---|---:|---:|---:|

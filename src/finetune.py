@@ -36,7 +36,7 @@ def get_args(argv=None):
     p.add_argument("--data-dir", default=str(ROOT / "data"))
     p.add_argument("--out-dir", default=str(ROOT / "checkpoints" / "sft"))
     p.add_argument("--batch-size", type=int, default=32)
-    p.add_argument("--max-steps", type=int, default=1500)          # v1.1: a bit longer with replay
+    p.add_argument("--max-steps", type=int, default=1500)          # longer schedule with replay
     p.add_argument("--lr", type=float, default=8e-5)
     p.add_argument("--min-lr", type=float, default=8e-6)
     p.add_argument("--warmup-steps", type=int, default=75)

@@ -49,7 +49,7 @@ def get_args(argv=None):
     p.add_argument("--d-model", type=int, default=384)
     p.add_argument("--context-length", type=int, default=256)
     p.add_argument("--dropout", type=float, default=0.12)
-    # optimization  (v1.1 defaults: longer run on the expanded corpus; still keep best-val ckpt)
+    # optimization  (defaults: longer run on the expanded corpus; still keep best-val ckpt)
     p.add_argument("--batch-size", type=int, default=32)
     p.add_argument("--max-steps", type=int, default=8000)
     p.add_argument("--lr", type=float, default=6e-4)

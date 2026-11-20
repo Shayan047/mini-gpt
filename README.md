@@ -151,7 +151,7 @@ Full tables and figures are in `results/tables/` and `results/figures/`.
 Data generation and the tokenizer need only the Python standard library. Training needs a GPU; the notebooks are written for **Google Colab (free T4)**.
 
 ```bash
-# 1. data (deterministic). Optional longer recipe notes: RETRAIN_V2.md
+# 1. data (deterministic). Optional longer recipe notes: RETRAIN.md
 python -m src.datagen.add_core_items          # extra core items on thin material rules (idempotent)
 python src/kb.py                              # validate the knowledge base
 python -m src.datagen.generate_corpus         # ~12k train docs by default
